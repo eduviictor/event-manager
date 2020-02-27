@@ -1,5 +1,9 @@
 # Event-manager
-Repositório para disciplina de Engenharia de Software II.
+  Repositório para disciplina de Engenharia de Software II.
+
+# Descrição:
+  
+Desenvolvimento de uma aplicação web que atuará como um gerenciador de eventos.
 
 # Tecnologias:
 
