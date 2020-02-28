@@ -122,3 +122,12 @@ Segue abaixo o modelo entidade relacionamento:
 |**Horário**|Hora de início do evento|Varchar|6|Not Null|
 |**Cod_Atracao**|Chave estrangeira referenciando o código da tabela atração|Int| |FK|
 |**Cod_Empresa**|Chave estrangeira referenciando o código da tabela terceirizados|Varchar|15|FK|
+
+### Atração
+* Armazenará as informações das atrações de um evento;
+* Não possui nenhuma chave estrangeira.
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome da atração|Varchar|31|Not Null|
