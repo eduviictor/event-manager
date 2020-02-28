@@ -79,6 +79,9 @@ Segue abaixo o modelo entidade relacionamento:
 ![alt text](https://github.com/eduviictor/event-manager/blob/master/Modelo%20ER%20-%20EventManager.png "Modelo Entidade Relacionamento")
  
  ## Modelo de dados
+ ### Cliente
+ * Armazenará as informações dos usuários;
+ * Essa tabela possui uma chave estrangeira da tabela ingresso.
  
 | Nome | Descrição | Tipo de dado | Tamanho | Restrições |
 |------|-----------|--------------|---------|------------|
@@ -90,3 +93,16 @@ Segue abaixo o modelo entidade relacionamento:
 |**Estado**|Estado em que reside|Varchar|3| |
 |**Cidade**|Cidade em reside|Varchar|31| |
 |**Cod_Ing**|Chave estrangeira referenciando o código da tabela ingresso|Int| |FK|
+
+### Organizador
+* Armazenará as informações dos organizadores de evento;
+* Essa tabela possui uma chave estrangeira da tabela evento.
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**CPF/CNPJ**|Código de identificação da tabela organizador|Int| |PK/Identify|
+|**Nome**|Nome do organizador|Varchar|31|Not Null|
+|**E-mail**|E-mail de contato do organizador|Varchar|31|Not Null|
+|**Telefone**|Telefone de contato do organizador|Varchar|15| |
+|**Checagem**|Validação de envio de relatórios do sistema|Boolean| | |
+|**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento|Int| |FK|
