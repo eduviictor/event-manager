@@ -80,4 +80,13 @@ Segue abaixo o modelo entidade relacionamento:
  
  ## Modelo de dados
  
- 
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**CPF**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome do cliente|Varchar|31|Not Null|
+|**E-mail**|E-mail do cliente|Varchar|31|Not null|
+|**Telefone**|Telefone de contato do cliente|Varchar|31| |
+|**Checagem**|Validação de envio de notificações do sistema|Boolean| | |
+|**Estado**|Estado em que reside|Varchar|3| |
+|**Cidade**|Cidade em reside|Varchar|31| |
+|**Cod_Ing**|Chave estrangeira referenciando o código da tabela ingresso|Int| |FK|
