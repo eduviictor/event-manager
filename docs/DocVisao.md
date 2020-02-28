@@ -68,7 +68,7 @@ empresa.
   * uma atração pode ser cadastrada para ser associada a um evento;
   * as atrações cadastradas serão associadas a um evento por meio do organizador do evento;
   * uma atração possui:
-    * codigo, nome, servico, telefone, e-mail
+    * codigo, nome, telefone, e-mail
      
 * O sistema possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou
 reclamações sobre o sistema;
@@ -137,5 +137,5 @@ Segue abaixo o modelo entidade relacionamento:
 |------|-----------|--------------|---------|------------|
 |**Código**|Código de identificação da tabela|Int| |PK/Identify|
 |**Nome**|Nome da atração|Varchar|31|Not Null|
-|**E-mail**|E-mail de contato do organizador|Varchar|31|Not Null|
-|**Telefone**|Telefone de contato do organizador|Varchar|15| |
+|**E-mail**|E-mail de contato da assessoria da atração|Varchar|31|Not Null|
+|**Telefone**|Telefone de contato da assessoria da atração|Varchar|15| |
