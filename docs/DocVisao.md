@@ -106,3 +106,19 @@ Segue abaixo o modelo entidade relacionamento:
 |**Telefone**|Telefone de contato do organizador|Varchar|15| |
 |**Checagem**|Validação de envio de relatórios do sistema|Boolean| | |
 |**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento|Int| |FK|
+
+### Evento
+* Armazenará as informações dos eventos;
+* Essa tabela possui uma chave estrangeira da tabela atração.
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome do evento|Varchar|31|Not Null|
+|**Local**|Local de realização do evento|Varchar|31|Not Null|
+|**Data**|Data de realização do evento|Date| |Not Null|
+|**Cidade**|Cidade que o evento irá ser realizado|Varchar|31|Not Null|
+|**Estado**|Estado em que o evento será realizado|Varchar|3|Not Null|
+|**Horário**|Hora de início do evento|Varchar|6|Not Null|
+|**Cod_Atracao**|Chave estrangeira referenciando o código da tabela atração|Int| |FK|
+|**Cod_Empresa**|Chave estrangeira referenciando o código da tabela terceirizados|Varchar|15|FK|
