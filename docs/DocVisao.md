@@ -164,3 +164,15 @@ Segue abaixo o modelo entidade relacionamento:
 |**Valor Investido**|Valor total investido |Double|||
 |**Receita**|Valor líquido obtido |Double|||
 |**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento |Int||FK|
+
+### Empresa
+* Armazenará as informações das empresas associadas à um evento
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Cnpj**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome da empresa |Varchar|31|Not Null|
+|**Serviço**|Tipo de serviço fornecido|Varchar|31|Not Null|
+|**Valor**|Valor correspondente ao contrato do serviço |Double|||
+|**Telefone**|Telefone de contato |Varchar|15|Not Null|
+|**E-mail**|E-mail de contato |Varchar|31|Not Null|
