@@ -139,3 +139,15 @@ Segue abaixo o modelo entidade relacionamento:
 |**Nome**|Nome da atração|Varchar|31|Not Null|
 |**E-mail**|E-mail de contato da assessoria da atração|Varchar|31|Not Null|
 |**Telefone**|Telefone de contato da assessoria da atração|Varchar|15| |
+
+### Ingresso
+* Armazenará as informações dos ingressos do evento
+* Essa tabela possui uma chave estrangeira da tabela evento
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Tipo**|Tipo do ingresso|Varchar|10|Not Null|
+|**Valor**|Valor correspondente ao tipo mencionado |Double|||
+|**Quantidade**|Quantidade disponível para venda|Int|| |
+|**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento|Int||FK |
