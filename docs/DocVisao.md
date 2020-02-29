@@ -151,3 +151,16 @@ Segue abaixo o modelo entidade relacionamento:
 |**Valor**|Valor correspondente ao tipo mencionado |Double|||
 |**Quantidade**|Quantidade disponível para venda|Int|| |
 |**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento|Int||FK |
+
+### Relatório
+* Armazenará as informações dos relatórios
+* Essa tabela possui uma chave estrangeira da tabela evento
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Ingressos**|Quantidade de ingressos vendidos |Int|||
+|**Valor Arrecadado**|Valor bruto arrecadado |Double|||
+|**Valor Investido**|Valor total investido |Double|||
+|**Receita**|Valor líquido obtido |Double|||
+|**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento |Int||FK|
