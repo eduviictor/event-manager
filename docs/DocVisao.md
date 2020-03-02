@@ -82,7 +82,7 @@ ser notificado, essa informação sobre a permissão constará no registro de st
  ## Modelo conceitual
  
 Segue abaixo o modelo entidade relacionamento:
-![alt text](https://github.com/eduviictor/event-manager/blob/master/Modelo%20ER%20-%20EventManager.png "Modelo Entidade Relacionamento")
+![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/docs/modelo_ER.png")
  
  ## Modelo de dados
  ### Cliente
