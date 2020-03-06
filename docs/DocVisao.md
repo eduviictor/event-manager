@@ -85,6 +85,9 @@ Segue abaixo o modelo entidade relacionamento:
 ![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/docs/modelo_ER.png)
  
  ## Modelo de dados
+ Segue abaixo o modelo relacional:
+ ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/docs/Modelo%20relacional.png)
+ 
  ### Cliente
  * Armazenará as informações dos usuários;
  * Essa tabela possui uma chave estrangeira da tabela ingresso.
