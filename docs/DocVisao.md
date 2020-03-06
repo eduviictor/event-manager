@@ -52,7 +52,7 @@ empresa.
   * uma empresa pode ser cadastrada para ser associada a um evento;
   * as empresas cadastradas serão associadas a um evento por meio do organizador do evento;
   * uma empresa possui:
-    * cnpj, nome, servico, valor, telefone, e-mail
+    * cnpj, nome, servico, telefone, e-mail
 
 * Gerar relatórios;
   * um evento poderá gerar relatório para os organizadores caso o mesmo tenha dado permissão necessária que constará no registro status;
@@ -63,6 +63,12 @@ empresa.
   * um ingresso pode ser adquirido por cliente;
   * um ingresso possui:
      * codigo, tipo de ingresso, valor
+     
+* Cadastrar atrações;
+  * uma atração pode ser cadastrada para ser associada a um evento;
+  * as atrações cadastradas serão associadas a um evento por meio do organizador do evento;
+  * uma atração possui:
+    * codigo, nome, telefone, e-mail
      
 * O sistema possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou
 reclamações sobre o sistema;
@@ -76,8 +82,100 @@ ser notificado, essa informação sobre a permissão constará no registro de st
  ## Modelo conceitual
  
 Segue abaixo o modelo entidade relacionamento:
-![alt text](https://github.com/eduviictor/event-manager/blob/master/Modelo%20ER%20-%20EventManager.png "Modelo Entidade Relacionamento")
+![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/docs/modelo_ER.png)
  
  ## Modelo de dados
+ Segue abaixo o modelo relacional:
+ ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/docs/Modelo%20relacional.png)
  
+ ### Cliente
+ * Armazenará as informações dos usuários;
+ * Essa tabela possui uma chave estrangeira da tabela ingresso.
  
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**CPF**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome do cliente|Varchar|31|Not Null|
+|**E-mail**|E-mail do cliente|Varchar|31|Not null|
+|**Telefone**|Telefone de contato do cliente|Varchar|31| |
+|**Checagem**|Validação de envio de notificações do sistema|Boolean| | |
+|**Estado**|Estado em que reside|Varchar|3| |
+|**Cidade**|Cidade em reside|Varchar|31| |
+|**Cod_Ing**|Chave estrangeira referenciando o código da tabela ingresso|Int| |FK|
+
+### Organizador
+* Armazenará as informações dos organizadores de evento;
+* Essa tabela possui uma chave estrangeira da tabela evento.
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**CPF/CNPJ**|Código de identificação da tabela organizador|Int| |PK/Identify|
+|**Nome**|Nome do organizador|Varchar|31|Not Null|
+|**E-mail**|E-mail de contato do organizador|Varchar|31|Not Null|
+|**Telefone**|Telefone de contato do organizador|Varchar|15| |
+|**Checagem**|Validação de envio de relatórios do sistema|Boolean| | |
+|**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento|Int| |FK|
+
+### Evento
+* Armazenará as informações dos eventos;
+* Essa tabela possui uma chave estrangeira da tabela atração.
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome do evento|Varchar|31|Not Null|
+|**Local**|Local de realização do evento|Varchar|31|Not Null|
+|**Data**|Data de realização do evento|Date| |Not Null|
+|**Cidade**|Cidade que o evento irá ser realizado|Varchar|31|Not Null|
+|**Estado**|Estado em que o evento será realizado|Varchar|3|Not Null|
+|**Horário**|Hora de início do evento|Varchar|6|Not Null|
+|**Cod_Atracao**|Chave estrangeira referenciando o código da tabela atração|Int| |FK|
+|**Cod_Empresa**|Chave estrangeira referenciando o código da tabela terceirizados|Varchar|15|FK|
+
+### Atração
+* Armazenará as informações das atrações de um evento;
+* Não possui nenhuma chave estrangeira.
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome da atração|Varchar|31|Not Null|
+|**E-mail**|E-mail de contato da assessoria da atração|Varchar|31|Not Null|
+|**Telefone**|Telefone de contato da assessoria da atração|Varchar|15| |
+
+### Ingresso
+* Armazenará as informações dos ingressos do evento
+* Essa tabela possui uma chave estrangeira da tabela evento
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Tipo**|Tipo do ingresso|Varchar|10|Not Null|
+|**Valor**|Valor correspondente ao tipo mencionado |Double|||
+|**Quantidade**|Quantidade disponível para venda|Int|| |
+|**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento|Int||FK |
+
+### Relatório
+* Armazenará as informações dos relatórios
+* Essa tabela possui uma chave estrangeira da tabela evento
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Código**|Código de identificação da tabela|Int| |PK/Identify|
+|**Ingressos**|Quantidade de ingressos vendidos |Int|||
+|**Valor Arrecadado**|Valor bruto arrecadado |Double|||
+|**Valor Investido**|Valor total investido |Double|||
+|**Receita**|Valor líquido obtido |Double|||
+|**Cod_Evento**|Chave estrangeira referenciando o código da tabela evento |Int||FK|
+
+### Empresa
+* Armazenará as informações das empresas associadas à um evento
+
+| Nome | Descrição | Tipo de dado | Tamanho | Restrições |
+|------|-----------|--------------|---------|------------|
+|**Cnpj**|Código de identificação da tabela|Int| |PK/Identify|
+|**Nome**|Nome da empresa |Varchar|31|Not Null|
+|**Serviço**|Tipo de serviço fornecido|Varchar|31|Not Null|
+|**Valor**|Valor correspondente ao contrato do serviço |Double|||
+|**Telefone**|Telefone de contato |Varchar|15|Not Null|
+|**E-mail**|E-mail de contato |Varchar|31|Not Null|
