@@ -36,23 +36,23 @@ empresa.
 * RF02 - Usuários têm como atributos: Login, Senha
 
 * RF03 - Usuários do tipo cliente têm como atributos:
-  * 
+   
     * cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso;  
     
 * RF04 - Usuários do tipo organizador de evento têm como atributos:
-  * 
+   
     * cnpj, nome, e-mail, telefone, cod_evento;  
     
 * RF05 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
 
 * RF06 - Eventos têm como atributos:
-  * 
-    * codigo, nome, data, horario, cod_atracao, cod_local, cod_empresa, cod_orcamento
+   
+    * codigo, nome, data, horario, cod_atracao, cod_local, cod_empresa, cod_orcamento, cod_ingresso
     
 * RF07 - Eventos possuem localizações.
 
 * RF08 - Localização têm como atributos:
-  * 
+   
     * codigo, local, rua, bairro, cidade, estado
     
 * RF09 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
@@ -60,26 +60,40 @@ empresa.
 * RF10 - Organizadores podem consultar empresas.
 
 * RF11 - Empresas têm como atributos:
-  * 
-    * cnpj, nome, servico, telefone, e-mail
+   
+    * cnpj, nome, serviço, telefone, e-mail
     
-* RF12 - Eventos geram orçamentos.
-* RF13 - Orçamentos têm como atributos:
-  * 
-    * codigo, descricao, ingressos vendidos, valor arrecadado, valor investido, receita   
-    
-* RF14 - Ingressos podem ser adquiridos pelos clientes. 
-* RF15 - Ingressos têm como atributos:
-  * 
-     * codigo, tipo_ingresso, valor
+* RF12 - Eventos possuem atrações.
+
+* RF13 - Atrações têm como atributos:
+   
+    * codigo, nome, telefone, e-mail
+
+* RF13 - Eventos geram orçamentos.
+
+* RF14 - Orçamentos têm como atributos:
+   
+    * codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita   
+
+* RF15 - Ingressos podem ser adquiridos pelos clientes.
+
+* RF16 - Ingressos possuem tipos: Estudante, VIP, Normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento. 
+
+* RF17 - Ingressos têm como atributos:
+   
+    * codigo, tipo, valor, quantidade
+
+* RF19 - Tipo_ingresso têm como atributos:
+   
+     * cod_ingresso, cod_evento
      
-* RF16 - A aplicação possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou
+* RF20 - A aplicação possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou
 reclamações sobre o sistema;
 
-* RF17 - A aplicação poderá enviar notificações sobre eventos por meio da localização do usuário caso o mesmo tenha permitido
+* RF21 - A aplicação poderá enviar notificações sobre eventos por meio da localização do usuário caso o mesmo tenha permitido
 ser notificado, essa informação sobre a permissão constará no registro de status;
 
-* RF18 - A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país;
+* RF22 - A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país;
 
  
  ## Modelo conceitual
