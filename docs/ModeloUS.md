@@ -17,8 +17,8 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 * User Story US00 - Manter evento
 
-  * Descrição: 
-  * Requisitos envolvidos:
+  * Descrição: O sistema deve manter um cadastro de evento que pode ser consultado tanto pelos gerentes do evento, quanto pelos interessados na inscrição no mesmo. Além da consulta, o gerente também será capaz de alterar e deletar um evento já criado ou criar um novo.
+  * Requisitos envolvidos: 
   * Prioridade: 
   * Estimativa:
   * Tempo gasto(real): 
