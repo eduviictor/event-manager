@@ -24,3 +24,5 @@ Os detalhes do Plano de Iteração pode ser encontrado na página [Plano de Iter
 O Documento de Visão completo pode ser encontrado na página [Documento de Visão](DocVisao.md).
 
 ## Lista de User Stories
+
+O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md)
