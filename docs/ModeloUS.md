@@ -22,6 +22,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Prioridade: Essencial
   * Estimativa:
   * Tempo gasto(real): 
+  * Tamanho funcional: 
   * Testes de aceitação:
       * TA01.01
       
@@ -32,6 +33,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Prioridade: 
   * Estimativa:
   * Tempo gasto(real): 
+  * Tamanho funcional: 
   * Testes de aceitação:
       * TA01.01
       
@@ -42,5 +44,6 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Prioridade: 
   * Estimativa:
   * Tempo gasto(real): 
+  * Tamanho funcional: 
   * Testes de aceitação:
       * TA01.01
