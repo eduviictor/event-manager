@@ -17,14 +17,18 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 * User Story US00 - Manter evento
 
-  * Descrição: O sistema deve manter um cadastro de evento que pode ser consultado tanto pelos gerentes do evento, quanto pelos interessados na inscrição no mesmo. Além da consulta, o gerente também será capaz de alterar e deletar um evento já criado ou criar um novo. Um evento tem os atributos codigo, nome, data, horario, cod_atracao, cod_local, cod_empresa, cod_orcamento e cod_ingresso.
-  * Requisitos envolvidos: RF05, RF06, RF07
+
+  * Descrição: O sistema deve manter um cadastro de evento que é criado por um organizador e consultado por clientes. Um evento tem os atributos código, nome, data, horario, código da atração, código da localização, código da empresa, código do orçamento, código de ingresso. O evento é cadastrado por um organizador diretamente no sistema e consultado pelo cliente que deseja participar.
+  * Requisitos envolvidos: RF05, RF06, RF07, RF09, RF12, RF13
   * Prioridade: Essencial
-  * Estimativa: 7h
+  * Estimativa: 10h
   * Tempo gasto(real): 
-  * Tamanho funcional: 7 PF
-  * Testes de aceitação: 
-      * TA01.01
+  * Testes de aceitação:
+      * TA01.01 - O organizador informa, na tela cadastrar evento, todos os dados para registrar corretamente um evento, ao clicar em cadastrar ou criar ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso.      
+      * TA01.02 - O organizador informa, na tela cadastrar evento, todos os dados para registrar incorretamente um evento, ao clicar em cadastrar ou criar ele é notificado com uma mensagem de erro. Mensagem: Cadastro não realizado, o campo "xxxx" não foi informado corretamente.
+      * TA01.03 - O organizador informa, na tela alterar evento, os dados para alterar corretamente um evento, ao clicar em salvar alterações ele é notificado com uma mensagem de sucesso. Mensagem: Alterado com sucesso.
+      * TA01.04 - O organizador informa, na tela alterar evento, os dados para alterar incorretamente um evento, ao clicar em salvar alterações ele é notificado com uma mensagem de erro. Mensagem: Campo não foi informado corretamente.
+      * TA01.05 - O organizador informa, na tela deletar evento, o evento que deseja ser deletado do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de sucesso. Mensagem: Evento deletado com sucesso.
       
 * User Story US01 - Manter usuário
 
