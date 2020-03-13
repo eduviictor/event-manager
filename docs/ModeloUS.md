@@ -41,13 +41,16 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Testes de aceitação:
       * TA01.01
       
-* User Story US02 - Manter empresa
+* User Story US02 - Manter organizador
 
-  * Descrição: 
-  * Requisitos envolvidos:
-  * Prioridade: 
-  * Estimativa: 
+  * Descrição: O sistema deve manter um cadastro de organizador que é criado por uma pessoa que utiliza a aplicação. Um organizador tem os atributos cpf/cnpj, nome, email, telefone, status, cod_evento. Os organizadores cadastram eventos nos quais os usuários podem acessar informações.
+  * Requisitos envolvidos: RF10
+  * Prioridade: Essencial
+  * Estimativa: 10h
   * Tempo gasto(real): 
-  * Tamanho funcional: 
   * Testes de aceitação:
-      * TA01.01
+      * TA01.01 - O usuário sem cadastro informa, na tela de cadastrar organizador, seus dados para cadastrar um novo organizador. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de sucesso no cadastro.
+      * TA01.02 - O organizador clica na aba de alterar dados, resultando no redirecionamento para a página de alteração de dados do referido organizador, que em seguida insere corretamente todos os dados nos campos que deseja alterar. Após isso, o organizador clica em salvar dados e uma mensagem de sucesso na alteração de dados é exibida.
+      * TA01.03 - O organizador clica na aba de alterar dados, sendo redirecionado para a página de alteração de dados, que por sua vez possui um botão de deletar organizador. Ao ser clicado, surge uma mensagem perguntando ao usuário se ele realmente deseja deletar, com botões de resposta para o organizador clicar (sim ou não). Ao clicar no botão não, nada acontece. Ao clicar no botão sim, o organizador é deletado e a página redireciona para a página principal do sistema.
+      * TA01.04 - O organizador clica na aba criar evento e é redirecionado para a página de criação de evento.
+      * TA01.05 - O organizador clica na aba de consultar eventos cadastrados e é redirecionado para uma página com a lista de eventos que cadastrou. Após clicar no símbolo de lupa no fim da linha de algum evento cadastrado, o organizador é redirecionado para uma página na qual há detalhes sobre o evento.
