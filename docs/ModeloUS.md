@@ -17,6 +17,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 * User Story US00 - Manter evento
 
+
   * Descrição: O sistema deve manter um cadastro de evento que é criado por um organizador e consultado por clientes. Um evento tem os atributos código, nome, data, horario, código da atração, código da localização, código da empresa, código do orçamento, código de ingresso. O evento é cadastrado por um organizador diretamente no sistema e consultado pelo cliente que deseja participar.
   * Requisitos envolvidos: RF05, RF06, RF07, RF09, RF12, RF13
   * Prioridade: Essencial
@@ -29,7 +30,6 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
       * TA01.04 - O organizador informa, na tela alterar evento, os dados para alterar incorretamente um evento, ao clicar em salvar alterações ele é notificado com uma mensagem de erro. Mensagem: Campo não foi informado corretamente.
       * TA01.05 - O organizador informa, na tela deletar evento, o evento que deseja ser deletado do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de sucesso. Mensagem: Evento deletado com sucesso.
       
-      
 * User Story US01 - Manter usuário
 
   * Descrição: 
@@ -37,6 +37,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Prioridade: 
   * Estimativa:
   * Tempo gasto(real): 
+  * Tamanho funcional: 
   * Testes de aceitação:
       * TA01.01
       
@@ -45,7 +46,8 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Descrição: 
   * Requisitos envolvidos:
   * Prioridade: 
-  * Estimativa:
+  * Estimativa: 
   * Tempo gasto(real): 
+  * Tamanho funcional: 
   * Testes de aceitação:
       * TA01.01
