@@ -20,10 +20,10 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Descrição: O sistema deve manter um cadastro de evento que pode ser consultado tanto pelos gerentes do evento, quanto pelos interessados na inscrição no mesmo. Além da consulta, o gerente também será capaz de alterar e deletar um evento já criado ou criar um novo. Um evento tem os atributos codigo, nome, data, horario, cod_atracao, cod_local, cod_empresa, cod_orcamento e cod_ingresso.
   * Requisitos envolvidos: RF05, RF06, RF07
   * Prioridade: Essencial
-  * Estimativa:
+  * Estimativa: 7h
   * Tempo gasto(real): 
-  * Tamanho funcional: 
-  * Testes de aceitação:
+  * Tamanho funcional: 7 PF
+  * Testes de aceitação: 
       * TA01.01
       
 * User Story US01 - Manter usuário
@@ -42,7 +42,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Descrição: 
   * Requisitos envolvidos:
   * Prioridade: 
-  * Estimativa:
+  * Estimativa: 
   * Tempo gasto(real): 
   * Tamanho funcional: 
   * Testes de aceitação:
