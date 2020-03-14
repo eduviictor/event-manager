@@ -36,9 +36,9 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
    * Descrição: O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos nome, endereço, email e senha. O email será o login e ele pode registrar-se diretamente no sistema e aguardar ativação da conta pelo administrador. Ao efetuar login o sistema deverá ser capaz de distinguir entre os tipos de usuário seja ele cliente ou Organizador dando acesso a suas respectivas funcionalidades.
    * Requisitos envolvidos: RF01, RF02, RF03
    * Prioridade: Essencial
-   * Estimativa: 9h
+   * Estimativa: 10h
    * Tempo gasto(real):12h
-   *Testes de aceitação:
+   * Testes de aceitação:
      * TA01.01 - O usuário informa, na tela Registrar, todos os dados para registrar-se corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso, aguardando ativação do administrador.
      * TA01.02 - O usuário informa, na tela Registrar, os dados para registrar-se incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. Mensagem: Cadastro não realizado, o campo “xxxx” não foi informado corretamente.
      * TA01.03 - O usuário informa, na tela Login, os dados para logar corretamente, ao clicar em entrar ele é notificado com uma mensagem de erro. Mensagem: Usuário não ativado, aguardando ativação do administrador.
