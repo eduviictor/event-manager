@@ -101,3 +101,7 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 |	Atualizar evento |	EE	|		|		|	Baixa		|	3		|
 |	Deletar evento	|	EE	|		|		|	Baixa		|	3		|
 |	Consultar evento|	CE	|		|		|	Baixa		|	3		|
+|Inserir usuário|EE|||Baixa|3|
+|Alterar usuário|EE|||Baixa|3|
+|Deletar usuário|EE|||Baixa|3|
+|Consultar usuário|CE|||Baixa|3|
