@@ -25,4 +25,16 @@ O Documento de Visão completo pode ser encontrado na página [Documento de Vis�
 
 ## Lista de User Stories
 
-O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md)
+O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md).
+
+## Análise por Pontos de Função
+
+O Documento da Análise por Pontos de Função pode ser encontrado na página [Documento APF](ModeloPF.md).
+
+## Termo de Abertura do Projeto
+
+O Documento do Termo de Abertura do Projeto pode ser encontrado na página [Documento TAP]().
+
+## Arquitetura Geral do Sistema
+
+O Documento da Arquitetura Geral do Sistema pode ser encontrado na página [Documento Arquitetura]().
