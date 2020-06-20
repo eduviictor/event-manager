@@ -68,7 +68,7 @@ A Iteração 1 começou dia 02/03 e vai até 14/03. As atividades dessa tarefa s
   - Faça a contagem indicativa do tamanho funcional do software;
   - Faça a contagem detalhada do tamanho funcional de pelo menos três User Stories;
  - Criar documento com o Termo de Abertura do Projeto, no google docs
-   - [Modelo Aqui!](https://docs.google.com/document/d/1xGwEppR2qmQ7H3EdevWBCWferzY3RuoZim_GEz6LZ90/edit?usp=sharing);
+   - [Modelo Aqui!](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit?usp=sharing);
 
 Gerentes:
 
