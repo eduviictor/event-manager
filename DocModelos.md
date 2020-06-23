@@ -5,7 +5,15 @@ Este documento descreve o modelo conceitual do software e é composto por um con
 
 
 ## Histórico de revisões
-
+Data       | Versão      | Descrição        | Autor 
+---------- | ----------- | ---------------- | ---------
+23/06/2020 | 1.0         |Documento inicial | Ewerton silva
+   --      | -           | -                | -
+   --      | -           | -                | -
+   --      | -           | -                | -
+   --      | -           | -                | -
+   --      | -           | -                | -
+           
 ## Modelo conceitual
 
 ### Descrição das estidades
