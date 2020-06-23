@@ -9,15 +9,18 @@ e exibirá os relatórios dos eventos para os seus organizadores.
 
 Iteração | Data início | Data Final | Apresentação | Gerente
 -------- | ----------- | ---------- | ------------ | -------
-It0      | 21/02/2020  | 29/02/2020 | -            | Gerente 1
-It1      | 02/03/2020  | 14/03/2020 | 19/03/2020   | Gerente 1
-It2      | 16/03/2020  | 04/04/2020 | 03/04/2020   | Gerente 2
-It3      | 06/04/2020  | 25/04/2020 | 24/04/2020   | Gerente 3
-It4      | 27/04/2020  | 16/05/2020 | 15/05/2020   | Gerente 4
-It5      | 18/05/2020  | 06/06/2020 | 05/06/2020   | Gerente 5
-It6      | 08/06/2020  | 27/06/2020 | 26/06/2020   | Gerente 6
+It0      | 21/02/2020  | 29/02/2020 | -            | Arthur
+It1      | 02/03/2020  | 14/03/2020 | -            | Arthur
+It2      | 24/06/2020  | 30/06/2020 | -            | Kael
+It3      | 01/07/2020  | 07/07/2020 | -            | Eduardo
+It4      | 08/07/2020  | 14/07/2020 | -            | Ewerton
+It5      | 15/07/2020  | 21/07/2020 | -            | Clodoaldo
+It6      | 22/06/2020  | 28/06/2020 | -            | Arthur
 
 Os detalhes do Plano de Iteração pode ser encontrado na página [Plano de Iteração](PlanoIteracao.md).
+
+## Termo de Abertura 
+O documento do termo de abertura pode ser encontrado no google drive que pode ser encontrado na pagina [Termo de Abertura](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit)
 
 ## Documento de Visão
 
@@ -26,3 +29,5 @@ O Documento de Visão completo pode ser encontrado na página [Documento de Vis�
 ## Lista de User Stories
 
 O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md)
+
+
