@@ -19,6 +19,9 @@ It6      | 08/06/2020  | 27/06/2020 | 26/06/2020   | Gerente 6
 
 Os detalhes do Plano de Iteração pode ser encontrado na página [Plano de Iteração](PlanoIteracao.md).
 
+## Termo de Abertura 
+O documento do termo de abertura pode ser encontrado no google drive que pode ser encontrado na pagina [Termo de Abertura](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit)
+
 ## Documento de Visão
 
 O Documento de Visão completo pode ser encontrado na página [Documento de Visão](DocVisao.md).
@@ -26,3 +29,5 @@ O Documento de Visão completo pode ser encontrado na página [Documento de Vis�
 ## Lista de User Stories
 
 O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md)
+
+
