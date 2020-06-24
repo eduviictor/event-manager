@@ -10,6 +10,17 @@ Data        |   Versão     |  Descrição               | Autor
 23/06/2020  |     1.0      |Documento revisado        |Kael
 --          |      --      |      --                  |--
 
+## Equipe e definição de papéis
+
+Equipe            |  Papel                                        |  E-mail
+------------------|-----------------------------------------------|--------------------------
+Ewerton Silva     |  Gerente, Desenvolvedor, Analista, Testador   |  ewertoncom297@gmail.com
+Eduardo Victor    |  Gerente, Desenvolvedor, Analista, Testador   |  eduvictornobrega@gmail.com
+Arthur Medeiros   |  Gerente, Analista, Desenvolvedor, Testador   |  arthurmedeiros2005@gmail.com
+Kael Silva        |  Gerente, Desenvolvedor, Analista, Testador   |  kaelsilvaaraujo@gmail.com
+Clodoaldo Brito   |  Gerente, Desenvolvedor, Analista, Testador   |  clodoaldo.brtp4@gmail.com
+
+
 ## Descrição geral do sistema
 
 O sistema Event Manager é uma ferramenta para o processo de gerenciamento de
