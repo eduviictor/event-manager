@@ -3,6 +3,12 @@
 Documento construído a partir do do **Modelo BSI - Doc 001 - Documento de Visão** que pode ser encontrado no 
 link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
 
+## Histórico de revisões
+
+Data        |   Versão     |  Descrição               | Autor
+-----       |   --------   |  -----------             |-------
+23/06/2020  |     1.0      |Documento revisado        |Kael
+--          |      --      |      --                  |--
 
 ## Descrição geral do sistema
 
