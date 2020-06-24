@@ -16,7 +16,12 @@ O sistema Event Manager é uma ferramenta para o processo de gerenciamento de ev
 Lista de user stories e os requisitos que estão associados.
 
 ### US00 - Manter evento
-* RF00 - Cadastrar evento
+* RF05 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
+* RF06 - Eventos têm atributos.
+* RF07 - Eventos possuem localizações.
+* RF09 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
+* RF12 - Eventos possuem atrações.
+* RF13 - Eventos geram orçamentos.
 
 ### US01 - Manter usuário
 * RF01 - Cadastrar usuário
@@ -92,3 +97,15 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 |      Descrição      |       Tipo      |       TD       |      TR      |      Complexidade      |      Contribuição      |
 | ------------------- |:---------------:| --------------:|:------------:|:----------------------:|:----------------------:|
+|	Inserir evento	|	EE	|		|		|	Baixa		|	3		|
+|	Atualizar evento |	EE	|		|		|	Baixa		|	3		|
+|	Deletar evento	|	EE	|		|		|	Baixa		|	3		|
+|	Consultar evento|	CE	|		|		|	Baixa		|	3		|
+|Inserir usuário|EE|||Baixa|3|
+|Alterar usuário|EE|||Baixa|3|
+|Deletar usuário|EE|||Baixa|3|
+|Consultar usuário|CE|||Baixa|3|
+|Inserir organizador|EE|||Baixa|3|
+|Alterar organizador|EE|||Baixa|3|
+|Deletar organizador|EE|||Baixa|3|
+|Consultar organizador|CE|||Baixa|3|

@@ -30,24 +30,30 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
       * TA01.04 - O organizador informa, na tela alterar evento, os dados para alterar incorretamente um evento, ao clicar em salvar alterações ele é notificado com uma mensagem de erro. Mensagem: Campo não foi informado corretamente.
       * TA01.05 - O organizador informa, na tela deletar evento, o evento que deseja ser deletado do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de sucesso. Mensagem: Evento deletado com sucesso.
       
-* User Story US01 - Manter usuário
+* User Story US01 - Manter Usuário
 
-  * Descrição: 
-  * Requisitos envolvidos:
-  * Prioridade: 
-  * Estimativa:
-  * Tempo gasto(real): 
-  * Tamanho funcional: 
-  * Testes de aceitação:
-      * TA01.01
+
+   * Descrição: O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos nome, endereço, email e senha. O email será o login e ele pode registrar-se diretamente no sistema e aguardar ativação da conta pelo administrador. Ao efetuar login o sistema deverá ser capaz de distinguir entre os tipos de usuário seja ele cliente ou Organizador dando acesso a suas respectivas funcionalidades.
+   * Requisitos envolvidos: RF01, RF02, RF03
+   * Prioridade: Essencial
+   * Estimativa: 10h
+   * Tempo gasto(real):12h
+   * Testes de aceitação:
+     * TA01.01 - O usuário informa, na tela Registrar, todos os dados para registrar-se corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso, aguardando ativação do administrador.
+     * TA01.02 - O usuário informa, na tela Registrar, os dados para registrar-se incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. Mensagem: Cadastro não realizado, o campo “xxxx” não foi informado corretamente.
+     * TA01.03 - O usuário informa, na tela Login, os dados para logar corretamente, ao clicar em entrar ele é notificado com uma mensagem de erro. Mensagem: Usuário não ativado, aguardando ativação do administrador.
+     * TA01.04 - Esqueci minha senha, O usuário informa, na tela Login, os dados para logar e ao ser notificado repetitivamente de dados incorretos procura redefinir senha, ele informa o email cadastrado e um token é enviado para o mesmo.Mensagem: Senha redefinida com Sucesso.
       
-* User Story US02 - Manter empresa
+* User Story US02 - Manter organizador
 
-  * Descrição: 
-  * Requisitos envolvidos:
-  * Prioridade: 
-  * Estimativa: 
+  * Descrição: O sistema deve manter um cadastro de organizador que é criado por uma pessoa que utiliza a aplicação. Um organizador tem os atributos cpf/cnpj, nome, email, telefone, status, cod_evento. Os organizadores cadastram eventos nos quais os usuários podem acessar informações.
+  * Requisitos envolvidos: RF10
+  * Prioridade: Essencial
+  * Estimativa: 10h
   * Tempo gasto(real): 
-  * Tamanho funcional: 
   * Testes de aceitação:
-      * TA01.01
+      * TA01.01 - O usuário sem cadastro informa, na tela de cadastrar organizador, seus dados para cadastrar um novo organizador. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de sucesso no cadastro.
+      * TA01.02 - O organizador clica na aba de alterar dados, resultando no redirecionamento para a página de alteração de dados do referido organizador, que em seguida insere corretamente todos os dados nos campos que deseja alterar. Após isso, o organizador clica em salvar dados e uma mensagem de sucesso na alteração de dados é exibida.
+      * TA01.03 - O organizador clica na aba de alterar dados, sendo redirecionado para a página de alteração de dados, que por sua vez possui um botão de deletar organizador. Ao ser clicado, surge uma mensagem perguntando ao usuário se ele realmente deseja deletar, com botões de resposta para o organizador clicar (sim ou não). Ao clicar no botão não, nada acontece. Ao clicar no botão sim, o organizador é deletado e a página redireciona para a página principal do sistema.
+      * TA01.04 - O organizador clica na aba criar evento e é redirecionado para a página de criação de evento.
+      * TA01.05 - O organizador clica na aba de consultar eventos cadastrados e é redirecionado para uma página com a lista de eventos que cadastrou. Após clicar no símbolo de lupa no fim da linha de algum evento cadastrado, o organizador é redirecionado para uma página na qual há detalhes sobre o evento.
