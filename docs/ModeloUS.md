@@ -2,9 +2,9 @@
 
 ## Histórico de Revisões do Modelo
 
-|     Data    |   Versão  |     Descrição     |      Autor     |
-| ------------|:----------------:|:----------:|:--------------:|
-| 12/03/2020  |    1.0    | Documento inicial.| Arthur Medeiros|
+| Data       | Versão |     Descrição      |      Autor      |
+| ---------- | :----: | :----------------: | :-------------: |
+| 12/03/2020 |  1.0   | Documento inicial. | Arthur Medeiros |
 
 ## Prioridade do User Story
 
@@ -71,3 +71,18 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.03 - O organizador informa, na tela de alterar atração, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso. 
      * TA01.04 - O organizador informa, na tela alterar atração, os dados invalidos para alterar uma atração, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
      * TA01.05 - O organizador informa, na tela deletar atração, a atração que deseja ser deletada do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de: Atração deletada com sucesso.
+
+* User Story US04 - Manter Ingresso
+
+   * Descrição: O sistema deverá permitir a compra/aquisição de ingressos por parte do cliente e a disponibilização dos mesmos com suas respectivas informações por parte dos organizadores.
+   * Requisitos envolvidos: RF15, RF16, RF17, RF19
+   * Prioridade: Essencial
+   * Estimativa: 12h
+   * Tempo gasto(real):
+   * Testes de aceitação:
+     * TA01.01 - O cliente que deseja participar do evento, irá adquirir o ingresso do mesmo. Em seguida, caso tudo ocorra bem, receberá uma notificação de: Ingresso adquirido com sucesso.
+     * TA01.02 -   O organizador informa, na tela de cadastrar ingresso, todos os dados do seu ingresso. Caso algum dado informado não seja valido, o mesmo recebe uma notificação de: Cadastro não realizado, o campo "xxxx" não foi informado corretamente. 
+     * TA01.03 - O organizador que que criou o evento, irá passar as informações pra geração dos ingressos e caso tudo ocorra bem, receberá uma notificação de: Ingresso cadastrado com sucesso.
+     * TA01.04 - O organizador informa, na tela de alterar ingresso, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
+     * TA01.05 - O organizador informa, na tela alterar ingresso, os dados invalidos para alterar um ingresso, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
+     * TA01.06 - O organizador informa, na tela invalidar ingresso, o ingresso que deseja ser inválidado no banco de dados, ao clicar em invalidar ele é notificado com uma mensagem de: Ingresso invalidado com sucesso.
