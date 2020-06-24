@@ -24,7 +24,7 @@ Clodoaldo Brito   |  Gerente, Desenvolvedor, Analista, Testador   |  clodoaldo.b
 
 Equipe            |  Competências
 ------------------|---------------------------------------------------------------------------------
-Ewerton Silva     |  
+Ewerton Silva     |  Python, C, JavaScript, SQL
 Eduardo Victor    |  
 Arthur Medeiros   |  
 Kael Silva        |  JavaScript, Node.js, React, React-Native, TypeScript, SQL
