@@ -31,7 +31,6 @@ Kael Silva        |  JavaScript, Node.js, React, React-Native, TypeScript, SQL
 Clodoaldo Brito   |  
 
 
-
 ## Descrição geral do sistema
 
 O sistema Event Manager é uma ferramenta para o processo de gerenciamento de
@@ -248,3 +247,16 @@ Segue abaixo o modelo entidade relacionamento:
 |**Valor**|Valor correspondente ao contrato do serviço |Double|||
 |**Telefone**|Telefone de contato |Varchar|15|Not Null|
 |**E-mail**|E-mail de contato |Varchar|31|Not Null|
+
+## Perfis dos usuários
+
+
+## Riscos
+Data        |Risco                                                                     |Prioridade |Responsável|Status  |Providência/Solução
+------------|--------------------------------------------------------------------------|-----------|-----------|--------|--------------------
+23/06/2020  |Fragilidade no acesso de usuário                                          |Baixa      |Todos      |Vigente |Criação da entidade usuário que possui os atributos login e senha
+23/06/2020  |Venda de ingressos                                                        |Alta       |Todos      |Vigente |Realizar testes até que o sistema esteja funcionando corretamente
+23/06/2020  |Quantidade de vagas                                                       |Alta       |Todos      |Vigente |Realizar testes e certificar que a contagem de vagas esteja implementada corretamente
+23/06/2020  |Curto prazo para desenvolver o sistema                                    |Alta       |Todos      |Vigente |Antecipar desenvolvimento
+23/06/2020  |Falta de técnica de membros da equipe                                     |Média      |Todos      |Vigente |Estudar, praticar e buscar ajuda com membros da equipe mais experientes nas ferramentas utilizadas
+23/06/2020  |Acúmulo de tarefas não relacionadas ao projeto                            |Alta       |Todos      |Vigente |Buscar diminuir número de tarefas antecipadamente
