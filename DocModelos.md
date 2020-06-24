@@ -9,7 +9,7 @@ Data       | Versão      | Descrição                      | Autor
 ---------- | ----------- | ----------------               | ---------
 23/06/2020 | 1.0         |Documento inicial               | Ewerton silva
 23/06/2020 | 1.1         | Adição de Imagens dos modelos  | Ewerton silva
-   --      | -           | -                              | -
+23/06/2020 | 1.2         | Adição do dicionário de dados  | ewerton silva
    --      | -           | -                              | -
    --      | -           | -                              | -
    --      | -           | -                              | -
@@ -18,8 +18,6 @@ Data       | Versão      | Descrição                      | Autor
 Segue abaixo o modelo conceitual:
 
 ![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/docs/modelo_ER.png)
-
-### Descrição das entidades do modelo conceitual
 
 ## Modelo de dados
  Segue abaixo o modelo relacional:
@@ -144,6 +142,7 @@ Segue abaixo o modelo conceitual:
 |**Valor**|Valor correspondente ao contrato do serviço |Double|||
 |**Telefone**|Telefone de contato |Varchar|15|Not Null|
 |**E-mail**|E-mail de contato |Varchar|31|Not Null|
+
 ## Referências
- ## Modelo conceitual
+Endereço para o documento de visão [Documento de visão](https://github.com/eduviictor/event-manager/edit/master/docs/DocVisao.md)
  
