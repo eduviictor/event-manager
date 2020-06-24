@@ -8,10 +8,10 @@ Iteração | Data início | Data Final | Apresentação | Gerente
 -------- | ----------- | ---------- | ------------ | -------
 It1      | 19/06/2020  | 24/06/2020 | 26/06/2020   | Kael
 It2      | 24/06/2020  | 02/07/2020 | -            | Kael
-It3      | -           | -          | -            | Arthur
-It4      | -           | -          | -            | Clodoaldo
-It5      | -           | -          | -            | Eduardo
-It6      | -           | -          | -            | Ewerton
+It3      | -           | -          | -            | Ewerton
+It4      | -           | -          | -            | Eduardo
+It5      | -           | -          | -            | Clodoaldo
+It6      | -           | -          | -            | Arthur
 
 * Observação: Cada Iteração de ser cadastrada como Milestones no GitHub.
 
