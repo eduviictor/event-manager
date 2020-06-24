@@ -22,13 +22,13 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 ## Matriz de competências
 
-| Equipe          | Competências                                              |
-| --------------- | --------------------------------------------------------- |
+| Equipe          | Competências                                                                     |
+| --------------- | -------------------------------------------------------------------------------- |
 | Ewerton Silva   |
-| Eduardo Victor  |
+| Eduardo Victor  | Javascript, NodeJS, React, React-Native, Typescript, SQL, Mongo, PHP, CI, Docker |
 | Arthur Medeiros |
-| Kael Silva      | JavaScript, Node.js, React, React-Native, TypeScript, SQL |
-| Clodoaldo Brito | JavaScript, React, SQL, Ejs                               |
+| Kael Silva      | JavaScript, Node.js, React, React-Native, TypeScript, SQL                        |
+| Clodoaldo Brito | JavaScript, React, SQL, Ejs                                                      |
 
 
 ## Descrição geral do sistema
