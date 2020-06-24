@@ -5,30 +5,31 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 ## Histórico de revisões
 
-Data        |   Versão     |  Descrição               | Autor
------       |   --------   |  -----------             |-------
-23/06/2020  |     1.0      |Documento revisado        |Kael
---          |      --      |      --                  |--
+| Data       | Versão | Descrição          | Autor |
+| ---------- | ------ | ------------------ | ----- |
+| 23/06/2020 | 1.0    | Documento revisado | Kael  |
+| --         | --     | --                 | --    |
 
 ## Equipe e definição de papéis
 
-Equipe            |  Papel                                        |  E-mail
-------------------|-----------------------------------------------|--------------------------
-Ewerton Silva     |  Gerente, Desenvolvedor, Analista, Testador   |  ewertoncom297@gmail.com
-Eduardo Victor    |  Gerente, Desenvolvedor, Analista, Testador   |  eduvictornobrega@gmail.com
-Arthur Medeiros   |  Gerente, Analista, Desenvolvedor, Testador   |  arthurmedeiros2005@gmail.com
-Kael Silva        |  Gerente, Desenvolvedor, Analista, Testador   |  kaelsilvaaraujo@gmail.com
-Clodoaldo Brito   |  Gerente, Desenvolvedor, Analista, Testador   |  clodoaldo.brtp4@gmail.com
+| Equipe          | Papel                                      | E-mail                       |
+| --------------- | ------------------------------------------ | ---------------------------- |
+| Ewerton Silva   | Gerente, Desenvolvedor, Analista, Testador | ewertoncom297@gmail.com      |
+| Eduardo Victor  | Gerente, Desenvolvedor, Analista, Testador | eduvictornobrega@gmail.com   |
+| Arthur Medeiros | Gerente, Analista, Desenvolvedor, Testador | arthurmedeiros2005@gmail.com |
+| Kael Silva      | Gerente, Desenvolvedor, Analista, Testador | kaelsilvaaraujo@gmail.com    |
+| Clodoaldo Brito | Gerente, Desenvolvedor, Analista, Testador | clodoaldo.brtp4@gmail.com    |
 
 ## Matriz de competências
 
-Equipe            |  Competências
-------------------|---------------------------------------------------------------------------------
-Ewerton Silva     |  Python, C, JavaScript, SQL
-Eduardo Victor    |  
-Arthur Medeiros   |  
-Kael Silva        |  JavaScript, Node.js, React, React-Native, TypeScript, SQL
-Clodoaldo Brito   |  
+
+| Equipe          | Competências                                                                     |
+| --------------- | -------------------------------------------------------------------------------- |
+| Ewerton Silva   | Python, C, JavaScript, SQL
+| Eduardo Victor  | Javascript, NodeJS, React, React-Native, Typescript, SQL, Mongo, PHP, CI, Docker |
+| Arthur Medeiros |
+| Kael Silva      | JavaScript, Node.js, React, React-Native, TypeScript, SQL                        |
+| Clodoaldo Brito | JavaScript, React, SQL, Ejs                                                      |
 
 
 ## Descrição geral do sistema
@@ -120,16 +121,20 @@ ser notificado, essa informação sobre a permissão constará no registro de st
 
 * RF22 - A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país.
 
- 
 ## Perfis dos usuários
+O sistema poderá ser utilizado por diversos usuários . Temos os seguintes perfis:  
+#### Perfil Cliente:  
+   Este usuário visita o sistema a fim de obter ingressos para eventos, consultar eventos, insere informações sobre ele mesmo, consulta dados de atrações entre outras necessidades.
+#### Perfil Organizador:  
+   Este usuário poderá cadastrar novos eventos ou criar eventos a partir de outros já existentes. Além disso, poderá alterar, remover e consultar eventos já criados.
 
 
 ## Riscos
-Data        |Risco                                                                     |Prioridade |Responsável|Status  |Providência/Solução
-------------|--------------------------------------------------------------------------|-----------|-----------|--------|--------------------
-23/06/2020  |Fragilidade no acesso de usuário                                          |Baixa      |Todos      |Vigente |Criação da entidade usuário que possui os atributos login e senha
-23/06/2020  |Venda de ingressos                                                        |Alta       |Todos      |Vigente |Realizar testes até que o sistema esteja funcionando corretamente
-23/06/2020  |Quantidade de vagas                                                       |Alta       |Todos      |Vigente |Realizar testes e certificar que a contagem de vagas esteja implementada corretamente
-23/06/2020  |Curto prazo para desenvolver o sistema                                    |Alta       |Todos      |Vigente |Antecipar desenvolvimento
-23/06/2020  |Falta de técnica de membros da equipe                                     |Média      |Todos      |Vigente |Estudar, praticar e buscar ajuda com membros da equipe mais experientes nas ferramentas utilizadas
-23/06/2020  |Acúmulo de tarefas não relacionadas ao projeto                            |Alta       |Todos      |Vigente |Buscar diminuir número de tarefas antecipadamente
+| Data       | Risco                                          | Prioridade | Responsável | Status  | Providência/Solução                                                                                |
+| ---------- | ---------------------------------------------- | ---------- | ----------- | ------- | -------------------------------------------------------------------------------------------------- |
+| 23/06/2020 | Fragilidade no acesso de usuário               | Baixa      | Todos       | Vigente | Criação da entidade usuário que possui os atributos login e senha                                  |
+| 23/06/2020 | Venda de ingressos                             | Alta       | Todos       | Vigente | Realizar testes até que o sistema esteja funcionando corretamente                                  |
+| 23/06/2020 | Quantidade de vagas                            | Alta       | Todos       | Vigente | Realizar testes e certificar que a contagem de vagas esteja implementada corretamente              |
+| 23/06/2020 | Curto prazo para desenvolver o sistema         | Alta       | Todos       | Vigente | Antecipar desenvolvimento                                                                          |
+| 23/06/2020 | Falta de técnica de membros da equipe          | Média      | Todos       | Vigente | Estudar, praticar e buscar ajuda com membros da equipe mais experientes nas ferramentas utilizadas |
+| 23/06/2020 | Acúmulo de tarefas não relacionadas ao projeto | Alta       | Todos       | Vigente | Buscar diminuir número de tarefas antecipadamente                                                  |
