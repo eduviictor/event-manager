@@ -5,21 +5,29 @@ Este documento descreve o modelo conceitual do software e é composto por um con
 
 
 ## Histórico de revisões
-Data       | Versão      | Descrição        | Autor 
----------- | ----------- | ---------------- | ---------
-23/06/2020 | 1.0         |Documento inicial | Ewerton silva
-   --      | -           | -                | -
-   --      | -           | -                | -
-   --      | -           | -                | -
-   --      | -           | -                | -
-   --      | -           | -                | -
+Data       | Versão      | Descrição                      | Autor 
+---------- | ----------- | ----------------               | ---------
+23/06/2020 | 1.0         |Documento inicial               | Ewerton silva
+23/06/2020 | 1.1         | Adição de Imagens dos modelos  | Ewerton silva
+   --      | -           | -                              | -
+   --      | -           | -                              | -
+   --      | -           | -                              | -
+   --      | -           | -                              | -
            
 ## Modelo conceitual
+Segue abaixo o modelo conceitual:
 
-### Descrição das estidades
+![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/docs/modelo_ER.png)
+
+### Descrição das entidades do modelo conceitual
 
 ## Modelo de dados
-
+ Segue abaixo o modelo relacional:
+ 
+ ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/docs/Modelo%20relacional.png)
+ 
 ## Dicionário de dados
 
 ## Referências
+ ## Modelo conceitual
+ 
