@@ -28,7 +28,7 @@ Ewerton Silva     |
 Eduardo Victor    |  
 Arthur Medeiros   |  
 Kael Silva        |  JavaScript, Node.js, React, React-Native, TypeScript, SQL
-Clodoaldo Brito   |  
+Clodoaldo Brito   |  JavaScript, React, SQL, Ejs
 
 
 ## Descrição geral do sistema
