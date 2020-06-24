@@ -249,6 +249,9 @@ Segue abaixo o modelo entidade relacionamento:
 |**E-mail**|E-mail de contato |Varchar|31|Not Null|
 
 ## Perfis dos usuários
+O sistema poderá ser utilizado por diversos usuários . Temos os seguintes perfis:  
+#### Perfil Cliente:  
+   Este usuário visita o sistema a fim de obter ingressos para eventos, consultar eventos, insere informações sobre ele mesmo, consulta dados de atrações entre outras necessidades.
 
 
 ## Riscos
