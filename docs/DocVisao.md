@@ -20,6 +20,17 @@ Arthur Medeiros   |  Gerente, Analista, Desenvolvedor, Testador   |  arthurmedei
 Kael Silva        |  Gerente, Desenvolvedor, Analista, Testador   |  kaelsilvaaraujo@gmail.com
 Clodoaldo Brito   |  Gerente, Desenvolvedor, Analista, Testador   |  clodoaldo.brtp4@gmail.com
 
+## Matriz de competências
+
+Equipe            |  Competências
+------------------|---------------------------------------------------------------------------------
+Ewerton Silva     |  
+Eduardo Victor    |  
+Arthur Medeiros   |  
+Kael Silva        |  JavaScript, Node.js, React, React-Native, TypeScript, SQL
+Clodoaldo Brito   |  
+
+
 
 ## Descrição geral do sistema
 
