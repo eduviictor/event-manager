@@ -26,7 +26,7 @@ Equipe            |  Competências
 ------------------|---------------------------------------------------------------------------------
 Ewerton Silva     |  
 Eduardo Victor    |  
-Arthur Medeiros   |  
+Arthur Medeiros   |  JavaScript, Node, React, React-Native
 Kael Silva        |  JavaScript, Node.js, React, React-Native, TypeScript, SQL
 Clodoaldo Brito   |  JavaScript, React, SQL, Ejs
 
