@@ -2,9 +2,9 @@
 
 ## Histórico de Revisões do Modelo
 
-|     Data    |   Versão  |     Descrição     |      Autor     |
-| ------------|:----------------:|:----------:|:--------------:|
-| 12/03/2020  |    1.0    | Documento inicial.| Arthur Medeiros|
+| Data       | Versão |     Descrição      |      Autor      |
+| ---------- | :----: | :----------------: | :-------------: |
+| 12/03/2020 |  1.0   | Documento inicial. | Arthur Medeiros |
 
 ## Prioridade do User Story
 
@@ -57,3 +57,32 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
       * TA01.03 - O organizador clica na aba de alterar dados, sendo redirecionado para a página de alteração de dados, que por sua vez possui um botão de deletar organizador. Ao ser clicado, surge uma mensagem perguntando ao usuário se ele realmente deseja deletar, com botões de resposta para o organizador clicar (sim ou não). Ao clicar no botão não, nada acontece. Ao clicar no botão sim, o organizador é deletado e a página redireciona para a página principal do sistema.
       * TA01.04 - O organizador clica na aba criar evento e é redirecionado para a página de criação de evento.
       * TA01.05 - O organizador clica na aba de consultar eventos cadastrados e é redirecionado para uma página com a lista de eventos que cadastrou. Após clicar no símbolo de lupa no fim da linha de algum evento cadastrado, o organizador é redirecionado para uma página na qual há detalhes sobre o evento.
+      
+* User Story US03 - Manter Atração
+
+   * Descrição: O sistema deve manter um cadastro de uma ou mais atrações pertencentes a um único evento(no qual deverá ser criado por um organizador, que terá acesso posteriormente a parte de criar atrações para esse evento). Uma atração tem os atributos código, nome, e-mail e telefone. Uma atração é criada pelo mesmo usúario que criou o respectivo evento, podendo ser acessado pelos clientes.
+   * Requisitos envolvidos: RF12, RF13
+   * Prioridade: Essencial
+   * Estimativa: 10h
+   * Tempo gasto(real):
+   * Testes de aceitação:
+     * TA01.01 - O organizador que criou o evento irá informar, na tela de cadastrar atração, todos os dados da respectiva atração. Ao confirmar a atração o mesmo receberá uma notificação de: Atração cadastrada com sucesso.
+     * TA01.02 -   O organizador informa, na tela de cadastrar atração, todos os dados de sua atração. Caso algum dado informado não seja valido, o mesmo recebe uma notificação de: Cadastro não realizado, o campo "xxxx" não foi informado corretamente. 
+     * TA01.03 - O organizador informa, na tela de alterar atração, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso. 
+     * TA01.04 - O organizador informa, na tela alterar atração, os dados invalidos para alterar uma atração, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
+     * TA01.05 - O organizador informa, na tela deletar atração, a atração que deseja ser deletada do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de: Atração deletada com sucesso.
+
+* User Story US04 - Manter Ingresso
+
+   * Descrição: O sistema deverá permitir a compra/aquisição de ingressos por parte do cliente e a disponibilização dos mesmos com suas respectivas informações por parte dos organizadores.
+   * Requisitos envolvidos: RF15, RF16, RF17, RF19
+   * Prioridade: Essencial
+   * Estimativa: 12h
+   * Tempo gasto(real):
+   * Testes de aceitação:
+     * TA01.01 - O cliente que deseja participar do evento, irá adquirir o ingresso do mesmo. Em seguida, caso tudo ocorra bem, receberá uma notificação de: Ingresso adquirido com sucesso.
+     * TA01.02 -   O organizador informa, na tela de cadastrar ingresso, todos os dados do seu ingresso. Caso algum dado informado não seja valido, o mesmo recebe uma notificação de: Cadastro não realizado, o campo "xxxx" não foi informado corretamente. 
+     * TA01.03 - O organizador que que criou o evento, irá passar as informações pra geração dos ingressos e caso tudo ocorra bem, receberá uma notificação de: Ingresso cadastrado com sucesso.
+     * TA01.04 - O organizador informa, na tela de alterar ingresso, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
+     * TA01.05 - O organizador informa, na tela alterar ingresso, os dados invalidos para alterar um ingresso, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
+     * TA01.06 - O organizador informa, na tela invalidar ingresso, o ingresso que deseja ser inválidado no banco de dados, ao clicar em invalidar ele é notificado com uma mensagem de: Ingresso invalidado com sucesso.
