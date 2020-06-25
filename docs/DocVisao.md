@@ -27,7 +27,7 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 | --------------- | -------------------------------------------------------------------------------- |
 | Ewerton Silva   | Python, C, JavaScript, SQL
 | Eduardo Victor  | Javascript, NodeJS, React, React-Native, Typescript, SQL, Mongo, PHP, CI, Docker |
-| Arthur Medeiros |
+| Arthur Medeiros | JavaScript, Node.js, React, React-Native
 | Kael Silva      | JavaScript, Node.js, React, React-Native, TypeScript, SQL                        |
 | Clodoaldo Brito | JavaScript, React, SQL, Ejs                                                      |
 
