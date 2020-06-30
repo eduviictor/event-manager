@@ -86,3 +86,19 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.04 - O organizador informa, na tela de alterar ingresso, os dados validos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
      * TA01.05 - O organizador informa, na tela alterar ingresso, os dados invalidos para alterar um ingresso, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
      * TA01.06 - O organizador informa, na tela invalidar ingresso, o ingresso que deseja ser inválidado no banco de dados, ao clicar em invalidar ele é notificado com uma mensagem de: Ingresso invalidado com sucesso.
+     
+* User Story US05 - Manter Empresa
+
+   * Descrição:O sistema deve manter um cadastro de empresa que é criado por um usuário organizador que utiliza a aplicação. Uma empresa tem como atributos cnpj, nome, serviço, telefone, e-mail. Uma empresa é cadastrada diretamente no sistema por um usuário organizador e consultada pelos usuários clientes.
+
+   * Requisitos envolvidos: RF09, RF11
+   * Prioridade: Essencial
+   * Estimativa: 10h
+   * Tempo gasto(real):
+   * Testes de aceitação:
+     * TA01.01 - 
+     * TA01.02 -   
+     * TA01.03 - 
+     * TA01.04 - 
+     * TA01.05 - 
+     * TA01.06 - 
