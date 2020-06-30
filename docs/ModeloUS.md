@@ -96,9 +96,9 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
    * Estimativa: 10h
    * Tempo gasto(real):
    * Testes de aceitação:
-     * TA01.01 - 
-     * TA01.02 -   
-     * TA01.03 - 
-     * TA01.04 - 
-     * TA01.05 - 
-     * TA01.06 - 
+     * TA01.01 - Um usuário, ao tentar cadastrar uma nova empresa, deverá informar os dados da empresa na tela de cadastrar empresa. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de: Cadastro realizado com sucesso.
+     * TA01.02 - O organizador informa, na tela de cadastrar empresa, todos os dados de sua empresa. Caso algum dado informado não seja válido, o mesmo recebe uma notificação de: Cadastro não realizado, o campo "xxxx" não foi informado corretamente.
+     * TA01.03 - O organizador informa, na tela de alterar empresa, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
+     * TA01.04 - O organizador informa, na tela alterar empresa, os dados inválidos para alterar uma empresa, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
+     * TA01.05 - O organizador informa, na tela deletar empresa, a empresa que deseja ser deletada do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de: Empresa deletada com sucesso.
+     * TA01.06 - Uma empresa, quando cadastrada no sistema, pode ser referenciada em eventos posteriores, sem precisar fazer o cadastro novamente.
