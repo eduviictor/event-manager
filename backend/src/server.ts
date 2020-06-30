@@ -1,7 +1,3 @@
-import express from 'express';
+import server from './app';
 
-const app = express();
-
-app.get('/', (req, res) => res.json('Hello World!'));
-
-app.listen(3000);
+server.listen(3000);
