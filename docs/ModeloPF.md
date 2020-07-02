@@ -34,18 +34,18 @@ Lista de user stories e os requisitos que estão associados.
 ### Contagem indicativa (Ci)
 Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos Internos) com o valor de 35 PF cada e os AIE (Arquivos de Interface Externa) com o valor de 15 PF cada.
 
-|         ALI          |       Entidades Relacionadas     |  PF |
-| ---------------------|:--------------------------------:| ---:|
-|     ALI Evento       |              Evento              |  35 |
-|     ALI Usuário      |              Usuário             |  35 |
-|     ALI Cliente      |              Cliente             |  35 |
-|    ALI Organizador   |             Organizador          |  35 |
-|     ALI Atração      |              Atração             |  35 |
-|     ALI Orçamento    |             Orçamento            |  35 |
-|     ALI Ingresso     |              Ingresso            |  35 |
-|    ALI Tipo Ingresso |            Tipo Ingresso         |  35 |
-|     ALI Empresa      |              Empresa             |  35 |
-|    ALI Localização   |             Localização          |  35 |
+|         ALI          		|       Entidades Relacionadas     |  PF |
+| ------------------------------|:--------------------------------:| ---:|
+|     ALI Evento       		|              Evento              |  35 |
+|     ALI Tipo_Ingresso      	|              Usuário             |  35 |
+|     ALI Cliente      		|              Cliente             |  35 |
+|    ALI Organizador   		|             Organizador          |  35 |
+|     ALI Atração      		|              Atração             |  35 |
+|     ALI Orçamento    		|             Orçamento            |  35 |
+|     ALI Ingresso     		|              Ingresso            |  35 |
+|    ALI Tipo Ingresso 		|            Tipo Ingresso         |  35 |
+|     ALI Empresa      		|              Empresa             |  35 |
+|    ALI Localização   		|             Localização          |  35 |
 
 |     Contagem     |  Total de Pontos Função |
 | -----------------|:-----------------------:|
