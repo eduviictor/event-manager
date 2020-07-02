@@ -32,3 +32,7 @@ O Documento da Lista de User Stories pode ser encontrado na página [Documento U
 ## Projeto Arquitetural
 
 O Documento do Projeto Arquitetural pode ser encontrado na página [Documento de Projeto Arquitetural](DocArquitetura.md).
+
+## Análise de Ponto de Função
+
+O Documento da Análise de Ponto de Função pode ser encontrado na página [Documento de Análise de Ponto de Função](ModeloPF.md).
