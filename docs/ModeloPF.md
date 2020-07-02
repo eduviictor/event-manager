@@ -1,4 +1,4 @@
-# Modelo para Análise de Pontos de Função
+# Análise de Pontos de Função
 
 ## Descrição do projeto
 O sistema Event Manager é uma ferramenta para o processo de gerenciamento de eventos. Fornece uma maneira intuitiva e eficiente para definir eventos adequados ao público-alvo. Um evento é um acontecimento (festa, espetáculo, comemoração, solenidade etc.) organizado por especialistas, com objetivos institucionais, comunitários ou promocionais.
