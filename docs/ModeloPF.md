@@ -37,7 +37,7 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 |         ALI          		|       Entidades Relacionadas     |  PF |
 | ------------------------------|:--------------------------------:| ---:|
 |     ALI Evento       		|              Evento              |  35 |
-|     ALI Tipo_Ingresso      	|              Usuário             |  35 |
+|     ALI Tipo_Ingresso      	|	   Ingresso, Tipo	   |  35 |
 |     ALI Cliente      		|              Cliente             |  35 |
 |    ALI Organizador   		|             Organizador          |  35 |
 |     ALI Atração      		|              Atração             |  35 |
