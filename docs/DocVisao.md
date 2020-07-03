@@ -57,30 +57,30 @@ empresa.
 
 ## Lista de requisitos funcionais
 
-|     Requisito                          |  Descrição                                                                                                                                                 |  Ator
-|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------
-|  RF01 - Cadastrar usuário              | Usuários podem ser cadastrados como clientes e organizadores de eventos.                                                                                   | Usuário
-|  RF02 - Manter usuário (genérico)      | Usuários têm como atributos: Login, Senha.                                                                                                                 | Usuário
-|  RF03 - Manter usuário cliente         | Usuários do tipo cliente têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso.                                                    | Cliente
-|  RF04 - Manter usuário organizador     | Usuários do tipo organizador de evento têm como atributos: cnpj, nome, e-mail, telefone, cod_evento.                                                       | Organizador
-|  RF05 - Cadastrar evento               | Eventos podem ser cadastrados por organizadores e consultados por clientes.                                                                                | Organizador
-|  RF06 - Manter evento                  | Eventos têm como atributos: codigo, nome, data, horario, cod_atracao, cod_local, cod_empresa, cod_orcamento, cod_ingresso.                                 | Organizador
-|  RF07 - Localização do evento          | Eventos possuem localizações.                                                                                                                              | Organizador
-|  RF08 - Manter localização             | Localização têm como atributos: codigo, local, rua, bairro, cidade, estado.                                                                                | Organizador
-|  RF09 - Associar empresa               | O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.                                            | Organizador
-|  RF10 - Consultar empresa              | Organizadores podem consultar empresas.                                                                                                                    | Organizador
-|  RF11 - Manter empresa                 | Empresas têm como atributos: cnpj, nome, serviço, telefone, e-mail.                                                                                        | Organizador
-|  RF12 - Atribuir atrações a evento     | Eventos possuem atrações.                                                                                                                                  | Organizador
-|  RF13 - Manter atração                 | Atrações têm como atributos: codigo, nome, telefone, e-mail.                                                                                               | Organizador
-|  RF14 - Manter orçamento               | Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.                                          | Organizador
-|  RF15 - Adquirir ingresso              | Ingressos podem ser adquiridos pelos clientes.                                                                                                             | Cliente
-|  RF16 - Especificar tipo de ingresso   | Ingressos possuem tipos: Estudante, VIP, normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento.            | Organizador
-|  RF17 - Manter ingresso                | Ingressos têm como atributos: codigo, tipo, valor, quantidade.                                                                                             | Organizador
-|  RF18 - Manter ouvidoria               | Mensagem de ouvidoria tem como atributos: cod_mensagem, cod_usuario, mensagem.                                                                             | Administrador
-|  RF19 - Manter tipo de ingresso        | Tipo_ingresso tem como atributos: cod_ingresso, cod_evento.                                                                                                | Organizador
-|  RF20 - Cadastrar mensagem na ouvidoria| A aplicação possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou reclamações sobre o sistema.             | Administrador
-|  RF21 - Notificar usuários             | A aplicação poderá enviar notificações sobre eventos por meio da localização do usuário caso o mesmo tenha permitido ser notificado, essa informação sobre a permissão constará no registro de status.| Administrador
-|  RF22 - Manter notícias                |A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país.                                          | Administrador
+|     Requisito                              |  Descrição                                                                                                                                                 |  Ator
+|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------
+|  **RF01 - Cadastrar usuário**              | Usuários podem ser cadastrados como clientes e organizadores de eventos.                                                                                   | Usuário
+|  **RF02 - Manter usuário (genérico)**      | Usuários têm como atributos: Login, Senha.                                                                                                                 | Usuário
+|  **RF03 - Manter usuário cliente**         | Usuários do tipo cliente têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso.                                                    | Cliente
+|  **RF04 - Manter usuário organizador**     | Usuários do tipo organizador de evento têm como atributos: cnpj, nome, e-mail, telefone, cod_evento.                                                       | Organizador
+|  **RF05 - Cadastrar evento**               | Eventos podem ser cadastrados por organizadores e consultados por clientes.                                                                                | Organizador
+|  **RF06 - Manter evento**                  | Eventos têm como atributos: codigo, nome, data, horario, cod_atracao, cod_local, cod_empresa, cod_orcamento, cod_ingresso.                                 | Organizador
+|  **RF07 - Localização do evento**          | Eventos possuem localizações.                                                                                                                              | Organizador
+|  **RF08 - Manter localização**             | Localização têm como atributos: codigo, local, rua, bairro, cidade, estado.                                                                                | Organizador
+|  **RF09 - Associar empresa**               | O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.                                            | Organizador
+|  **RF10 - Consultar empresa**              | Organizadores podem consultar empresas.                                                                                                                    | Organizador
+|  **RF11 - Manter empresa**                 | Empresas têm como atributos: cnpj, nome, serviço, telefone, e-mail.                                                                                        | Organizador
+|  **RF12 - Atribuir atrações a evento**     | Eventos possuem atrações.                                                                                                                                  | Organizador
+|  **RF13 - Manter atração**                 | Atrações têm como atributos: codigo, nome, telefone, e-mail.                                                                                               | Organizador
+|  **RF14 - Manter orçamento**               | Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.                                          | Organizador
+|  **RF15 - Adquirir ingresso**              | Ingressos podem ser adquiridos pelos clientes.                                                                                                             | Cliente
+|  **RF16 - Especificar tipo de ingresso**   | Ingressos possuem tipos: Estudante, VIP, normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento.            | Organizador
+|  **RF17 - Manter ingresso**                | Ingressos têm como atributos: codigo, tipo, valor, quantidade.                                                                                             | Organizador
+|  **RF18 - Manter ouvidoria**               | Mensagem de ouvidoria tem como atributos: cod_mensagem, cod_usuario, mensagem.                                                                             | Administrador
+|  **RF19 - Manter tipo de ingresso**        | Tipo_ingresso tem como atributos: cod_ingresso, cod_evento.                                                                                                | Organizador
+|  **RF20 - Cadastrar mensagem na ouvidoria**| A aplicação possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou reclamações sobre o sistema.             | Administrador
+|  **RF21 - Notificar usuários**             | A aplicação poderá enviar notificações sobre eventos por meio da localização do usuário caso o mesmo tenha permitido ser notificado, essa informação sobre a permissão constará no registro de status.| Administrador
+|  **RF22 - Manter notícias**                |A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país.                                          | Administrador
 
 
 ## Perfis dos usuários
