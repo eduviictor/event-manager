@@ -95,12 +95,12 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 #### Análise detalhada
 
-|      Descrição      |       Tipo      |       TD       |      TR      |      Complexidade      |      Contribuição      |
-| ------------------- |:---------------:| --------------:|:------------:|:----------------------:|:----------------------:|
-|	Inserir evento	|	EE	|		|		|	Baixa		|	3		|
-|	Atualizar evento |	EE	|		|		|	Baixa		|	3		|
-|	Deletar evento	|	EE	|		|		|	Baixa		|	3		|
-|	Consultar evento|	CE	|		|		|	Baixa		|	3		|
+|      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      Contribuição     |
+| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
+|	Inserir evento		|	EE	|		|		|	Baixa		|	3		|
+|	Atualizar evento 	|	EE	|		|		|	Baixa		|	3		|
+|	Deletar evento		|	EE	|		|		|	Baixa		|	3		|
+|	Consultar evento	|	CE	|		|		|	Baixa		|	3		|
 |Inserir usuário|EE|||Baixa|3|
 |Alterar usuário|EE|||Baixa|3|
 |Deletar usuário|EE|||Baixa|3|
