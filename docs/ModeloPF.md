@@ -95,17 +95,22 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 #### Análise detalhada
 
-|      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      Contribuição     |
+|      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      	Contribuição	|
 | ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
-|	Inserir evento		|	EE	|		|		|	Baixa		|	3		|
-|	Atualizar evento 	|	EE	|		|		|	Baixa		|	3		|
-|	Deletar evento		|	EE	|		|		|	Baixa		|	3		|
-|	Consultar evento	|	CE	|		|		|	Baixa		|	3		|
-|Inserir usuário|EE|||Baixa|3|
-|Alterar usuário|EE|||Baixa|3|
-|Deletar usuário|EE|||Baixa|3|
-|Consultar usuário|CE|||Baixa|3|
-|Inserir organizador|EE|||Baixa|3|
-|Alterar organizador|EE|||Baixa|3|
-|Deletar organizador|EE|||Baixa|3|
-|Consultar organizador|CE|||Baixa|3|
+|	ALI Organizador		|	ALI	|	5	|	2	|	Baixa		|	7		|
+|	Inserir evento		|	EE	|		|		|	Baixa		|			|
+|	Atualizar evento 	|	EE	|		|		|	Baixa		|			|
+|	Deletar evento		|	EE	|		|		|	Baixa		|			|
+|	Consultar evento	|	CE	|		|		|	Baixa		|			|
+|	Inserir usuário		|	EE	|		|		|	Baixa		|			|
+|	Alterar usuário		|	EE	|		|		|	Baixa		|			|
+|	Deletar usuário		|	EE	|		|		|	Baixa		|			|
+|	Consultar usuário	|	CE	|		|		|	Baixa		|			|
+
+
+|      Descrição      		|       Tipo    |       DER     |	ALR    	|      Complexidade     |      	Contribuição	|
+| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
+|	Inserir organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Alterar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Deletar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Consultar organizador	|	CE	|	5	|	1	|	Baixa		|	3		|
