@@ -8,7 +8,7 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 | Data       | Versão | Descrição          | Autor |
 | ---------- | ------ | ------------------ | ----- |
 | 23/06/2020 | 1.0    | Documento revisado | Kael  |
-| --         | --     | --                 | --    |
+| 03/06/2020 | 1.1    | Documento revisado | Kael  |
 
 ## Equipe e definição de papéis
 
