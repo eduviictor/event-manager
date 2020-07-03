@@ -1,4 +1,4 @@
-# Modelo para Análise de Pontos de Função
+# Análise de Pontos de Função
 
 ## Descrição do projeto
 O sistema Event Manager é uma ferramenta para o processo de gerenciamento de eventos. Fornece uma maneira intuitiva e eficiente para definir eventos adequados ao público-alvo. Um evento é um acontecimento (festa, espetáculo, comemoração, solenidade etc.) organizado por especialistas, com objetivos institucionais, comunitários ou promocionais.
@@ -34,18 +34,18 @@ Lista de user stories e os requisitos que estão associados.
 ### Contagem indicativa (Ci)
 Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos Internos) com o valor de 35 PF cada e os AIE (Arquivos de Interface Externa) com o valor de 15 PF cada.
 
-|         ALI          |       Entidades Relacionadas     |  PF |
-| ---------------------|:--------------------------------:| ---:|
-|     ALI Evento       |              Evento              |  35 |
-|     ALI Usuário      |              Usuário             |  35 |
-|     ALI Cliente      |              Cliente             |  35 |
-|    ALI Organizador   |             Organizador          |  35 |
-|     ALI Atração      |              Atração             |  35 |
-|     ALI Orçamento    |             Orçamento            |  35 |
-|     ALI Ingresso     |              Ingresso            |  35 |
-|    ALI Tipo Ingresso |            Tipo Ingresso         |  35 |
-|     ALI Empresa      |              Empresa             |  35 |
-|    ALI Localização   |             Localização          |  35 |
+|         ALI          		|       Entidades Relacionadas     |  PF |
+| ------------------------------|:--------------------------------:| ---:|
+|     ALI Evento       		|              Evento              |  35 |
+|     ALI Tipo_Ingresso      	|	   Ingresso, Tipo	   |  35 |
+|     ALI Cliente      		|              Cliente             |  35 |
+|    ALI Organizador   		|             Organizador          |  35 |
+|     ALI Atração      		|              Atração             |  35 |
+|     ALI Orçamento    		|             Orçamento            |  35 |
+|     ALI Ingresso     		|              Ingresso            |  35 |
+|    ALI Tipo Ingresso 		|            Tipo Ingresso         |  35 |
+|     ALI Empresa      		|              Empresa             |  35 |
+|    ALI Localização   		|             Localização          |  35 |
 
 |     Contagem     |  Total de Pontos Função |
 | -----------------|:-----------------------:|
@@ -95,17 +95,22 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 #### Análise detalhada
 
-|      Descrição      |       Tipo      |       TD       |      TR      |      Complexidade      |      Contribuição      |
-| ------------------- |:---------------:| --------------:|:------------:|:----------------------:|:----------------------:|
-|	Inserir evento	|	EE	|		|		|	Baixa		|	3		|
-|	Atualizar evento |	EE	|		|		|	Baixa		|	3		|
-|	Deletar evento	|	EE	|		|		|	Baixa		|	3		|
-|	Consultar evento|	CE	|		|		|	Baixa		|	3		|
-|Inserir usuário|EE|||Baixa|3|
-|Alterar usuário|EE|||Baixa|3|
-|Deletar usuário|EE|||Baixa|3|
-|Consultar usuário|CE|||Baixa|3|
-|Inserir organizador|EE|||Baixa|3|
-|Alterar organizador|EE|||Baixa|3|
-|Deletar organizador|EE|||Baixa|3|
-|Consultar organizador|CE|||Baixa|3|
+|      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      	Contribuição	|
+| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
+|	ALI Organizador		|	ALI	|	5	|	2	|	Baixa		|	7		|
+|	Inserir evento		|	EE	|		|		|	Baixa		|			|
+|	Atualizar evento 	|	EE	|		|		|	Baixa		|			|
+|	Deletar evento		|	EE	|		|		|	Baixa		|			|
+|	Consultar evento	|	CE	|		|		|	Baixa		|			|
+|	Inserir usuário		|	EE	|		|		|	Baixa		|			|
+|	Alterar usuário		|	EE	|		|		|	Baixa		|			|
+|	Deletar usuário		|	EE	|		|		|	Baixa		|			|
+|	Consultar usuário	|	CE	|		|		|	Baixa		|			|
+
+
+|      Descrição      		|       Tipo    |       DER     |	ALR    	|      Complexidade     |      	Contribuição	|
+| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
+|	Inserir organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Alterar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Deletar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Consultar organizador	|	CE	|	5	|	1	|	Baixa		|	3		|

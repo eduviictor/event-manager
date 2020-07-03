@@ -19,7 +19,7 @@ It6      | -           | -          | -            | Arthur
 Os detalhes do Plano de Iteração pode ser encontrado na página [Plano de Iteração](PlanoIteracao.md).
 
 ## Termo de Abertura 
-O documento do termo de abertura pode ser encontrado no google drive que pode ser encontrado na pagina [Termo de Abertura](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit)
+O documento do termo de abertura pode ser encontrado no google drive que pode ser encontrado na pagina [Termo de Abertura](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit).
 
 ## Documento de Visão
 
@@ -27,6 +27,12 @@ O Documento de Visão completo pode ser encontrado na página [Documento de Vis�
 
 ## Lista de User Stories
 
-O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md)
+O Documento da Lista de User Stories pode ser encontrado na página [Documento User Stories](ModeloUS.md).
 
+## Projeto Arquitetural
 
+O Documento do Projeto Arquitetural pode ser encontrado na página [Documento de Projeto Arquitetural](DocArquitetura.md).
+
+## Análise de Ponto de Função
+
+O Documento da Análise de Ponto de Função pode ser encontrado na página [Documento de Análise de Ponto de Função](ModeloPF.md).
