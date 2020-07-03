@@ -47,7 +47,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US02 - Manter organizador
 
   * Descrição: O sistema deve manter um cadastro de organizador que é criado por uma pessoa que utiliza a aplicação. Um organizador tem os atributos cpf/cnpj, nome, email, telefone, status, cod_evento. Os organizadores cadastram eventos nos quais os usuários podem acessar informações.
-  * Requisitos envolvidos: RF10
+  * Requisitos envolvidos: RF01, RF04, RF05, RF10
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
