@@ -5,7 +5,6 @@ O modelo arquitetural do software tem como objetivo fornecer uma visão geral da
 Data        | Versão | Descrição                                                      | Autor
 ------------|--------|----------------------------------------------------------------|--------------------
 29/06/2020  | 1.0    | Documento inicial                                              | Kael
-------------|--------|----------------------------------------------------------------|--------------------
 04/07/2020  | 1.1    | Adicionando novos itens                                        | Arthur Medeiros
 
 # Visão Geral
