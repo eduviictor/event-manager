@@ -1,7 +1,5 @@
 # Descrição
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor urna, viverra nec enim in, accumsan placerat neque. Pellentesque aliquam volutpat lectus 
-ac tempor. Morbi vitae placerat felis. Nulla et turpis quam. Nullam pellentesque, velit vitae aliquam dictum, est elit malesuada dui, vitae vehicula quam orci 
-hendrerit justo. Aenean vitae elit nec nibh porttitor vulputate non vitae mi. Nullam sagittis tellus sit amet turpis porta dignissim.*
+O modelo arquitetural do software tem como objetivo fornecer uma visão geral da arquitetura do sistema, servindo como meio de comunicação entre desenvolvedores e outros que tenham interesse no sistema (stakeholders). Neste documento serão expostos atributos sobre a arquitetura do sistema, como a visão geral do software, para auxiliar na abordagem de desenvolvimento do projeto.
 
 ## Histórico de revisões
 Data        | Versão | Descrição                                                      | Autor
