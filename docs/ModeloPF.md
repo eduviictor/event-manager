@@ -97,26 +97,18 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 |      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      	Contribuição	|
 | ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
+|	ALI Organizador		|	ALI	|	5	|	2	|	Baixa		|	7		|
 |	ALI Evento		|	ALI	|	 9	|	5	|	Média		|	    4		|
+
+
+|      Descrição      		|       Tipo    |       DER     |	ALR    	|      Complexidade     |      	Contribuição	|
+| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
+|	Inserir organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Alterar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Deletar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
+|	Consultar organizador	|	CE	|	5	|	1	|	Baixa		|	3		|
 |	Inserir evento		|	EE	|	 9	|	5	|	Média		|	    4		|
 |	Atualizar evento 	|	EE	|	 9	|	5	|	Média		|	    4		|
 |	Deletar evento		|	EE	|	 9	|	1	|	Baixa		|	    3		|
 |	Consultar evento	|	CE	|	 9	|	1	|	Baixa		|	    3		|
 
-
-|      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      	Contribuição	|
-| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
-|	ALI Cliente		|	ALI	|		|		|	Baixa		|			|
-|	Inserir cliente		|	EE	|		|		|	Baixa		|			|
-|	Alterar cliente		|	EE	|		|		|	Baixa		|			|
-|	Deletar cliente		|	EE	|		|		|	Baixa		|			|
-|	Consultar cliente	|	CE	|		|		|	Baixa		|			|
-
-
-|      Descrição      		|       Tipo    |       DER     |	ALR    	|      Complexidade     |      	Contribuição	|
-| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
-|	ALI Organizador		|	ALI	|	5	|	2	|	Baixa		|	3		|
-|	Inserir organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
-|	Alterar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
-|	Deletar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
-|	Consultar organizador	|	CE	|	5	|	1	|	Baixa		|	3		|
