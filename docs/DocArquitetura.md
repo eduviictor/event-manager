@@ -8,5 +8,9 @@ Data        | Versão | Descrição                                             
 04/07/2020  | 1.1    | Adicionando novos itens                                        | Arthur Medeiros
 
 # Visão Geral
-<img src="https://image.slidesharecdn.com/introduoaarquiteturadesistemas-100818131112-phpapp02/95/introduo-a-arquitetura-de-sistemas-10-728.jpg?cb=1282137235" />
+<p align="center">
+  <img src="https://github.com/arthurmdros/event-manager/blob/master/docs/modeloArquitetural.png" />
+</p>
 Figura 1. Imagem da arquitetura do sistema.
+
+
