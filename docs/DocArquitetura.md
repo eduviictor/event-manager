@@ -1,4 +1,5 @@
-# Descrição
+# Projeto Arquitetural
+## Descrição
 O modelo arquitetural do software tem como objetivo fornecer uma visão geral da arquitetura do sistema, servindo como meio de comunicação entre desenvolvedores e outros que tenham interesse no sistema (stakeholders). Neste documento serão expostos atributos sobre a arquitetura do sistema, como a visão geral do software, para auxiliar na abordagem de desenvolvimento do projeto.
 
 ## Histórico de revisões
