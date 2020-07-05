@@ -3,7 +3,9 @@ interface RespTest {
 }
 
 class EventController {
-  test(req, res): RespTest {
+  public index(req, res): RespTest {
     return res.json({ text: 'Opa' });
   }
 }
+
+export default new EventController();

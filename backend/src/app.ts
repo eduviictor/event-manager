@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-// import database from './database';
+import path from 'path';
+
+import './database';
 
 import routes from './routes';
 
@@ -17,9 +19,15 @@ class App {
   private middlewares(): void {
     this.server.use(express.json());
     this.server.use(cors());
+
+    console.log('opa');
   }
 
   private routes(): void {
+    this.server.use(
+      '/docs',
+      express.static(path.resolve(__dirname, '..', 'docs-api'))
+    );
     this.server.use(routes);
   }
 }
