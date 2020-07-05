@@ -1,7 +1,7 @@
 // import { Model, DataTypes } from 'sequelize';
 // import database from '../../database';
 
-interface EventAttributes {
+export interface EventAttributes {
   codigo: number;
   codEmpresa: number;
   codAtracao: number;
