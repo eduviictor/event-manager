@@ -7,10 +7,10 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 Iteração | Data início | Data Final | Apresentação | Gerente
 -------- | ----------- | ---------- | ------------ | -------
 It1      | 19/06/2020  | 24/06/2020 | 26/06/2020   | Kael
-It2      | 24/06/2020  | 02/07/2020 | -            | Kael
-It3      | -           | -          | -            | Ewerton
-It4      | -           | -          | -            | Eduardo
-It5      | -           | -          | -            | Clodoaldo
+It2      | 24/06/2020  | 02/07/2020 | 03/07/2020   | Kael
+It3      | 02/06/2020  | 09/06/2020 | 10/06/2020   | Ewerton
+It4      | 09/06/2020  | 16/06/2020 | 17/06/2020   | Eduardo
+It5      | 16/06/2020  | 23/06/2020 | 24/06/2020   | Clodoaldo
 It6      | -           | -          | -            | Arthur
 
 * Observação: Cada Iteração de ser cadastrada como Milestones no GitHub.
