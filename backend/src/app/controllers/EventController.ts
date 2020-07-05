@@ -68,6 +68,28 @@ class EventController {
       throw new Error('Internal Server Error');
     }
   }
+
+  public async delete(req: Request, res: Response): Promise<any> {
+    const id = req.params.id;
+
+    if (!id) {
+      return res.json('Id não informado').status(400);
+    }
+
+    try {
+      const event = await Event.destroy({
+        where: { codigo: id },
+      });
+
+      if (event[0] !== 1) {
+        return res.json('Evento não encontrado').status(404);
+      }
+
+      return res.json(event).status(200);
+    } catch (err) {
+      throw new Error('Internal Server Error');
+    }
+  }
 }
 
 export default new EventController();
