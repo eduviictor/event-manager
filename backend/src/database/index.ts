@@ -1,5 +1,8 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize-typescript';
+import Event from '../app/models/Event';
 const databaseConfig = require('../config/database');
+
+const models = [Event];
 
 class Database {
   public connection: Sequelize;
@@ -9,7 +12,8 @@ class Database {
   }
 
   init(): void {
-    this.connection = new Sequelize(JSON.stringify(databaseConfig));
+    this.connection = new Sequelize(databaseConfig);
+    this.connection.addModels(models);
   }
 }
 

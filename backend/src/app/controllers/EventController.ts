@@ -1,10 +1,14 @@
-interface RespTest {
-  text: string;
-}
+// interface RespTest {
+//   text: string;
+// }
+
+import Event from '../models/Event';
 
 class EventController {
-  public index(req, res): RespTest {
-    return res.json({ text: 'Opa' });
+  public async index(req, res): Promise<any> {
+    const events = await Event.findAll();
+
+    return res.json(events);
   }
 }
 
