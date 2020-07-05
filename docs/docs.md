@@ -10,16 +10,16 @@ e exibirá os relatórios dos eventos para os seus organizadores.
 Iteração | Data início | Data Final | Apresentação | Gerente
 -------- | ----------- | ---------- | ------------ | -------
 It1      | 19/06/2020  | 24/06/2020 | 26/06/2020   | Kael
-It2      | 24/06/2020  | 02/07/2020 | -            | Kael
-It3      | -           | -          | -            | Ewerton
-It4      | -           | -          | -            | Eduardo
-It5      | -           | -          | -            | Clodoaldo
+It2      | 24/06/2020  | 02/07/2020 | 03/07/2020   | Kael
+It3      | 02/06/2020  | 09/06/2020 | 10/06/2020   | Ewerton
+It4      | 09/06/2020  | 16/06/2020 | 17/06/2020   | Eduardo
+It5      | 16/06/2020  | 23/06/2020 | 24/06/2020   | Clodoaldo
 It6      | -           | -          | -            | Arthur
 
 Os detalhes do Plano de Iteração pode ser encontrado na página [Plano de Iteração](PlanoIteracao.md).
 
 ## Termo de Abertura 
-O documento do termo de abertura pode ser encontrado no google drive que pode ser encontrado na pagina [Termo de Abertura](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit)
+O documento do termo de abertura pode ser encontrado no google drive que pode ser encontrado na pagina [Termo de Abertura](https://docs.google.com/document/d/1m3T2eIovP-VWMlkNr7gWR-0lO50QkCH_noEwD9v1VGM/edit).
 
 ## Documento de Visão
 
@@ -27,6 +27,12 @@ O Documento de Visão completo pode ser encontrado na página [Documento de Vis�
 
 ## Lista de User Stories
 
-O Documento da Lista de User Stories pode ser encontrado na página [Documento User Storie](ModeloUS.md)
+O Documento da Lista de User Stories pode ser encontrado na página [Documento User Stories](ModeloUS.md).
 
+## Projeto Arquitetural
 
+O Documento do Projeto Arquitetural pode ser encontrado na página [Documento de Projeto Arquitetural](DocArquitetura.md).
+
+## Análise de Ponto de Função
+
+O Documento da Análise de Ponto de Função pode ser encontrado na página [Documento de Análise de Ponto de Função](ModeloPF.md).
