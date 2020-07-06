@@ -24,13 +24,32 @@ Lista de user stories e os requisitos que estão associados.
 * RF13 - Eventos geram orçamentos.
 
 ### US01 - Manter usuário
-* RF01 - Cadastrar usuário
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
+* RF02 - Usuários têm como atributos: Login, Senha.
+* RF03 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
 
-### US02 - Manter empresa
-* RF02 - Cadastrar empresa
+### US02 - Manter organizador
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
+* RF04 - Usuários do tipo organizador de evento têm como atributos: cnpj, nome, e-mail, telefone, cod_evento.
+* RF05 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
+* RF10 - Organizadores podem consultar empresas.
 
-### US03 -Manter Orçamento
-* RF14 - Manter orçamento
+### US03 - Manter atração
+* RF12 - Eventos possuem atrações.
+* RF13 - Atrações têm como atributos: codigo, nome, telefone, e-mail.
+
+### US04 - Manter ingresso
+* RF15 - Ingressos podem ser adquiridos pelos clientes.
+* RF16 - Ingressos possuem tipos: Estudante, VIP, normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento.
+* RF17 - Ingressos têm como atributos: codigo, tipo, valor, quantidade.
+* RF19 - Tipo_ingresso tem como atributos: cod_ingresso, cod_evento.
+
+### US05 - Manter empresa
+* RF09 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
+* RF11 - Empresas têm como atributos: cnpj, nome, serviço, telefone, e-mail.
+
+### US06 -Manter orçamento
+* RF14 - Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.
 
 ## Tipo de Contagem
 
