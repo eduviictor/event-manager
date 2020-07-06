@@ -122,4 +122,5 @@ sketch
 
 # End of https://www.gitignore.io/api/node,react
 
-docs-api/
+# Sonar
+.scannerwork
