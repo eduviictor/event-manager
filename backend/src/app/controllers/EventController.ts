@@ -1,95 +1,102 @@
-import { Request, Response } from 'express';
-import Event, { EventAttributes } from '../models/Event';
+import {
+  Controller,
+  Get,
+  Route,
+  Path,
+  Post,
+  Body,
+  Put,
+  Res,
+  TsoaResponse,
+  Delete,
+} from 'tsoa';
+import Event, { EventAttributes, EventAttributesBody } from '../models/Event';
 
-class EventController {
-  public async index(req: Request, res: Response): Promise<any> {
+@Route('events')
+export class EventController extends Controller {
+  @Get('')
+  public async index(
+    @Res() serverError: TsoaResponse<500, { message: string }>
+  ): Promise<EventAttributes[]> {
     try {
       const events: EventAttributes[] = await Event.findAll();
 
-      return res.json(events).status(200);
+      return events;
     } catch (err) {
-      throw new Error('Internal Server Error');
+      serverError(500, { message: 'Internal Server Error' });
     }
   }
 
-  public async show(req: Request, res: Response): Promise<any> {
-    const id = req.params.id;
-
-    if (!id) {
-      return res.json('Id não informado').status(400);
-    }
-
+  @Get('{codigo}')
+  public async show(
+    @Path() codigo: number,
+    @Res() serverError: TsoaResponse<500, { message: string }>,
+    @Res() notFound: TsoaResponse<404, { message: string }>
+  ): Promise<EventAttributes> {
     try {
-      const event: EventAttributes = await Event.findByPk(id);
+      const event: EventAttributes = await Event.findByPk(codigo);
 
       if (!event) {
-        return res.json('Evento não encontrado').status(404);
+        notFound(404, { message: 'Event not exists' });
       }
 
-      return res.json(event).status(200);
+      return event;
     } catch (err) {
-      throw new Error('Internal Server Error');
+      serverError(500, { message: 'Internal Server Error' });
     }
   }
 
-  public async store(req: Request, res: Response): Promise<any> {
-    const { body } = req;
+  @Post('')
+  public async store(
+    @Body() body: EventAttributesBody
+  ): Promise<EventAttributes> {
+    const event: EventAttributes = await Event.create(body);
 
-    try {
-      const event: EventAttributes = await Event.create(body);
-
-      return res.json(event).status(200);
-    } catch (err) {
-      throw new Error('Internal Server Error');
-    }
+    return event;
   }
 
-  public async update(req: Request, res: Response): Promise<any> {
-    const id = req.params.id;
-    const { body } = req;
-
-    if (!id) {
-      return res.json('Id não informado').status(400);
-    }
-
+  @Put('{codigo}')
+  public async update(
+    @Path() codigo: number,
+    @Body() body: EventAttributesBody,
+    @Res() serverError: TsoaResponse<500, { message: string }>,
+    @Res() notFound: TsoaResponse<404, { message: string }>
+  ): Promise<string> {
     try {
       const event = await Event.update(body, {
-        where: { codigo: id },
+        where: { codigo: codigo },
+      });
+
+      if (event[0] !== 1) {
+        notFound(404, { message: 'Event not exists' });
+      }
+
+      return 'Event updated with success';
+    } catch (err) {
+      serverError(500, { message: 'Internal Server Error' });
+    }
+  }
+
+  @Delete('{codigo}')
+  public async delete(
+    @Path() codigo: number,
+    @Res() serverError: TsoaResponse<500, { message: string }>,
+    @Res() notFound: TsoaResponse<404, { message: string }>
+  ): Promise<string> {
+    try {
+      const event = await Event.destroy({
+        where: { codigo: codigo },
       });
 
       console.log('event', event);
 
-      if (event[0] !== 1) {
-        return res.json('Evento não encontrado').status(404);
+      if (event !== 1) {
+        notFound(404, { message: 'Event not exists' });
       }
 
-      return res.json(event).status(200);
+      return 'Event deleted with success';
     } catch (err) {
-      throw new Error('Internal Server Error');
-    }
-  }
-
-  public async delete(req: Request, res: Response): Promise<any> {
-    const id = req.params.id;
-
-    if (!id) {
-      return res.json('Id não informado').status(400);
-    }
-
-    try {
-      const event = await Event.destroy({
-        where: { codigo: id },
-      });
-
-      if (event[0] !== 1) {
-        return res.json('Evento não encontrado').status(404);
-      }
-
-      return res.json(event).status(200);
-    } catch (err) {
-      throw new Error('Internal Server Error');
+      serverError(500, { message: 'Internal Server Error' });
     }
   }
 }
-
-export default new EventController();

@@ -1,10 +1,14 @@
-import express from 'express';
+import express, {
+  Response as ExResponse,
+  Request as ExRequest,
+  NextFunction,
+} from 'express';
 import cors from 'cors';
-import path from 'path';
+import { RegisterRoutes } from '../dist/routes';
+import swaggerUi from 'swagger-ui-express';
 
 import './database';
-
-import routes from './routes';
+import { ValidateError } from 'tsoa';
 
 class App {
   public server: express.Express;
@@ -20,15 +24,43 @@ class App {
     this.server.use(express.json());
     this.server.use(cors());
 
+    this.server.use(function errorHandler(
+      err: unknown,
+      req: ExRequest,
+      res: ExResponse,
+      next: NextFunction
+    ): ExResponse | void {
+      if (err instanceof ValidateError) {
+        console.warn(`Caught Validation Error for ${req.path}:`, err.fields);
+        return res.status(422).json({
+          message: 'Validation Failed',
+          details: err?.fields,
+        });
+      }
+      if (err instanceof Error) {
+        return res.status(500).json({
+          message: 'Internal Server Error',
+        });
+      }
+
+      next();
+    });
+
     console.log('opa');
   }
 
   private routes(): void {
     this.server.use(
       '/docs',
-      express.static(path.resolve(__dirname, '..', 'docs-api'))
+      swaggerUi.serve,
+      async (_req: ExRequest, res: ExResponse) => {
+        return res.send(
+          swaggerUi.generateHTML(await import('../dist/swagger.json'))
+        );
+      }
     );
-    this.server.use(routes);
+
+    RegisterRoutes(this.server);
   }
 }
 
