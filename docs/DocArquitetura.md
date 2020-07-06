@@ -1,13 +1,18 @@
-# Descrição
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor urna, viverra nec enim in, accumsan placerat neque. Pellentesque aliquam volutpat lectus 
-ac tempor. Morbi vitae placerat felis. Nulla et turpis quam. Nullam pellentesque, velit vitae aliquam dictum, est elit malesuada dui, vitae vehicula quam orci 
-hendrerit justo. Aenean vitae elit nec nibh porttitor vulputate non vitae mi. Nullam sagittis tellus sit amet turpis porta dignissim.*
+# Projeto Arquitetural
+## Descrição
+O modelo arquitetural do software tem como objetivo fornecer uma visão geral da arquitetura do sistema, servindo como meio de comunicação entre desenvolvedores e outros que tenham interesse no sistema (stakeholders). Neste documento serão expostos atributos sobre a arquitetura do sistema, como a visão geral do software, para auxiliar na abordagem de desenvolvimento do projeto.
 
 ## Histórico de revisões
 Data        | Versão | Descrição                                                      | Autor
 ------------|--------|----------------------------------------------------------------|--------------------
 29/06/2020  | 1.0    | Documento inicial                                              | Kael
+04/07/2020  | 1.1    | Adicionando novos itens                                        | Arthur Medeiros
 
 # Visão Geral
-<img src="https://image.slidesharecdn.com/introduoaarquiteturadesistemas-100818131112-phpapp02/95/introduo-a-arquitetura-de-sistemas-10-728.jpg?cb=1282137235" />
+<p align="center">
+  <img src="https://github.com/arthurmdros/event-manager/blob/master/docs/modeloArquitetural.png" />
+</p>
+<p align="center">
 Figura 1. Imagem da arquitetura do sistema.
+</p>
+

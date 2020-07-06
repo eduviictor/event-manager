@@ -47,7 +47,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US02 - Manter organizador
 
   * Descrição: O sistema deve manter um cadastro de organizador que é criado por uma pessoa que utiliza a aplicação. Um organizador tem os atributos cpf/cnpj, nome, email, telefone, status, cod_evento. Os organizadores cadastram eventos nos quais os usuários podem acessar informações.
-  * Requisitos envolvidos: RF10
+  * Requisitos envolvidos: RF01, RF04, RF05, RF10
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -101,4 +101,18 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.03 - O organizador informa, na tela de alterar empresa, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
      * TA01.04 - O organizador informa, na tela alterar empresa, os dados inválidos para alterar uma empresa, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
      * TA01.05 - O organizador informa, na tela deletar empresa, a empresa que deseja ser deletada do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de: Empresa deletada com sucesso.
-     * TA01.06 - Uma empresa, quando cadastrada no sistema, pode ser referenciada em eventos posteriores, sem precisar fazer o cadastro novamente.
+     * TA01.06 - Uma empresa, quando cadastrada no sistema, pode ser referenciada em eventos posteriores, sem precisar fazer o cadastro novamente.  
+     
+* User Story US06 - Manter Orçamento
+
+   * Descrição: O sistema deve manter o registro de Informações sobre finanças como ingressos vendidos, valores arrecadados, valores investidos enfim, informações que serão analisadas e avaliadas em determinado período. Um Orçamento têm como atributos: código, descrição, ingressos vendidos, valor arrecadado, valor investido, receita. Ele pode ser consultado pelo Organizador.
+
+   * Requisitos envolvidos:RF14
+   * Prioridade: Essencial
+   * Estimativa: 12h
+   * Tempo gasto(real):
+   * Testes de aceitação:
+     * TA01.01 - Um Organizador, ao tentar cadastrar dados sobre orçamento, deverá informar os dados sobre o ingreço e preço inicial de venda. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de: cadastrado com sucesso e o nome do evento a que o ingresso pertence.
+     * TA01.02 - O organizador informa, na tela de visualização de orçamento, insere o codigo do evento a que o ingresso esta relacionado. Caso os dados não existam, o mesmo recebe uma notificação o campo "xxxx" não foi informado corretamente .
+     * TA01.03 - O organizador informa, na tela de alterar orçamento,e devera informar dado cnpj e se comprovado que ele é organizador do evento, mensagem: autorizado.
+     * TA01.04 - Ja autorizado organizador informa, na tela de alterar orçamento, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
