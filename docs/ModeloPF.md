@@ -29,6 +29,9 @@ Lista de user stories e os requisitos que estão associados.
 ### US02 - Manter empresa
 * RF02 - Cadastrar empresa
 
+### US03 -Manter Orçamento
+* RF14 - Manter orçamento
+
 ## Tipo de Contagem
 
 ### Contagem indicativa (Ci)
@@ -99,6 +102,7 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
 |	ALI Organizador		|	ALI	|	5	|	2	|	Baixa		|	7		|
 |	ALI Evento		|	ALI	|	 9	|	5	|	Média		|	    4		|
+|	ALI Orçamento		|	ALI	|	6	|	2	|	Baixa		|	7		|
 
 
 |      Descrição      		|       Tipo    |       DER     |	ALR    	|      Complexidade     |      	Contribuição	|
@@ -111,4 +115,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 |	Atualizar evento 	|	EE	|	 9	|	5	|	Média		|	    4		|
 |	Deletar evento		|	EE	|	 9	|	1	|	Baixa		|	    3		|
 |	Consultar evento	|	CE	|	 9	|	1	|	Baixa		|	    3		|
+|	Inserir Orçamento	|	EE	|	 6	|	1	|	Baixa		|	    3		|
+|	Atualizar Orçamento 	|	EE	|	 6	|	2	|	Média		|	    4		|
+|	Deletar Orçamento	|	EE	|	 6	|	1	|	Baixa		|	    3		|
+|	Consultar Orçamento	|	CE	|	 6	|	1	|	Baixa		|	    3		|
 
