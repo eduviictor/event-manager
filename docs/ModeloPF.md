@@ -103,6 +103,7 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Organizador | ALI  | 5   | 2   | Baixa        | 7            |
 | ALI Evento      | ALI  | 9   | 5   | Média        | 4            |
 | ALI Ingresso    | ALI  | 4   | 4   | Baixa        | 7            |
+|	ALI Orçamento		|	ALI	|	6	|	2	|	Baixa		|	7		|
 
 
 | Descrição             | Tipo | DER | ALR | Complexidade | Contribuição |
@@ -121,24 +122,6 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Consultar ingresso    | CE   | 4   | 1   | Baixa        | 3            |
 | Comprar ingresso      | EE   | 4   | 1   | Baixa        | 3            |
 | Detalhar ingresso     | SE   | 4   | 2   | Baixa        | 4            |
-=======
-|      Descrição      		|       Tipo    |       DER     |      RLR    	|      Complexidade     |      	Contribuição	|
-| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
-|	ALI Organizador		|	ALI	|	5	|	2	|	Baixa		|	7		|
-|	ALI Evento		|	ALI	|	 9	|	5	|	Média		|	    4		|
-|	ALI Orçamento		|	ALI	|	6	|	2	|	Baixa		|	7		|
-
-
-|      Descrição      		|       Tipo    |       DER     |	ALR    	|      Complexidade     |      	Contribuição	|
-| ------------------------------|---------------|---------------|---------------|-----------------------|-----------------------|
-|	Inserir organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
-|	Alterar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
-|	Deletar organizador	|	EE	|	5	|	1	|	Baixa		|	3		|
-|	Consultar organizador	|	CE	|	5	|	1	|	Baixa		|	3		|
-|	Inserir evento		|	EE	|	 9	|	5	|	Média		|	    4		|
-|	Atualizar evento 	|	EE	|	 9	|	5	|	Média		|	    4		|
-|	Deletar evento		|	EE	|	 9	|	1	|	Baixa		|	    3		|
-|	Consultar evento	|	CE	|	 9	|	1	|	Baixa		|	    3		|
 |	Inserir Orçamento	|	EE	|	 6	|	1	|	Baixa		|	    3		|
 |	Atualizar Orçamento 	|	EE	|	 6	|	2	|	Média		|	    4		|
 |	Deletar Orçamento	|	EE	|	 6	|	1	|	Baixa		|	    3		|
