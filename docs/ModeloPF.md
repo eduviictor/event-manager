@@ -24,13 +24,32 @@ Lista de user stories e os requisitos que estão associados.
 * RF13 - Eventos geram orçamentos.
 
 ### US01 - Manter usuário
-* RF01 - Cadastrar usuário
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
+* RF02 - Usuários têm como atributos: Login, Senha.
+* RF03 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
 
-### US02 - Manter empresa
-* RF02 - Cadastrar empresa
+### US02 - Manter organizador
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
+* RF04 - Usuários do tipo organizador de evento têm como atributos: cnpj, nome, e-mail, telefone, cod_evento.
+* RF05 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
+* RF10 - Organizadores podem consultar empresas.
 
-### US03 -Manter Orçamento
-* RF14 - Manter orçamento
+### US03 - Manter atração
+* RF12 - Eventos possuem atrações.
+* RF13 - Atrações têm como atributos: codigo, nome, telefone, e-mail.
+
+### US04 - Manter ingresso
+* RF15 - Ingressos podem ser adquiridos pelos clientes.
+* RF16 - Ingressos possuem tipos: Estudante, VIP, normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento.
+* RF17 - Ingressos têm como atributos: codigo, tipo, valor, quantidade.
+* RF19 - Tipo_ingresso tem como atributos: cod_ingresso, cod_evento.
+
+### US05 - Manter empresa
+* RF09 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
+* RF11 - Empresas têm como atributos: cnpj, nome, serviço, telefone, e-mail.
+
+### US06 -Manter orçamento
+* RF14 - Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.
 
 ## Tipo de Contagem
 
@@ -101,9 +120,11 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Descrição       | Tipo | DER | RLR | Complexidade | Contribuição |
 | --------------- | ---- | --- | --- | ------------ | ------------ |
 | ALI Organizador | ALI  | 5   | 2   | Baixa        | 7            |
-| ALI Evento      | ALI  | 9   | 5   | Média        | 4            |
+| ALI Evento      | ALI  | 9   | 5   | Média        | 10           |
 | ALI Ingresso    | ALI  | 4   | 4   | Baixa        | 7            |
-|	ALI Orçamento		|	ALI	|	6	|	2	|	Baixa		|	7		|
+| ALI Orçamento   | ALI  | 6   | 2   | Baixa        | 7	           |
+| ALI Atração     | ALI  | 4   | 2   | Baixa        | 7            |
+
 
 
 | Descrição             | Tipo | DER | ALR | Complexidade | Contribuição |
@@ -121,8 +142,12 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Deletar ingresso      | EE   | 4   | 1   | Baixa        | 3            |
 | Consultar ingresso    | CE   | 4   | 1   | Baixa        | 3            |
 | Comprar ingresso      | EE   | 4   | 1   | Baixa        | 3            |
-| Detalhar ingresso     | SE   | 4   | 2   | Baixa        | 4            |
-|	Inserir Orçamento	|	EE	|	 6	|	1	|	Baixa		|	    3		|
-|	Atualizar Orçamento 	|	EE	|	 6	|	2	|	Média		|	    4		|
-|	Deletar Orçamento	|	EE	|	 6	|	1	|	Baixa		|	    3		|
-|	Consultar Orçamento	|	CE	|	 6	|	1	|	Baixa		|	    3		|
+| Detalhar ingresso     | SE   | 4   | 2   | Baixa        | 3            |
+| Inserir Orçamento	| EE   | 6   | 1   | Baixa	  | 3		 |
+| Atualizar Orçamento 	| EE   | 6   | 2   | Média	  | 4		 |
+| Deletar Orçamento	| EE   | 6   | 1   | Baixa	  | 3		 |
+| Consultar Orçamento	| CE   | 6   | 1   | Baixa        | 3            |
+| Inserir atração       | EE   | 4   | 2   | Baixa        | 3            |
+| Alterar atração       | EE   | 4   | 2   | Baixa        | 3            |
+| Deletar atração       | EE   | 4   | 2   | Baixa        | 3            |
+| Consultar atração     | CE   | 4   | 2   | Baixa        | 3            |
