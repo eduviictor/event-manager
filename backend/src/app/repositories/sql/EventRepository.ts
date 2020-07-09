@@ -12,31 +12,21 @@ export default class EventRepository {
   protected saveInclude: Sequelize.IncludeOptions[] = [];
 
   public async create(model: Event): Promise<Event> {
-    try {
-      const res = await this.entityModel.create(this.cleanToSave(model));
-
-      return new this.formatter(res);
-    } catch (err) {
-      throw new ApiError(constants.errorTypes.db);
-    }
+    const res = await this.entityModel.create(this.cleanToSave(model));
+    return new this.formatter(res);
   }
 
-  public async update(codigo: string, model: Event): Promise<void> {
-    const event = await this.entityModel.update(this.cleanToSave(model), {
+  public async update(
+    codigo: string,
+    model: Event
+  ): Promise<[number, Event[]]> {
+    return this.entityModel.update(this.cleanToSave(model), {
       where: { codigo },
     });
-
-    if (event[0] !== 1) {
-      throw new ApiError(constants.errorTypes.notFound);
-    }
   }
 
-  public async delete(codigo: string): Promise<void> {
-    const event = await this.entityModel.destroy({ where: { codigo } });
-
-    if (event !== 1) {
-      throw new ApiError(constants.errorTypes.notFound);
-    }
+  public async delete(codigo: string): Promise<number> {
+    return this.entityModel.destroy({ where: { codigo } });
   }
 
   public async find(): Promise<Event[]> {
@@ -46,13 +36,7 @@ export default class EventRepository {
   }
 
   public async findOne<T>(codigo: string): Promise<Event> {
-    const event: Event = await this.entityModel.findByPk(codigo);
-
-    if (!event) {
-      throw new ApiError(constants.errorTypes.notFound);
-    }
-
-    return event;
+    return this.entityModel.findByPk(codigo);
   }
 
   protected cleanToSave(entity: any): any {
