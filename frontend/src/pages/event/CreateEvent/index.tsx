@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
 
+interface Event {
+  name: string
+  date: string
+  hour: string
+}
+
 const CreateEvent = () => {
+  const [event, setEvent] = useState<Event>();
+  const [formData, setFormData] = useState({
+    name: '',
+    date: '',
+    hour: '',
+  });
+
   function handleSubmit() {
     alert('função handleSubmit executada');
+  }
+
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>){
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   }
 
   return (
@@ -29,7 +47,7 @@ const CreateEvent = () => {
               type="text" 
               name="name" 
               id="name" 
-              onChange={()=>{}}
+              onChange={handleInputChange}
             />
           </div>
 
@@ -39,7 +57,7 @@ const CreateEvent = () => {
               type="text" 
               name="date" 
               id="date" 
-              onChange={()=>{}}
+              onChange={handleInputChange}
             />
           </div>
 
@@ -49,7 +67,7 @@ const CreateEvent = () => {
               type="text" 
               name="hour" 
               id="hour" 
-              onChange={()=>{}}
+              onChange={handleInputChange}
             />
           </div>
 
