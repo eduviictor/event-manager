@@ -1,14 +1,10 @@
-import express, {
-  Response as ExResponse,
-  Request as ExRequest,
-  NextFunction,
-} from 'express';
+import express, { Response as ExResponse, Request as ExRequest } from 'express';
 import cors from 'cors';
 import { RegisterRoutes } from '../dist/routes';
 import swaggerUi from 'swagger-ui-express';
 
 import './database';
-import { ValidateError } from 'tsoa';
+import { ErrorHandler } from './config/ErrorHandler';
 
 class App {
   public server: express.Express;
@@ -18,33 +14,35 @@ class App {
 
     this.middlewares();
     this.routes();
+
+    this.server.use(ErrorHandler.handleError);
   }
 
   private middlewares(): void {
     this.server.use(express.json());
     this.server.use(cors());
 
-    this.server.use(function errorHandler(
-      err: unknown,
-      req: ExRequest,
-      res: ExResponse,
-      next: NextFunction
-    ): ExResponse | void {
-      if (err instanceof ValidateError) {
-        console.warn(`Caught Validation Error for ${req.path}:`, err.fields);
-        return res.status(422).json({
-          message: 'Validation Failed',
-          details: err?.fields,
-        });
-      }
-      if (err instanceof Error) {
-        return res.status(500).json({
-          message: 'Internal Server Error',
-        });
-      }
+    // this.server.use(function errorHandler(
+    //   err: unknown,
+    //   req: ExRequest,
+    //   res: ExResponse,
+    //   next: NextFunction
+    // ): ExResponse | void {
+    //   if (err instanceof ValidateError) {
+    //     console.warn(`Caught Validation Error for ${req.path}:`, err.fields);
+    //     return res.status(422).json({
+    //       message: 'Validation Failed',
+    //       details: err?.fields,
+    //     });
+    //   }
+    //   if (err instanceof Error) {
+    //     return res.status(500).json({
+    //       message: 'Internal Server Error',
+    //     });
+    //   }
 
-      next();
-    });
+    //   next();
+    // });
 
     console.log('opa');
   }
