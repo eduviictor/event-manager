@@ -1,5 +1,3 @@
-import constants from '../../config/constants';
-import { ApiError } from '../../config/ErrorHandler';
 import EventRepository from '../repositories/sql/EventRepository';
 import Event from '../models/Event';
 

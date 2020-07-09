@@ -4,5 +4,5 @@ export interface IBaseRepository<EntityType> {
   delete(_id: string): Promise<{ n: number }>;
   find(): Promise<EntityType[]>;
   findOne<T>(query: any): Promise<EntityType>;
-  count(query: any): Promise<number>;
+  // count(query: any): Promise<number>;
 }

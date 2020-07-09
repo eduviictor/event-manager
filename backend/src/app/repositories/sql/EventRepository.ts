@@ -1,4 +1,5 @@
 import * as Sequelize from 'sequelize';
+import '../../../database';
 
 import { ApiError } from '../../../config/ErrorHandler';
 import constants from '../../../config/constants';
