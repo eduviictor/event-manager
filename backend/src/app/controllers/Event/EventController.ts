@@ -1,105 +1,37 @@
-import {
-  Controller,
-  Get,
-  Route,
-  Path,
-  Post,
-  Body,
-  Put,
-  Res,
-  TsoaResponse,
-  Delete,
-} from 'tsoa';
-import Event, {
-  EventAttributes,
-  EventAttributesBody,
-} from '../../models/Event';
+import { Controller, Get, Route, Path, Post, Body, Put, Delete } from 'tsoa';
+import Event, { EventAttributes } from '../../models/Event';
+
+import EventService from '../../services/EventService';
 
 @Route('events')
 export class EventController extends Controller {
-  @Get('')
-  public async index(
-    @Res() serverError: TsoaResponse<500, { message: string }>
-  ): Promise<EventAttributes[]> {
-    try {
-      const events: EventAttributes[] = await Event.findAll();
+  service: EventService = new EventService();
 
-      return events;
-    } catch (err) {
-      serverError(500, { message: 'Internal Server Error' });
-    }
+  @Get('')
+  public async index(): Promise<EventAttributes[]> {
+    return this.service.findAll();
   }
 
   @Get('{codigo}')
-  public async show(
-    @Path() codigo: number,
-    @Res() serverError: TsoaResponse<500, { message: string }>,
-    @Res() notFound: TsoaResponse<404, { message: string }>
-  ): Promise<EventAttributes> {
-    try {
-      const event: EventAttributes = await Event.findByPk(codigo);
-
-      if (!event) {
-        notFound(404, { message: 'Event not exists' });
-      }
-
-      return event;
-    } catch (err) {
-      serverError(500, { message: 'Internal Server Error' });
-    }
+  public async show(@Path() codigo: string): Promise<EventAttributes> {
+    return this.service.getById(codigo);
   }
 
   @Post('')
-  public async store(
-    @Body() body: EventAttributesBody
-  ): Promise<EventAttributes> {
-    const event: EventAttributes = await Event.create(body);
-
-    return event;
+  public async store(@Body() body: Event): Promise<EventAttributes> {
+    return this.service.create(body);
   }
 
   @Put('{codigo}')
   public async update(
-    @Path() codigo: number,
-    @Body() body: EventAttributesBody,
-    @Res() serverError: TsoaResponse<500, { message: string }>,
-    @Res() notFound: TsoaResponse<404, { message: string }>
-  ): Promise<string> {
-    try {
-      const event = await Event.update(body, {
-        where: { codigo: codigo },
-      });
-
-      if (event[0] !== 1) {
-        notFound(404, { message: 'Event not exists' });
-      }
-
-      return 'Event updated with success';
-    } catch (err) {
-      serverError(500, { message: 'Internal Server Error' });
-    }
+    @Path() codigo: string,
+    @Body() body: Event
+  ): Promise<Event> {
+    return this.service.update(codigo, body);
   }
 
   @Delete('{codigo}')
-  public async delete(
-    @Path() codigo: number,
-    @Res() serverError: TsoaResponse<500, { message: string }>,
-    @Res() notFound: TsoaResponse<404, { message: string }>
-  ): Promise<string> {
-    try {
-      const event = await Event.destroy({
-        where: { codigo: codigo },
-      });
-
-      console.log('event', event);
-
-      if (event !== 1) {
-        notFound(404, { message: 'Event not exists' });
-      }
-
-      return 'Event deleted with success';
-    } catch (err) {
-      serverError(500, { message: 'Internal Server Error' });
-    }
+  public async delete(@Path() codigo: string): Promise<string> {
+    return this.service.delete(codigo);
   }
 }

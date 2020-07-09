@@ -10,5 +10,5 @@
   "routes": {
     "routesDir": "dist"
   },
-  "ignore": ["**/node_modules/**"]
+  "ignore": ["**/node_modules/**", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }
