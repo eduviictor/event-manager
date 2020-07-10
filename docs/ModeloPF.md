@@ -65,13 +65,12 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 | ALI Atração       |        Atração         |   35 |
 | ALI Orçamento     |       Orçamento        |   35 |
 | ALI Ingresso      |        Ingresso        |   35 |
-| ALI Tipo Ingresso |     Tipo Ingresso      |   35 |
 | ALI Empresa       |        Empresa         |   35 |
 | ALI Localização   |      Localização       |   35 |
 
 | Contagem   | Total de Pontos Função |
 | ---------- | :--------------------: |
-| Indicativa |          350           |
+| Indicativa |          325           |
 
 ### Contagem estimativa (Ce)
 Analisa todos às funções da dados (ALI’s e AIE’s) com complexidade baixa, 7 PF cada ALI e 5 PF para cada AIE).
@@ -119,35 +118,35 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 | Descrição       | Tipo | DER | RLR | Complexidade | Contribuição |
 | --------------- | ---- | --- | --- | ------------ | ------------ |
-| ALI Organizador | ALI  | 5   | 2   | Baixa        | 7            |
-| ALI Evento      | ALI  | 9   | 5   | Média        | 10           |
-| ALI Ingresso    | ALI  | 4   | 4   | Baixa        | 7            |
-| ALI Orçamento   | ALI  | 6   | 2   | Baixa        | 7	           |
-| ALI Atração     | ALI  | 4   | 2   | Baixa        | 7            |
+| ALI Evento      | ALI  | 9   | 1   | Média        | 10           |
+| ALI Organizador | ALI  | 5   | 1   | Baixa        | 7            |
+| ALI Ingresso    | ALI  | 4   | 2   | Baixa        | 7            |
+| ALI Orçamento   | ALI  | 6   | 1   | Baixa        | 7	           |
+| ALI Atração     | ALI  | 4   | 1   | Baixa        | 7            |
 
 
 
-| Descrição             | Tipo | DER | ALR | Complexidade | Contribuição |
-| --------------------- | ---- | --- | --- | ------------ | ------------ |
-| Inserir organizador   | EE   | 5   | 1   | Baixa        | 3            |
-| Alterar organizador   | EE   | 5   | 1   | Baixa        | 3            |
-| Deletar organizador   | EE   | 5   | 1   | Baixa        | 3            |
-| Consultar organizador | CE   | 5   | 1   | Baixa        | 3            |
-| Inserir evento        | EE   | 9   | 5   | Média        | 4            |
-| Atualizar evento      | EE   | 9   | 5   | Média        | 4            |
-| Deletar evento        | EE   | 9   | 1   | Baixa        | 3            |
-| Consultar evento      | CE   | 9   | 1   | Baixa        | 3            |
-| Inserir ingresso      | EE   | 4   | 1   | Baixa        | 3            |
-| Atualizar ingresso    | EE   | 4   | 1   | Baixa        | 3            |
-| Deletar ingresso      | EE   | 4   | 1   | Baixa        | 3            |
-| Consultar ingresso    | CE   | 4   | 1   | Baixa        | 3            |
-| Comprar ingresso      | EE   | 4   | 1   | Baixa        | 3            |
-| Detalhar ingresso     | SE   | 4   | 2   | Baixa        | 3            |
-| Inserir Orçamento	| EE   | 6   | 1   | Baixa	  | 3		 |
-| Atualizar Orçamento 	| EE   | 6   | 2   | Média	  | 4		 |
-| Deletar Orçamento	| EE   | 6   | 1   | Baixa	  | 3		 |
-| Consultar Orçamento	| CE   | 6   | 1   | Baixa        | 3            |
-| Inserir atração       | EE   | 4   | 2   | Baixa        | 3            |
-| Alterar atração       | EE   | 4   | 2   | Baixa        | 3            |
-| Deletar atração       | EE   | 4   | 2   | Baixa        | 3            |
-| Consultar atração     | CE   | 4   | 2   | Baixa        | 3            |
+| Descrição             | Tipo | DER | ALR | Complexidade | Contribuição 	|
+| --------------------- | ---- | --- | --- | ------------ | ------------ 	|
+| Inserir evento        | EE   | 9   | 2   | Média        | 4            	|
+| Alterar evento      	| EE   | 9   | 6   | Alta	        | 6            	|
+| Deletar evento        | EE   | 9   | 6   | Alta	        | 6            	|
+| Consultar evento      | CE   | 9   | 6   | Alta	        | 6            	|
+| Inserir organizador   | EE   | 8   | 1   | Baixa        | 3            	|
+| Alterar organizador   | EE   | 8   | 2   | Média 	      | 4            	|
+| Deletar organizador   | EE   | 8   | 2   | Média        | 4            	|
+| Consultar organizador | CE   | 8   | 2   | Média        | 4            	|
+| Inserir ingresso      | EE   | 4   | 2   | Baixa        | 3            	|
+| Alterar ingresso    	| EE   | 4   | 2   | Baixa        | 3            	|
+| Deletar ingresso      | EE   | 4   | 2   | Baixa        | 3            	|
+| Consultar ingresso    | CE   | 4   | 2   | Baixa        | 3            	|
+| Detalhar ingresso     | SE   | 4   | 2   | Baixa        | 4            	|
+| Inserir orçamento			| EE   | 6   | 2   | Média	  		| 4		 					|
+| Alterar orçamento 		| EE   | 6   | 2   | Média	  		| 4		 					|
+| Deletar orçamento			| EE   | 6   | 2   | Média	  		| 4		 					|
+| Consultar orçamento		| CE   | 6   | 2   | Média        | 4            	|
+| Inserir atração       | EE   | 4   | 2   | Baixa        | 3            	|
+| Alterar atração       | EE   | 4   | 2   | Baixa        | 3            	|
+| Deletar atração       | EE   | 4   | 2   | Baixa        | 3            	|
+| Consultar atração     | CE   | 4   | 2   | Baixa        | 3            	|
+| Total									|			 |		 |		 |							|	81+38=119			|
