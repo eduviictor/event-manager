@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es2019",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["src/routes.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "include": ["src/**/*"]
+}
