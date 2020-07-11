@@ -85,10 +85,11 @@ empresa.
 
 ## Perfis dos usuários
 O sistema poderá ser utilizado por diversos usuários . Temos os seguintes perfis:
-|  Perfil                   |                                                    Descrição                                                                                                                      |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  **Perfil Cliente**       |  Este usuário visita o sistema a fim de obter ingressos para eventos, consultar eventos, insere informações sobre ele mesmo, consulta dados de atrações entre outras necessidades.|
-|  **Perfil Organizador**   |  Este usuário poderá cadastrar novos eventos ou criar eventos a partir de outros já existentes. Além disso, poderá alterar, remover e consultar eventos já criados.               |
+|  Perfil                   |                                                    Descrição                                                                                                                            |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  **Perfil Administrador** |  Este usuário possui todas as permissões disponíveis no sistema, buscando realizar operações que necessitem das mesmas, como por exemplo manutenção de registros de eventos no sistema. |
+|  **Perfil Cliente**       |  Este usuário visita o sistema a fim de obter ingressos para eventos, consultar eventos, insere informações sobre ele mesmo, consulta dados de atrações entre outras necessidades.      |
+|  **Perfil Organizador**   |  Este usuário poderá cadastrar novos eventos ou criar eventos a partir de outros já existentes. Além disso, poderá alterar, remover e consultar eventos já criados.                     |
 
 ## Riscos
 | Data       | Risco                                          | Prioridade | Responsável | Status  | Providência/Solução                                                                                |
