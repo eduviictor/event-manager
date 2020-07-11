@@ -1,5 +1,5 @@
 import { EventController } from './EventController';
-import Event, { EventAttributes } from '../../models/Event';
+import Event from '../../models/Event';
 
 describe('Event Controller', () => {
   const eventController = new EventController();
