@@ -81,7 +81,7 @@ empresa.
 |  **RF20 - Cadastrar mensagem na ouvidoria**| A aplicação possuirá uma interface de ouvidoria na qual os clientes e organizadores podem realizar sugestões e/ou reclamações sobre o sistema.             | Administrador
 |  **RF21 - Notificar usuários**             | A aplicação poderá enviar notificações sobre eventos por meio da localização do usuário caso o mesmo tenha permitido ser notificado, essa informação sobre a permissão constará no registro de status.| Administrador
 |  **RF22 - Manter notícias**                |A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país.                                          | Administrador
-
+|  **RF23 - Manter relatório**               | Relatórios têm como atributos: codigo, valor_investido, valor_arrecadado, cod_evento, receita.                                                             | Administrador
 
 ## Perfis dos usuários
 O sistema poderá ser utilizado por diversos usuários . Temos os seguintes perfis:
