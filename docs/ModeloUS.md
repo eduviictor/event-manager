@@ -115,4 +115,16 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.01 - Um Organizador, ao tentar cadastrar dados sobre orçamento, deverá informar os dados sobre o ingreço e preço inicial de venda. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de: cadastrado com sucesso e o nome do evento a que o ingresso pertence.
      * TA01.02 - O organizador informa, na tela de visualização de orçamento, insere o codigo do evento a que o ingresso esta relacionado. Caso os dados não existam, o mesmo recebe uma notificação o campo "xxxx" não foi informado corretamente .
      * TA01.03 - O organizador informa, na tela de alterar orçamento,e devera informar dado cnpj e se comprovado que ele é organizador do evento, mensagem: autorizado.
-     * TA01.04 - Ja autorizado organizador informa, na tela de alterar orçamento, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
+     * TA01.04 - Ja autorizado organizador informa, na tela de alterar orçamento, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.  
+* User Story US07 - Manter Relatório  
+  
+  * Descrição: O sistema deve gerar um relatório com  registros de todos os eventos cadastrados no mesmo utilizando os valores investidos, valores arrecadados. Essas informações serão analisadas e avaliadas entre um período. Ele pode ser consultado pelo Organizador do evento ou administrador com fim de visualização para melhor planejamento ou gerenciamento, exemplo: quais eventos deram maior lucro em 2019, quais tem valor de investimento menor ou maior lucro, etc. Um Relatório têm como atributos: código, valor investido, valor arrecadado, cod_evento e receita.  
+  * Requisitos envolvidos: RF23  
+  * Prioridade: Essencial  
+  * Estimativa:  
+  * Tempo gasto(real):  
+  * Testes de aceitação:  
+    * TA01.01 - Um Organizador ou administrador, ao tentar visualizar relatório informa as datas do período e recebe a lista de eventos acontecidas naquele período.
+    * TA01.02 - O organizador informa datas de forma errada. receber notificação o campo "xxxx" não foi informado corretamente.
+    * TA01.03 - Um Organizador ou administrador, ao tentar visualizar relatório informa as datas do período que não ocorreram eventos. receber notificação não ocorreram eventos durante esse período.
+
