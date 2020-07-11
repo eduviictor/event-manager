@@ -12,7 +12,6 @@ export default class EventService {
 
   public async getById(codigo: string): Promise<Event> {
     const event = await this.repository.findOne(codigo);
-    console.log('event', event);
     if (!event) {
       throw new ApiError(constants.errorTypes.notFound);
     }
