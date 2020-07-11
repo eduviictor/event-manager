@@ -83,7 +83,7 @@ empresa.
 |  **RF21 - Notificar usuários**                            | A aplicação poderá enviar notificações sobre eventos por meio da localização do usuário caso o mesmo tenha permitido ser notificado, essa informação sobre a permissão constará no registro de status.| Administrador
 |  **RF22 - Manter notícias**                               | A aplicação contará com uma central de notícias que exibirá informações referentes aos principais eventos do país.                                                                                    | Administrador
 |  **RF23 - Manter relatório**                              | Relatórios têm como atributos: codigo, valor_investido, valor_arrecadado, cod_evento, receita.                                                                                                        | Administrador
-|  **RF24 - Manter usuário membro da equipe organizadora**  | Membros da equipe organizadora têm como atributos: codigo, nome, cpf, nome, e-mail, telefone, estado, cidade.                                                                                         | Administrador
+|  **RF24 - Manter usuário membro da equipe organizadora**  | Membros da equipe organizadora têm como atributos: codigo, nome, cpf, nome, e-mail, telefone, estado, cidade.                                                                                         | Organizador
 |  **RF25 - Associar membro da equipe a evento**            | O organizador é capaz de associar um membro da equipe organizadora a um evento.                                                                                                                       | Organizador
 
 ## Perfis dos usuários
