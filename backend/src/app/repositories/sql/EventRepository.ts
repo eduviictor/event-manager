@@ -1,8 +1,6 @@
 import * as Sequelize from 'sequelize';
 import '../../../database';
 
-import { ApiError } from '../../../config/ErrorHandler';
-import constants from '../../../config/constants';
 import Event from '../../models/Event';
 
 export default class EventRepository {
@@ -12,7 +10,7 @@ export default class EventRepository {
   protected saveInclude: Sequelize.IncludeOptions[] = [];
 
   public async create(model: Event): Promise<Event> {
-    const res = await this.entityModel.create(this.cleanToSave(model));
+    const res = await this.entityModel.create(model);
     return new this.formatter(res);
   }
 
@@ -20,7 +18,7 @@ export default class EventRepository {
     codigo: string,
     model: Event
   ): Promise<[number, Event[]]> {
-    return this.entityModel.update(this.cleanToSave(model), {
+    return this.entityModel.update(model, {
       where: { codigo },
     });
   }
@@ -37,16 +35,5 @@ export default class EventRepository {
 
   public async findOne<T>(codigo: string): Promise<Event> {
     return this.entityModel.findByPk(codigo);
-  }
-
-  protected cleanToSave(entity: any): any {
-    const copy: any = new this.formatter(entity);
-    const loop = (value: any): any => {
-      if (!value || typeof value !== 'object') return;
-      /** formatting logic to save goes here */
-      Object.keys(value).forEach((key) => loop(value[key]));
-    };
-    loop(copy);
-    return copy;
   }
 }
