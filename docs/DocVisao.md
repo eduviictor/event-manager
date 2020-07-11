@@ -5,10 +5,11 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 ## Histórico de revisões
 
-| Data       | Versão | Descrição          | Autor |
-| ---------- | ------ | ------------------ | ----- |
-| 23/06/2020 | 1.0    | Documento revisado | Kael  |
-| 03/06/2020 | 1.1    | Documento revisado | Kael  |
+| Data       | Versão | Descrição                                                                                         | Autor |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------- | ----- |
+| 23/06/2020 | 1.0    | Documento revisado.                                                                               | Kael  |
+| 03/07/2020 | 1.1    | Documento revisado.                                                                               | Kael  |
+| 11/07/2020 | 1.2    | Correção de tabela de riscos, perfis de usuário e atualização de lista de requisitos funcionais.  | Kael  |
 
 ## Equipe e definição de papéis
 
@@ -93,11 +94,10 @@ O sistema poderá ser utilizado por diversos usuários . Temos os seguintes perf
 |  **Perfil Membro da Equipe Organizadora**   |  Este usuário terá permissões de realizar ações no evento previamente definidas e concedidas pelo usuário organizador.                                                                  |
 
 ## Riscos
-| Data       | Risco                                          | Prioridade | Responsável | Status  | Providência/Solução                                                                                |
-| ---------- | ---------------------------------------------- | ---------- | ----------- | ------- | -------------------------------------------------------------------------------------------------- |
-| 23/06/2020 | Fragilidade no acesso de usuário               | Baixa      | Todos       | Vigente | Criação da entidade usuário que possui os atributos login e senha                                  |
-| 23/06/2020 | Venda de ingressos                             | Alta       | Todos       | Vigente | Realizar testes até que o sistema esteja funcionando corretamente                                  |
-| 23/06/2020 | Quantidade de vagas                            | Alta       | Todos       | Vigente | Realizar testes e certificar que a contagem de vagas esteja implementada corretamente              |
-| 23/06/2020 | Curto prazo para desenvolver o sistema         | Alta       | Todos       | Vigente | Antecipar desenvolvimento                                                                          |
-| 23/06/2020 | Falta de técnica de membros da equipe          | Média      | Todos       | Vigente | Estudar, praticar e buscar ajuda com membros da equipe mais experientes nas ferramentas utilizadas |
-| 23/06/2020 | Acúmulo de tarefas não relacionadas ao projeto | Alta       | Todos       | Vigente | Buscar diminuir número de tarefas antecipadamente                                                  |
+| Data       | Risco                                                       | Prioridade | Responsável | Status  | Providência/Solução                                                                                                                 |
+| ---------- | ------------------------------------------------------------| ---------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------|
+| 23/06/2020 | Fragilidade na segurança do login do usuário.               | Média      | Todos       | Vigente | Utilização de bibliotecas/frameworks de transferência segura de dados e autenticação.                                               |
+| 23/06/2020 | Vender de ingresso com quantidade disponível 0 (esgotada).  | Alta       | Todos       | Vigente | Garantir sincronia da aplicação na parte do usuário com o servidor.                                                                 |
+| 23/06/2020 | Curto prazo para desenvolver o sistema.                     | Alta       | Todos       | Vigente | Realizar todas as tarefas solicitadas pelo gerente da iteração o mais rápido possível.                                              |
+| 23/06/2020 | Falta de técnica de membros da equipe.                      | Média      | Todos       | Vigente | Estudar, praticar e buscar ajuda com membros da equipe mais experientes nas ferramentas utilizadas.                                 |
+| 23/06/2020 | Acúmulo de tarefas não relacionadas ao projeto.             | Alta       | Todos       | Vigente | Buscar diminuir número de tarefas ou realizá-las o mais rápido possível, resultando em tempo disponível para dedicar-se ao projeto. |
