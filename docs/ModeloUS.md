@@ -91,7 +91,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
    * Descrição:O sistema deve manter um cadastro de empresa que é criado por um usuário organizador que utiliza a aplicação. Uma empresa tem como atributos cnpj, nome, serviço, telefone, e-mail. Uma empresa é cadastrada diretamente no sistema por um usuário organizador e consultada pelos usuários clientes.
 
-   * Requisitos envolvidos: RF09, RF11
+   * Requisitos envolvidos: RF11
    * Prioridade: Essencial
    * Estimativa: 10h
    * Tempo gasto(real):
@@ -149,5 +149,16 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
   * Estimativa: 10h
   * Tempo gasto(real): 
   * Testes de aceitação:
-      * TA01.01 - O usuário altera na tela de alterar evento os dados de uma atração previamente criada. Quando o evento for consultado, as informações de atrações cadastradas no evento devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+      * TA01.01 - O usuário informa os dados de uma atração na tela de alterar evento os dados de uma atração previamente criada. Quando o evento for consultado, as informações de atrações cadastradas no evento devem estar de acordo com os dados inseridos pelo usuário anteriormente.
       * TA01.02 - O usuário remove na tela de alterar evento os dados de uma atração previamente atribuída ao evento. Quando o evento for consultado, as informações da atração removida não devem mais estar disponíveis no evento.
+
+* User Story US10 - Atribuir empresa a evento
+
+  * Descrição: O sistema deve ser capaz de atribuir várias empresas a um evento ou removê-las.
+  * Requisitos envolvidos: RF09
+  * Prioridade: Essencial
+  * Estimativa: 10h
+  * Tempo gasto(real): 
+  * Testes de aceitação:
+      * TA01.01 - O usuário informa na tela de alterar evento os dados de uma empresa previamente criada. Quando o evento for consultado, as informações de empresas cadastradas no evento devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+      * TA01.02 - O usuário remove na tela de alterar evento os dados de uma empresa previamente atribuída ao evento. Quando o evento for consultado, as informações da empresa removida não devem mais estar disponíveis no evento.
