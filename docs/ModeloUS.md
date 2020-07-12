@@ -19,7 +19,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 
   * Descrição: O sistema deve manter um cadastro de evento que é criado por um organizador e consultado por clientes. Um evento tem os atributos código, nome, data, horario, código da atração, código da localização, código da empresa, código do orçamento, código de ingresso. O evento é cadastrado por um organizador diretamente no sistema e consultado pelo cliente que deseja participar.
-  * Requisitos envolvidos: RF05, RF06, RF07, RF09, RF12, RF13
+  * Requisitos envolvidos: RF05, RF06, RF09, RF12, RF13
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -128,3 +128,15 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
     * TA01.02 - O organizador informa datas de forma errada. receber notificação o campo "xxxx" não foi informado corretamente.
     * TA01.03 - Um Organizador ou administrador, ao tentar visualizar relatório informa as datas do período que não ocorreram eventos. receber notificação não ocorreram eventos durante esse período.
 
+
+
+* User Story US08 - Atribuir localização a evento
+
+  * Descrição: O sistema deve ser capaz de atribuir uma localização a um evento.
+  * Requisitos envolvidos: RF07
+  * Prioridade: Essencial
+  * Estimativa: 10h
+  * Tempo gasto(real): 
+  * Testes de aceitação:
+      * TA01.01 - O usuário informa na tela de criar evento todos os dados do evento, incluindo a localização deste último. Quando o evento for consultado, as informações de localização cadastradas devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+      * TA01.02 - O usuário altera na tela de alterar evento os dados da localização do evento. Quando o evento for consultado, as informações de localização cadastradas devem estar de acordo com os dados inseridos pelo usuário anteriormente.
