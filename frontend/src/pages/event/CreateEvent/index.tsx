@@ -2,22 +2,20 @@ import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import api from '../../../services/api';
+
+import { EventAttributesBody } from '../../../../../backend/src/app/models/Event'
+
 import './styles.css';
 
-interface Event {
-  name: string
-  date: string
-  hour: string
-}
-
-interface Localization {
-  id: number
-  street: string
-  neighborhood: string
-  local: string
-  city: string
-  uf: string
-}
+// interface Localization {
+//   id: number
+//   street: string
+//   neighborhood: string
+//   local: string
+//   city: string
+//   uf: string
+// }
 
 interface IBGEUFResponse {
   sigla: string
@@ -28,7 +26,6 @@ interface IBGECityResponse {
 }
 
 const CreateEvent = () => {
-  const [event, setEvent] = useState<Event>();
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [formData, setFormData] = useState({
@@ -84,11 +81,18 @@ const CreateEvent = () => {
 
     const { name, date, hour, uf, city, street, neighborhood, local } = formData;
     
-    const eventData = new FormData();
+    const EventBody: EventAttributesBody = {
+      codEmpresa: 1,
+      codAtracao: 1,
+      codLocal: 1,
+      codOrcamento: 1,
+      codIngresso: 1,
+      dados: name,
+      horario: hour,
+    };
     
-    eventData.append('name', name);
-    eventData.append('date', date);
-    eventData.append('hour', hour);
+    await api.post('/events', EventBody);
+
 
     const locationData = new FormData();
     locationData.append('uf', uf);
