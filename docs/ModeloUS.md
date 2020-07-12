@@ -2,9 +2,10 @@
 
 ## Histórico de Revisões do Modelo
 
-| Data       | Versão |     Descrição      |      Autor      |
-| ---------- | :----: | :----------------: | :-------------: |
-| 12/03/2020 |  1.0   | Documento inicial. | Arthur Medeiros |
+| Data       | Versão |     Descrição                                              |      Autor      |
+| ---------- | :----: | :--------------------------------------------------------: | :-------------: |
+| 12/03/2020 |  1.0   | Documento inicial.                                         | Arthur Medeiros |
+| 12/07/2020 |  1.1   | Separação de requisitos funcionais em outros user stories. | Kael Silva      |
 
 ## Prioridade do User Story
 
