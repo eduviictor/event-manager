@@ -5,7 +5,6 @@ import Event, { EventAttributes } from '../../models/Event';
 import EventService from '../../services/EventService';
 
 @Route('events')
-// @ProvideSingleton(EventController)
 export class EventController extends Controller {
   service: EventService = new EventService();
 
