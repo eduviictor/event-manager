@@ -9,9 +9,9 @@
 
 ## US00 - Manter Evento
 
-|       Teste     |           Descrição           |       Especificação      |     Resultado     |
-|-----------------|-------------------------------|--------------------------|-------------------|
-
+|       Teste                   |           Descrição                                                                                                                                                                                                         |       Especificação                                                                             |     Resultado                           |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------|
+| **Teste 01 - Incluir Evento** | O organizador informa na tela cadastrar evento todos os dados para registrar corretamente um evento, ao clicar em cadastrar ou criar ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso.| A implementação está de acordo com o especificado, desde que o banco de dados esteja acessível. | O evento é inserido no banco de dados.  |
 
 # Relatório de Bugs e Providências
 
