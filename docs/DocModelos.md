@@ -9,20 +9,20 @@ Data       | Versão      | Descrição                      | Autor
 ---------- | ----------- | ----------------               | ---------
 23/06/2020 | 1.0         |Documento inicial               | Ewerton silva
 23/06/2020 | 1.1         | Adição de Imagens dos modelos  | Ewerton silva
-23/06/2020 | 1.2         | Adição do dicionário de dados  | ewerton silva
-   --      | -           | -                              | -
+23/06/2020 | 1.2         | Adição do dicionário de dados  | werton silva
+14/07/2020 | 1.3         | Atualizando links das imagens  | Ewerton silva
    --      | -           | -                              | -
    --      | -           | -                              | -
            
 ## Modelo conceitual
 Segue abaixo o modelo conceitual:
 
-![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/docs/modelo_ER.png)
+![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/imagens/modelo_ER.png)
 
 ## Modelo de dados
  Segue abaixo o modelo relacional:
  
- ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/docs/Modelo%20relacional.png)
+ ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/imagens/Modelo%20relacional.png)
  
 ## Dicionário de dados
  ### Usuário
