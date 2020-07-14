@@ -24,3 +24,4 @@
 | **Teste 02 - Incluir Evento com Dados Inválidos** | Corrigir identificação de campos inválidos inseridos pelo usuário.  | Tarefa: Bug de Implementação. |
 | **Teste 03 - Alterar Evento**                     | Corrigir alteração no banco de dados e mensagem exibida ao alterar. | Tarefa: Bug de Implementação. |
 | **Teste 04 - Alterar Evento**                     | Corrigir identificação de campos inválidos inseridos pelo usuário.  | Tarefa: Bug de Implementação. |
+| **Teste 05 - Deletar Evento**                     | Corrigir transação de deletar evento no banco de dados.             | Tarefa: Bug de Implementação. |
