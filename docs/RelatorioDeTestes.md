@@ -19,5 +19,6 @@
 
 # Relatório de Bugs e Providências
 
-|       Teste     |                    Providência                     |       Tarefas/Tipo      |
-|-----------------|----------------------------------------------------|-------------------------|
+|       Teste                                       |                    Providência                                      |       Tarefas/Tipo            |
+|---------------------------------------------------|---------------------------------------------------------------------|-------------------------------|
+| **Teste 02 - Incluir Evento com Dados Inválidos** | Corrigir identificação de campos inválidos inseridos pelo usuário.  | Tarefa: Bug de Implementação. |
