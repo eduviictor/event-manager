@@ -70,7 +70,7 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 
 | Contagem   | Total de Pontos Função |
 | ---------- | :--------------------: |
-| Indicativa |          325           |
+| Indicativa |          315           |
 
 ### Contagem estimativa (Ce)
 Analisa todos às funções da dados (ALI’s e AIE’s) com complexidade baixa, 7 PF cada ALI e 5 PF para cada AIE).
@@ -116,37 +116,37 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 
 #### Análise detalhada
 
-| Descrição       | Tipo | DER | RLR | Complexidade | Contribuição |
-| --------------- | ---- | --- | --- | ------------ | ------------ |
-| ALI Evento      | ALI  | 9   | 1   | Média        | 10           |
-| ALI Organizador | ALI  | 5   | 1   | Baixa        | 7            |
-| ALI Ingresso    | ALI  | 4   | 2   | Baixa        | 7            |
-| ALI Orçamento   | ALI  | 6   | 1   | Baixa        | 7	           |
-| ALI Atração     | ALI  | 4   | 1   | Baixa        | 7            |
+| Descrição       | Tipo | DER | RLR (Nome das Tabelas)	     | Complexidade | Contribuição |
+| --------------- | ---- | --- | --------------------------- | ------------ | ------------ |
+| ALI Evento      | ALI  | 9   | 1 (Evento)   		     | Média 	    | 10	   |
+| ALI Organizador | ALI  | 5   | 1 (Organizador)  	     | Baixa 	    | 7		   |
+| ALI Ingresso    | ALI  | 4   | 2 (Ingresso, Tipo_ingresso) | Baixa 	    | 7 	   |
+| ALI Orçamento   | ALI  | 6   | 1 (Orçamento) 		     | Baixa  	    | 7	      	   |
+| ALI Atração     | ALI  | 4   | 1 (Atração)  		     | Baixa 	    | 7 	   |
+| Total		  |      |     |                             |              | 38           |
 
 
-
-| Descrição             | Tipo | DER | ALR | Complexidade | Contribuição 	|
-| --------------------- | ---- | --- | --- | ------------ | ------------ 	|
-| Inserir evento        | EE   | 9   | 2   | Média        | 4            	|
-| Alterar evento      	| EE   | 9   | 6   | Alta	        | 6            	|
-| Deletar evento        | EE   | 9   | 6   | Alta	        | 6            	|
-| Consultar evento      | CE   | 9   | 6   | Alta	        | 6            	|
-| Inserir organizador   | EE   | 8   | 1   | Baixa        | 3            	|
-| Alterar organizador   | EE   | 8   | 2   | Média 	      | 4            	|
-| Deletar organizador   | EE   | 8   | 2   | Média        | 4            	|
-| Consultar organizador | CE   | 8   | 2   | Média        | 4            	|
-| Inserir ingresso      | EE   | 4   | 2   | Baixa        | 3            	|
-| Alterar ingresso    	| EE   | 4   | 2   | Baixa        | 3            	|
-| Deletar ingresso      | EE   | 4   | 2   | Baixa        | 3            	|
-| Consultar ingresso    | CE   | 4   | 2   | Baixa        | 3            	|
-| Detalhar ingresso     | SE   | 4   | 2   | Baixa        | 4            	|
-| Inserir orçamento			| EE   | 6   | 2   | Média	  		| 4		 					|
-| Alterar orçamento 		| EE   | 6   | 2   | Média	  		| 4		 					|
-| Deletar orçamento			| EE   | 6   | 2   | Média	  		| 4		 					|
-| Consultar orçamento		| CE   | 6   | 2   | Média        | 4            	|
-| Inserir atração       | EE   | 4   | 2   | Baixa        | 3            	|
-| Alterar atração       | EE   | 4   | 2   | Baixa        | 3            	|
-| Deletar atração       | EE   | 4   | 2   | Baixa        | 3            	|
-| Consultar atração     | CE   | 4   | 2   | Baixa        | 3            	|
-| Total									|			 |		 |		 |							|	81+38=119			|
+| Descrição             | Tipo | DER | ALR (Nome das Tabelas)						   | Complexidade | Contribuição |
+| --------------------- | ---- | --- | ------------------------------------------------------------------- | ------------ | ------------ |
+| Inserir evento        | EE   | 9   | 3 (Localização, Organizador, Empresa)   				   | Média        | 4            |
+| Alterar evento      	| EE   | 9   | 6 (Ingresso, Orçamento, Atração, Localização, Empresa, Organizador) | Alta	  | 6            |
+| Deletar evento        | EE   | 9   | 6 (Ingresso, Orçamento, Atração, Localização, Empresa, Organizador) | Alta         | 6            |
+| Consultar evento      | CE   | 9   | 6 (Ingresso, Orçamento, Atração, Localização, Empresa, Organizador) | Alta         | 6            |
+| Inserir organizador   | EE   | 8   | 1 (Organizador)							   | Baixa        | 3            |
+| Alterar organizador   | EE   | 8   | 1 (Organizador)							   | Média 	  | 4            |
+| Deletar organizador   | EE   | 8   | 1 (Organizador)							   | Média        | 4            |
+| Consultar organizador | CE   | 8   | 1 (Organizador)							   | Média        | 4            |
+| Inserir ingresso      | EE   | 4   | 2 (Ingresso, Tipo_ingresso)				           | Baixa        | 3            |
+| Alterar ingresso    	| EE   | 4   | 2 (Ingresso, Tipo_ingresso)					   | Baixa        | 3            |
+| Deletar ingresso      | EE   | 4   | 2 (Ingresso, Tipo_ingresso)					   | Baixa        | 3            |
+| Consultar ingresso    | CE   | 4   | 2 (Ingresso, Tipo_ingresso)					   | Baixa        | 3            |
+| Detalhar ingresso     | SE   | 4   | 2 (Ingresso, Tipo_ingresso)				           | Baixa        | 4            |
+| Inserir orçamento	| EE   | 6   | 2 (Orçamento, Evento)					           | Média        | 4		 |
+| Alterar orçamento 	| EE   | 6   | 2 (Orçamento, Evento)						   | Média        | 4            |
+| Deletar orçamento	| EE   | 6   | 2 (Orçamento, Evento)						   | Média        | 4            |
+| Consultar orçamento	| CE   | 6   | 2 (Orçamento, Evento)						   | Média        | 4            |
+| Inserir atração       | EE   | 4   | 2 (Atração, Evento)				  		   | Baixa        | 3            |
+| Alterar atração       | EE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
+| Deletar atração       | EE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
+| Consultar atração     | CE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 81		 |
