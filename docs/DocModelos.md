@@ -22,7 +22,7 @@ Segue abaixo o modelo conceitual:
 ## Modelo de dados
  Segue abaixo o modelo relacional:
  
- ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/docs/Modelo%20relacional.png)
+ ![Modelo relacional](https://github.com/eduviictor/event-manager/blob/master/imagens/Modelo%20relacional.png)
  
 ## Dicionário de dados
  ### Usuário
