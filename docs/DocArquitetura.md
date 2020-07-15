@@ -10,7 +10,7 @@ Data        | Versão | Descrição                                             
 
 # Visão Geral
 <p align="center">
-  <img src="https://github.com/arthurmdros/event-manager/blob/master/docs/modeloArquitetural.png" />
+  <img src="https://github.com/eduviictor/event-manager/blob/master/imagens/modeloArquitetural.png" />
 </p>
 <p align="center">
 Figura 1. Imagem da arquitetura do sistema.
