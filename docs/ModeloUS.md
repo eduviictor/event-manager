@@ -2,9 +2,10 @@
 
 ## Histórico de Revisões do Modelo
 
-| Data       | Versão |     Descrição      |      Autor      |
-| ---------- | :----: | :----------------: | :-------------: |
-| 12/03/2020 |  1.0   | Documento inicial. | Arthur Medeiros |
+| Data       | Versão |     Descrição                                              |      Autor      |
+| ---------- | :----: | :--------------------------------------------------------: | :-------------: |
+| 12/03/2020 |  1.0   | Documento inicial.                                         | Arthur Medeiros |
+| 12/07/2020 |  1.1   | Separação de requisitos funcionais em outros user stories. | Kael Silva      |
 
 ## Prioridade do User Story
 
@@ -19,7 +20,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 
   * Descrição: O sistema deve manter um cadastro de evento que é criado por um organizador e consultado por clientes. Um evento tem os atributos código, nome, data, horario, código da atração, código da localização, código da empresa, código do orçamento, código de ingresso. O evento é cadastrado por um organizador diretamente no sistema e consultado pelo cliente que deseja participar.
-  * Requisitos envolvidos: RF05, RF06, RF07, RF09, RF12, RF13
+  * Requisitos envolvidos: RF05, RF06, RF09
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -61,7 +62,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US03 - Manter Atração
 
    * Descrição: O sistema deve manter um cadastro de uma ou mais atrações pertencentes a um único evento(no qual deverá ser criado por um organizador, que terá acesso posteriormente a parte de criar atrações para esse evento). Uma atração tem os atributos código, nome, e-mail e telefone. Uma atração é criada pelo mesmo usúario que criou o respectivo evento, podendo ser acessado pelos clientes.
-   * Requisitos envolvidos: RF12, RF13
+   * Requisitos envolvidos: RF13
    * Prioridade: Essencial
    * Estimativa: 10h
    * Tempo gasto(real):
@@ -91,7 +92,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
    * Descrição:O sistema deve manter um cadastro de empresa que é criado por um usuário organizador que utiliza a aplicação. Uma empresa tem como atributos cnpj, nome, serviço, telefone, e-mail. Uma empresa é cadastrada diretamente no sistema por um usuário organizador e consultada pelos usuários clientes.
 
-   * Requisitos envolvidos: RF09, RF11
+   * Requisitos envolvidos: RF11
    * Prioridade: Essencial
    * Estimativa: 10h
    * Tempo gasto(real):
@@ -115,4 +116,50 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.01 - Um Organizador, ao tentar cadastrar dados sobre orçamento, deverá informar os dados sobre o ingreço e preço inicial de venda. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de: cadastrado com sucesso e o nome do evento a que o ingresso pertence.
      * TA01.02 - O organizador informa, na tela de visualização de orçamento, insere o codigo do evento a que o ingresso esta relacionado. Caso os dados não existam, o mesmo recebe uma notificação o campo "xxxx" não foi informado corretamente .
      * TA01.03 - O organizador informa, na tela de alterar orçamento,e devera informar dado cnpj e se comprovado que ele é organizador do evento, mensagem: autorizado.
-     * TA01.04 - Ja autorizado organizador informa, na tela de alterar orçamento, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.
+     * TA01.04 - Ja autorizado organizador informa, na tela de alterar orçamento, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.  
+* User Story US07 - Manter Relatório  
+  
+  * Descrição: O sistema deve gerar um relatório com  registros de todos os eventos cadastrados no mesmo utilizando os valores investidos, valores arrecadados. Essas informações serão analisadas e avaliadas entre um período. Ele pode ser consultado pelo Organizador do evento ou administrador com fim de visualização para melhor planejamento ou gerenciamento, exemplo: quais eventos deram maior lucro em 2019, quais tem valor de investimento menor ou maior lucro, etc. Um Relatório têm como atributos: código, valor investido, valor arrecadado, cod_evento e receita.  
+  * Requisitos envolvidos: RF23  
+  * Prioridade: Essencial  
+  * Estimativa:  
+  * Tempo gasto(real):  
+  * Testes de aceitação:  
+    * TA01.01 - Um Organizador ou administrador, ao tentar visualizar relatório informa as datas do período e recebe a lista de eventos acontecidas naquele período.
+    * TA01.02 - O organizador informa datas de forma errada. receber notificação o campo "xxxx" não foi informado corretamente.
+    * TA01.03 - Um Organizador ou administrador, ao tentar visualizar relatório informa as datas do período que não ocorreram eventos. receber notificação não ocorreram eventos durante esse período.
+
+
+* User Story US08 - Atribuir localização a evento
+
+  * Descrição: O sistema deve ser capaz de atribuir uma localização a um evento.
+  * Requisitos envolvidos: RF07
+  * Prioridade: Essencial
+  * Estimativa: 10h
+  * Tempo gasto(real): 
+  * Testes de aceitação:
+      * TA01.01 - O usuário informa na tela de criar evento todos os dados do evento, incluindo a localização deste último. Quando o evento for consultado, as informações de localização cadastradas devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+      * TA01.02 - O usuário altera na tela de alterar evento os dados da localização do evento. Quando o evento for consultado, as informações de localização cadastradas devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+
+
+* User Story US09 - Atribuir atração a evento
+
+  * Descrição: O sistema deve ser capaz de atribuir várias atrações a um evento ou removê-las.
+  * Requisitos envolvidos: RF12
+  * Prioridade: Essencial
+  * Estimativa: 10h
+  * Tempo gasto(real): 
+  * Testes de aceitação:
+      * TA01.01 - O usuário informa os dados de uma atração na tela de alterar evento os dados de uma atração previamente criada. Quando o evento for consultado, as informações de atrações cadastradas no evento devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+      * TA01.02 - O usuário remove na tela de alterar evento os dados de uma atração previamente atribuída ao evento. Quando o evento for consultado, as informações da atração removida não devem mais estar disponíveis no evento.
+
+* User Story US10 - Atribuir empresa a evento
+
+  * Descrição: O sistema deve ser capaz de atribuir várias empresas a um evento ou removê-las.
+  * Requisitos envolvidos: RF09
+  * Prioridade: Essencial
+  * Estimativa: 10h
+  * Tempo gasto(real): 
+  * Testes de aceitação:
+      * TA01.01 - O usuário informa na tela de alterar evento os dados de uma empresa previamente criada. Quando o evento for consultado, as informações de empresas cadastradas no evento devem estar de acordo com os dados inseridos pelo usuário anteriormente.
+      * TA01.02 - O usuário remove na tela de alterar evento os dados de uma empresa previamente atribuída ao evento. Quando o evento for consultado, as informações da empresa removida não devem mais estar disponíveis no evento.
