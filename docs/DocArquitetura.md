@@ -67,3 +67,19 @@ Camada de distribuição  |          Classe de comunicação com o banco, classe
 Front-End               |                  Interface de comunicação com o usuário do portal      |      React
 Build                   |                  Programação da IDE para validação do código fonte     |      Visual Studio Code
 Deploy                  |                  Configuração da IDE de deploy                         |     Visual Studio Code
+
+
+## Tecnologias
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" />
+</p>
+
+O framework Node foi projetado para facilitar a criação de aplicação de rede escaláveis, ou seja, muitas comunicação podem ser executadas simultaneamente. Isso se opõe ao modelo utilizado atualmente em que os threads do SO são empregados. A rede torna-se ineficiente e muito difícil de se usar, já utilizando-se do Node os seus usuários não precisam preocupar-se com bloqueios de processos, porque não há bloqueios. O Node não possui, em sua grande parte, funções que executam diretamente, o processo nunca bloqueia. Sendo assim, o Node torna-se uma ótima opção para aplicações que precisam de uma comunicação em tempo real ou de ambientes distribuídos.
+
+<p align="center">
+  <img src="https://i2.wp.com/blog.hariken.co/wp-content/uploads/2019/03/react-logo.png?ssl=1" />
+</p>
+
+O framework React é baseado em componentes encapsulados e não em templates, possibilitando na manipulação da árvore de elementos do HTML através da Virtual-DOM. Isso acaba por evitar alguns conflitos que ocorreriam por estar utilizando de JavaScript puro com HTML. Além disso, com a lógica de componentização facilita também a manipulação de dados ao longo da aplicação por meio de estados que são salvos fora do DOM. O framework ainda faz com que a criação de interfaces interativas seja eficientes, pois cada view da aplicação possuirá componentes que serão atualizados e renderizados apenas quando necessário, utilizando-se dos estados da aplicação, ou seja, somente quando há alterações nos dados é que um componente será renderizado.
+
