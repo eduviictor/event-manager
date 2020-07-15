@@ -83,3 +83,15 @@ O framework Node foi projetado para facilitar a criação de aplicação de rede
 
 O framework React é baseado em componentes encapsulados e não em templates, possibilitando na manipulação da árvore de elementos do HTML através da Virtual-DOM. Isso acaba por evitar alguns conflitos que ocorreriam por estar utilizando de JavaScript puro com HTML. Além disso, com a lógica de componentização facilita também a manipulação de dados ao longo da aplicação por meio de estados que são salvos fora do DOM. O framework ainda faz com que a criação de interfaces interativas seja eficientes, pois cada view da aplicação possuirá componentes que serão atualizados e renderizados apenas quando necessário, utilizando-se dos estados da aplicação, ou seja, somente quando há alterações nos dados é que um componente será renderizado.
 
+
+# Referências
+
++ [Node](https://nodejs.org/pt-br/about/)
+- [React](https://pt-br.reactjs.org/)
++ [MVC link 1](https://tableless.com.br/mvc-afinal-e-o-que/#:~:text=MVC%20%C3%A9%20nada%20mais%20que,camada%20de%20controle(controller).)
+- [MVC link 2](https://www.devmedia.com.br/introducao-ao-padrao-mvc/29308)
++ [RF link 1](https://www.devmedia.com.br/artigo-engenharia-de-software-3-requisitos-nao-funcionais/9525)
+- [RF link 2](http://www.dsc.ufcg.edu.br/~jacques/cursos/proj/gerenciadesenv/naofuncionais.htm)
++ [RF link 3](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional#:~:text=Requisitos%20n%C3%A3o%20funcionais%20s%C3%A3o%20os,disponibilidade%2C%20manuten%C3%A7%C3%A3o%20e%20tecnologias%20envolvidas.)
+- Peter Eeles; Peter Cripps. The Process of Software Architecting, Addison-Wesley Professional, 2009.
++ Paul Clements; Felix Bachmann; Len Bass; David Garlan; James Ivers; Reed Little; Paulo Merson; Robert Nord; Judith Stafford. Documenting Software Architectures: Views and Beyond, Second Edition, Addison-Wesley Professional, 2010.
