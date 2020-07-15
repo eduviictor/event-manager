@@ -58,3 +58,12 @@ A arquitetura do projeto seguirá o padrão Model-View-Controller. Essa arquitet
 2. Deve ser usado o framework React para o front-end do sistema.
 3. Deve ser usado o framework Node para o back-end do sistema.
 
+# Mecanismos arquiteturais
+
+   Mecanismo de Análise |                   Mecanismo de Design                                  |   Mecanismo de Implementação
+------------------------|------------------------------------------------------------------------|-------------------------------
+Persistência            |                  Banco de dados relacional                             |      PostgreSQL
+Camada de distribuição  |          Classe de comunicação com o banco, classe de persistência     |      Node Js
+Front-End               |                  Interface de comunicação com o usuário do portal      |      React
+Build                   |                  Programação da IDE para validação do código fonte     |      Visual Studio Code
+Deploy                  |                  Configuração da IDE de deploy                         |     Visual Studio Code
