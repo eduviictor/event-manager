@@ -7,6 +7,7 @@ Data        | Versão | Descrição                                             
 ------------|--------|----------------------------------------------------------------|--------------------
 29/06/2020  | 1.0    | Documento inicial                                              | Kael
 04/07/2020  | 1.1    | Adicionando novos itens                                        | Arthur Medeiros
+14/07/2020  | 1.2    | Adicionando novos itens                                        | Arthur Medeiros
 
 # Visão Geral
 <p align="center">
@@ -27,3 +28,33 @@ A arquitetura do projeto seguirá o padrão Model-View-Controller. Essa arquitet
    + ## Controller
    Responsável por receber todas as requisições do usuário. A camada controller possui métodos chamados actions que orientam o fluxo de dados
    na aplicaçã, como por exemplo, qual model será usado, qual view será exibida para o usuário.
+
+# Requisitos Não Funcionais
+
++ ### Desempenho
+
+1. A pagina principal tem que ser carregada em no máximo 3 segundos com uma conexão mínima de 256kbps.
+2. As páginas que recuperam informações de sistemas legados, devem responder em dois segundos a cada 10.000 (contextual) em uma conexão de 256kbps
+3. As páginas que recuperam informações de transações no banco de dados da própria aplicação, deve responder em um segundo a cada 10.000 registros (contextual), 
+   retornados em uma conexão de 256kbps.    
+4. O servidor deve suportar 100.000 conexões simultâneas sem perda de desempenho.                      
+
+- ### Interoperabilidade
+
+1. Deve ser desenvolvido com banco de dados PostgreSQL ou algum outro que use do serviço de nuvem (Ex: Amazon Web Services). 
+
++ ### Portabilidade
+
+1. Deve ser desenvolvido para plataforma web.
+
+- ### Usabilidade
+
+1. Deve ser usado por usuários treinados para as funcionalidades apresentadas pelo sistema.
+2. Os usuários serão divididos entre organizadores de eventos e clientes.
+
++ ### Implementação
+
+1. Deve ser desenvolvido utilizando-se da linguagem JavaScript.
+2. Deve ser usado o framework React para o front-end do sistema.
+3. Deve ser usado o framework Node para o back-end do sistema.
+
