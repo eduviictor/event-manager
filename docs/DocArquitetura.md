@@ -16,3 +16,14 @@ Data        | Versão | Descrição                                             
 Figura 1. Imagem da arquitetura do sistema.
 </p>
 
+A arquitetura do projeto seguirá o padrão Model-View-Controller. Essa arquitetura funciona da seguinte forma: 
+
+   + ## Model
+   Quando há processos de leitura e escrita de dados essa camada irá ser responsável por realizar as operações lógicas de manipulação.
+   
+   + ## View
+   É a camada responsável pela apresentação dos dados para o usuário.
+   
+   + ## Controller
+   Responsável por receber todas as requisições do usuário. A camada controller possui métodos chamados actions que orientam o fluxo de dados
+   na aplicaçã, como por exemplo, qual model será usado, qual view será exibida para o usuário.
