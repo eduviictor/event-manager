@@ -59,7 +59,21 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
       * TA01.04 - O organizador clica na aba criar evento e é redirecionado para a página de criação de evento.
       * TA01.05 - O organizador clica na aba de consultar eventos cadastrados e é redirecionado para uma página com a lista de eventos que cadastrou. Após clicar no símbolo de lupa no fim da linha de algum evento cadastrado, o organizador é redirecionado para uma página na qual há detalhes sobre o evento.
       
-* User Story US03 - Manter Atração
+* User Story US03 - Manter cliente
+
+  * Descrição: O sistema deve manter um cadastro de cliente que é criado por uma pessoa que utiliza a aplicação. Um cliente tem os atributos cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso. Os clientes adquirem ingressos de eventos nos quais os organizadores cadastram as informações.
+  * Requisitos envolvidos: RF01, RF03, RF15
+  * Prioridade: Essencial
+  * Estimativa: 10h
+  * Tempo gasto(real): 
+  * Testes de aceitação:
+      * TA01.01 - O usuário sem cadastro informa, na tela de cadastrar cliente, seus dados para cadastrar um novo cliente. Ao clicar em salvar cadastro, ele é notificado com uma mensagem de sucesso no cadastro.
+      * TA01.02 - O cliente clica na aba de alterar dados, resultando no redirecionamento para a página de alteração de dados do referido cliente, que em seguida insere corretamente todos os dados nos campos que deseja alterar. Após isso, o cliente clica em salvar dados e uma mensagem de sucesso na alteração de dados é exibida.
+      * TA01.03 - O cliente clica na aba de alterar dados, sendo redirecionado para a página de alteração de dados, que por sua vez possui um botão de deletar cliente. Ao ser clicado, surge uma mensagem perguntando ao usuário se ele realmente deseja deletar, com botões de resposta para o cliente clicar (sim ou não). Ao clicar no botão não, nada acontece. Ao clicar no botão sim, o cliente é deletado e a página redireciona para a página principal do sistema.
+      * TA01.04 - O cliente clica na aba criar evento e é redirecionado para a página de criação de evento.
+      * TA01.05 - O cliente clica na aba de buscar eventos e é redirecionado para uma página com a lista de eventos daisponíveis. Após clicar no símbolo de lupa no fim da linha de algum evento cadastrado, o cliente é redirecionado para uma página na qual há detalhes sobre o evento.      
+      
+* User Story US04 - Manter Atração
 
    * Descrição: O sistema deve manter um cadastro de uma ou mais atrações pertencentes a um único evento(no qual deverá ser criado por um organizador, que terá acesso posteriormente a parte de criar atrações para esse evento). Uma atração tem os atributos código, nome, e-mail e telefone. Uma atração é criada pelo mesmo usúario que criou o respectivo evento, podendo ser acessado pelos clientes.
    * Requisitos envolvidos: RF13
@@ -73,7 +87,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.04 - O organizador informa, na tela alterar atração, os dados invalidos para alterar uma atração, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
      * TA01.05 - O organizador informa, na tela deletar atração, a atração que deseja ser deletada do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de: Atração deletada com sucesso.
 
-* User Story US04 - Manter Ingresso
+* User Story US05 - Manter Ingresso
 
    * Descrição: O sistema deverá permitir a compra/aquisição de ingressos por parte do cliente e a disponibilização dos mesmos com suas respectivas informações por parte dos organizadores.
    * Requisitos envolvidos: RF15, RF16, RF17, RF19
@@ -88,7 +102,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.05 - O organizador informa, na tela alterar ingresso, os dados invalidos para alterar um ingresso, ao clicar em salvar alterações ele é notificado com uma mensagem de: Campo não foi informado corretamente.
      * TA01.06 - O organizador informa, na tela invalidar ingresso, o ingresso que deseja ser inválidado no banco de dados, ao clicar em invalidar ele é notificado com uma mensagem de: Ingresso invalidado com sucesso.
      
-* User Story US05 - Manter Empresa
+* User Story US06 - Manter Empresa
 
    * Descrição:O sistema deve manter um cadastro de empresa que é criado por um usuário organizador que utiliza a aplicação. Uma empresa tem como atributos cnpj, nome, serviço, telefone, e-mail. Uma empresa é cadastrada diretamente no sistema por um usuário organizador e consultada pelos usuários clientes.
 
@@ -104,7 +118,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.05 - O organizador informa, na tela deletar empresa, a empresa que deseja ser deletada do banco de dados, ao clicar em deletar ele é notificado com uma mensagem de: Empresa deletada com sucesso.
      * TA01.06 - Uma empresa, quando cadastrada no sistema, pode ser referenciada em eventos posteriores, sem precisar fazer o cadastro novamente.  
      
-* User Story US06 - Manter Orçamento
+* User Story US07 - Manter Orçamento
 
    * Descrição: O sistema deve manter o registro de Informações sobre finanças como ingressos vendidos, valores arrecadados, valores investidos enfim, informações que serão analisadas e avaliadas em determinado período. Um Orçamento têm como atributos: código, descrição, ingressos vendidos, valor arrecadado, valor investido, receita. Ele pode ser consultado pelo Organizador.
 
@@ -117,7 +131,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
      * TA01.02 - O organizador informa, na tela de visualização de orçamento, insere o codigo do evento a que o ingresso esta relacionado. Caso os dados não existam, o mesmo recebe uma notificação o campo "xxxx" não foi informado corretamente .
      * TA01.03 - O organizador informa, na tela de alterar orçamento,e devera informar dado cnpj e se comprovado que ele é organizador do evento, mensagem: autorizado.
      * TA01.04 - Ja autorizado organizador informa, na tela de alterar orçamento, os dados válidos que deseja alterar. Em seguida, receberá uma notificação de: Alterado com sucesso.  
-* User Story US07 - Manter Relatório  
+* User Story US08 - Manter Relatório  
   
   * Descrição: O sistema deve gerar um relatório com  registros de todos os eventos cadastrados no mesmo utilizando os valores investidos, valores arrecadados. Essas informações serão analisadas e avaliadas entre um período. Ele pode ser consultado pelo Organizador do evento ou administrador com fim de visualização para melhor planejamento ou gerenciamento, exemplo: quais eventos deram maior lucro em 2019, quais tem valor de investimento menor ou maior lucro, etc. Um Relatório têm como atributos: código, valor investido, valor arrecadado, cod_evento e receita.  
   * Requisitos envolvidos: RF23  
@@ -130,7 +144,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
     * TA01.03 - Um Organizador ou administrador, ao tentar visualizar relatório informa as datas do período que não ocorreram eventos. receber notificação não ocorreram eventos durante esse período.
 
 
-* User Story US08 - Atribuir localização a evento
+* User Story US09 - Atribuir localização a evento
 
   * Descrição: O sistema deve ser capaz de atribuir uma localização a um evento.
   * Requisitos envolvidos: RF07
@@ -142,7 +156,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
       * TA01.02 - O usuário altera na tela de alterar evento os dados da localização do evento. Quando o evento for consultado, as informações de localização cadastradas devem estar de acordo com os dados inseridos pelo usuário anteriormente.
 
 
-* User Story US09 - Atribuir atração a evento
+* User Story US10 - Atribuir atração a evento
 
   * Descrição: O sistema deve ser capaz de atribuir várias atrações a um evento ou removê-las.
   * Requisitos envolvidos: RF12
@@ -153,7 +167,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
       * TA01.01 - O usuário informa os dados de uma atração na tela de alterar evento os dados de uma atração previamente criada. Quando o evento for consultado, as informações de atrações cadastradas no evento devem estar de acordo com os dados inseridos pelo usuário anteriormente.
       * TA01.02 - O usuário remove na tela de alterar evento os dados de uma atração previamente atribuída ao evento. Quando o evento for consultado, as informações da atração removida não devem mais estar disponíveis no evento.
 
-* User Story US10 - Atribuir empresa a evento
+* User Story US11 - Atribuir empresa a evento
 
   * Descrição: O sistema deve ser capaz de atribuir várias empresas a um evento ou removê-las.
   * Requisitos envolvidos: RF09
