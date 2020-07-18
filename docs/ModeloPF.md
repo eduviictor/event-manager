@@ -51,6 +51,11 @@ Lista de user stories e os requisitos que estão associados.
 ### US06 -Manter orçamento
 * RF14 - Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.
 
+### US07 - Manter cliente
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
+* RF03 - Usuários do tipo cliente têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso.
+* RF15 - Ingressos podem ser adquiridos pelos clientes.
+
 
 ## Tipo de Contagem
 
@@ -126,7 +131,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Orçamento   | ALI  | 6   | 1 (Orçamento) 		     | Baixa  	    | 7	      	   |
 | ALI Atração     | ALI  | 4   | 1 (Atração)  		     | Baixa 	    | 7 	   |
 | ALI Usuário     | ALI  | 2   | 1 (Usuário)  		     | Baixa 	    | 7 	   |
-| Total		  |      |     |                             |              | 38           |
+| ALI Cliente     | ALI  | 7   | 1 (Cliente)  		     | Baixa 	    | 7 	   |
+| Total		  |      |     |                             |              | 52           |
 
 
 | Descrição             | Tipo | DER | ALR (Nome das Tabelas)						   | Complexidade | Contribuição |
@@ -156,4 +162,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Alterar usuário   	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa 	  | 3            |
 | Deletar usuário   	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa        | 3            |
 | Consultar usuário 	| CE   | 1   | 1 (Usuário)							   | Baixa        | 3            |
-| Total			|      |     |	 						   		   |              | 93		 |
+| Inserir cliente  	| EE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
+| Alterar cliente   	| EE   | 7   | 1 (Cliente)							   | Baixa 	  | 3            |
+| Deletar cliente   	| EE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
+| Consultar cliente 	| CE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 105		 |
