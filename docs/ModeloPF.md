@@ -52,7 +52,6 @@ Lista de user stories e os requisitos que estão associados.
 * RF14 - Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.
 
 
-
 ## Tipo de Contagem
 
 ### Contagem indicativa (Ci)
@@ -126,6 +125,7 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Ingresso    | ALI  | 4   | 2 (Ingresso, Tipo_ingresso) | Baixa 	    | 7 	   |
 | ALI Orçamento   | ALI  | 6   | 1 (Orçamento) 		     | Baixa  	    | 7	      	   |
 | ALI Atração     | ALI  | 4   | 1 (Atração)  		     | Baixa 	    | 7 	   |
+| ALI Usuário     | ALI  | 2   | 1 (Usuário)  		     | Baixa 	    | 7 	   |
 | Total		  |      |     |                             |              | 38           |
 
 
@@ -152,4 +152,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Alterar atração       | EE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
 | Deletar atração       | EE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
 | Consultar atração     | CE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
-| Total			|      |     |	 						   		   |              | 81		 |
+| Inserir usuário  	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa        | 3            |
+| Alterar usuário   	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa 	  | 3            |
+| Deletar usuário   	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa        | 3            |
+| Consultar usuário 	| CE   | 1   | 1 (Usuário)							   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 93		 |
