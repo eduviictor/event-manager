@@ -132,7 +132,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Atração     | ALI  | 4   | 1 (Atração)  		     | Baixa 	    | 7 	   |
 | ALI Usuário     | ALI  | 2   | 1 (Usuário)  		     | Baixa 	    | 7 	   |
 | ALI Cliente     | ALI  | 7   | 1 (Cliente)  		     | Baixa 	    | 7 	   |
-| Total		  |      |     |                             |              | 52           |
+| ALI Empresa     | ALI  | 5   | 1 (Empresa)  		     | Baixa 	    | 7 	   |
+| Total		  |      |     |                             |              | 59           |
 
 
 | Descrição             | Tipo | DER | ALR (Nome das Tabelas)						   | Complexidade | Contribuição |
@@ -166,4 +167,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Alterar cliente   	| EE   | 7   | 1 (Cliente)							   | Baixa 	  | 3            |
 | Deletar cliente   	| EE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
 | Consultar cliente 	| CE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
-| Total			|      |     |	 						   		   |              | 105		 |
+| Inserir empresa  	| EE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
+| Alterar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa 	  | 3            |
+| Deletar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
+| Consultar empresa 	| CE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 117		 |
