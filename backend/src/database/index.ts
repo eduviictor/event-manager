@@ -1,8 +1,9 @@
 import { Sequelize } from 'sequelize-typescript';
 import Event from '../app/models/Event';
+import User from '../app/models/User';
 const databaseConfig = require('../config/database');
 
-const models = [Event];
+const models = [Event, User];
 
 class Database {
   public connection: Sequelize;
