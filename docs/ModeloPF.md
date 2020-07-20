@@ -4,7 +4,7 @@
 O sistema Event Manager é uma ferramenta para o processo de gerenciamento de eventos. Fornece uma maneira intuitiva e eficiente para definir eventos adequados ao público-alvo. Um evento é um acontecimento (festa, espetáculo, comemoração, solenidade etc.) organizado por especialistas, com objetivos institucionais, comunitários ou promocionais.
 
 ## Siglas
-*  PF - Pontos de Função
+* 	 PF - Pontos de Função
 *	 APF - Análise de Pontos de Função
 *	 ALI - Arquivos Lógicos Internos
 *	 ALE - Arquivos Lógicos Externos
@@ -51,6 +51,12 @@ Lista de user stories e os requisitos que estão associados.
 ### US06 -Manter orçamento
 * RF14 - Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.
 
+### US07 - Manter cliente
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
+* RF03 - Usuários do tipo cliente têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso.
+* RF15 - Ingressos podem ser adquiridos pelos clientes.
+
+
 ## Tipo de Contagem
 
 ### Contagem indicativa (Ci)
@@ -59,7 +65,7 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 | ALI               | Entidades Relacionadas |   PF |
 | ----------------- | :--------------------: | ---: |
 | ALI Evento        |         Evento         |   35 |
-| ALI Tipo_Ingresso |     Ingresso, Tipo     |   35 |
+| ALI Ingresso      |     Ingresso, Tipo     |   35 |
 | ALI Cliente       |        Cliente         |   35 |
 | ALI Organizador   |      Organizador       |   35 |
 | ALI Atração       |        Atração         |   35 |
@@ -67,10 +73,11 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 | ALI Ingresso      |        Ingresso        |   35 |
 | ALI Empresa       |        Empresa         |   35 |
 | ALI Localização   |      Localização       |   35 |
+| ALI Usuário       |        Usuário         |   35 |
 
 | Contagem   | Total de Pontos Função |
 | ---------- | :--------------------: |
-| Indicativa |          315           |
+| Indicativa |          350           |
 
 ### Contagem estimativa (Ce)
 Analisa todos às funções da dados (ALI’s e AIE’s) com complexidade baixa, 7 PF cada ALI e 5 PF para cada AIE).
@@ -123,7 +130,10 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Ingresso    | ALI  | 4   | 2 (Ingresso, Tipo_ingresso) | Baixa 	    | 7 	   |
 | ALI Orçamento   | ALI  | 6   | 1 (Orçamento) 		     | Baixa  	    | 7	      	   |
 | ALI Atração     | ALI  | 4   | 1 (Atração)  		     | Baixa 	    | 7 	   |
-| Total		  |      |     |                             |              | 38           |
+| ALI Usuário     | ALI  | 2   | 1 (Usuário)  		     | Baixa 	    | 7 	   |
+| ALI Cliente     | ALI  | 7   | 1 (Cliente)  		     | Baixa 	    | 7 	   |
+| ALI Empresa     | ALI  | 5   | 1 (Empresa)  		     | Baixa 	    | 7 	   |
+| Total		  |      |     |                             |              | 59           |
 
 
 | Descrição             | Tipo | DER | ALR (Nome das Tabelas)						   | Complexidade | Contribuição |
@@ -149,4 +159,16 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Alterar atração       | EE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
 | Deletar atração       | EE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
 | Consultar atração     | CE   | 4   | 2 (Atração, Evento)						   | Baixa        | 3            |
-| Total			|      |     |	 						   		   |              | 81		 |
+| Inserir usuário  	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa        | 3            |
+| Alterar usuário   	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa 	  | 3            |
+| Deletar usuário   	| EE   | 2   | 2 (Usuário, Cliente ou Organizador)				   | Baixa        | 3            |
+| Consultar usuário 	| CE   | 1   | 1 (Usuário)							   | Baixa        | 3            |
+| Inserir cliente  	| EE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
+| Alterar cliente   	| EE   | 7   | 1 (Cliente)							   | Baixa 	  | 3            |
+| Deletar cliente   	| EE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
+| Consultar cliente 	| CE   | 7   | 1 (Cliente)							   | Baixa        | 3            |
+| Inserir empresa  	| EE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
+| Alterar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa 	  | 3            |
+| Deletar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
+| Consultar empresa 	| CE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 117		 |
