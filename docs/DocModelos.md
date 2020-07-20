@@ -17,7 +17,7 @@ Data       | Versão      | Descrição                      | Autor
 ## Modelo conceitual
 Segue abaixo o modelo conceitual:
 
-![Modelo Conceitual](https://github.com/eduviictor/event-manager/blob/master/imagens/modelo_ER.png)
+![Modelo Conceitual](https://raw.githubusercontent.com/kaelsilva/event-manager/master/imagens/modelo_ER.png)
 
 ## Modelo de dados
  Segue abaixo o modelo relacional:
