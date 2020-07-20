@@ -71,7 +71,7 @@ Segue abaixo o modelo conceitual:
 |**horario_inicio**|Data e hora de início do evento|Varchar|6|Not Null|
 |**horario_fim**|Data e hora de fim do evento|Varchar|6|Not Null|
 
-## Evento_Organizador
+### Evento_Organizador
 * Armazenará as informações que ligam um evento a um organizador.
 
 | Nome | Descrição | Tipo de dado | Tamanho | Restrições |
