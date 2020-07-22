@@ -96,7 +96,7 @@ describe('Event Controller', () => {
     });
   });
 
-  it('Create one user: store()', async () => {
+  it('Create one event: store()', async () => {
     const eventPost: Event = new Event({
       codigo: 9,
       codEmpresa: 1,
@@ -121,7 +121,7 @@ describe('Event Controller', () => {
     });
   });
 
-  it('Update one user: update()', async () => {
+  it('Update one event: update()', async () => {
     const eventPut: Event = new Event({
       codigo: 9,
       codEmpresa: 1,

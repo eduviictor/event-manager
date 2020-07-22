@@ -5,10 +5,22 @@
   "controllerPathGlobs": ["src/**/*Controller.ts"],
   "spec": {
     "outputDirectory": "dist",
-    "specVersion": 3
+    "specVersion": 3,
+    "securityDefinitions": {
+      "jwt": {
+        "name": "jwt",
+        "type": "jwt",
+        "scopes": {
+          "organizer": "organizer",
+          "client": "client",
+          "admin": "admin"
+        }
+      }
+    }
   },
   "routes": {
-    "routesDir": "dist"
+    "routesDir": "dist",
+    "authenticationModule": "./src/app/middlewares/Auth.ts"
   },
   "ignore": ["**/node_modules/**", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }
