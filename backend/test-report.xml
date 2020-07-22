@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="/home/kael/dev/typescript/event-manager/backend/src/app/controllers/Client/ClientController.spec.ts">
-    <testCase name="Client Controller Get all clients: index()" duration="9"/>
-    <testCase name="Client Controller Get one client: show()" duration="2"/>
-    <testCase name="Client Controller Create one client: store()" duration="100"/>
+    <testCase name="Client Controller Get all clients: index()" duration="4"/>
+    <testCase name="Client Controller Get one client: show()" duration="1"/>
+    <testCase name="Client Controller Create one client: store()" duration="64"/>
     <testCase name="Client Controller Update one client: update()" duration="2"/>
-    <testCase name="Client Controller Delete one client: delete()" duration="1"/>
+    <testCase name="Client Controller Delete one client: delete()" duration="0"/>
   </file>
   <file path="/home/kael/dev/typescript/event-manager/backend/src/app/controllers/Organizer/OrganizerController.spec.ts">
     <testCase name="Organizer Controller Get all organizers: index()" duration="5"/>
     <testCase name="Organizer Controller Get one organizer: show()" duration="1"/>
-    <testCase name="Organizer Controller Create one organizer: store()" duration="79"/>
+    <testCase name="Organizer Controller Create one organizer: store()" duration="84"/>
     <testCase name="Organizer Controller Update one organizer: update()" duration="2"/>
     <testCase name="Organizer Controller Delete one organizer: delete()" duration="1"/>
   </file>
-  <file path="/home/kael/dev/typescript/event-manager/backend/src/app/controllers/Event/EventController.spec.ts">
-    <testCase name="Event Controller Get all events: index()" duration="5"/>
-    <testCase name="Event Controller Get one event: show()" duration="1"/>
-    <testCase name="Event Controller Create one event: store()" duration="3"/>
-    <testCase name="Event Controller Update one event: update()" duration="2"/>
-    <testCase name="Event Controller Delete one event: delete()" duration="1"/>
-  </file>
   <file path="/home/kael/dev/typescript/event-manager/backend/src/app/controllers/Ticket/TicketController.spec.ts">
-    <testCase name="Ticket Controller Get all tickets: index()" duration="4"/>
-    <testCase name="Ticket Controller Get one ticket: show()" duration="2"/>
-    <testCase name="Ticket Controller Create one ticket: store()" duration="3"/>
+    <testCase name="Ticket Controller Get all tickets: index()" duration="5"/>
+    <testCase name="Ticket Controller Get one ticket: show()" duration="1"/>
+    <testCase name="Ticket Controller Create one ticket: store()" duration="2"/>
     <testCase name="Ticket Controller Update one ticket: update()" duration="1"/>
     <testCase name="Ticket Controller Delete one ticket: delete()" duration="1"/>
+  </file>
+  <file path="/home/kael/dev/typescript/event-manager/backend/src/app/controllers/Event/EventController.spec.ts">
+    <testCase name="Event Controller Get all events: index()" duration="4"/>
+    <testCase name="Event Controller Get one event: show()" duration="0"/>
+    <testCase name="Event Controller Create one event: store()" duration="2"/>
+    <testCase name="Event Controller Update one event: update()" duration="0"/>
+    <testCase name="Event Controller Delete one event: delete()" duration="0"/>
   </file>
 </testExecutions>
