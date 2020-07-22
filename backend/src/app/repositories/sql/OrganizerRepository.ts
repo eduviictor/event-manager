@@ -3,14 +3,12 @@ import bcrypt from 'bcryptjs';
 
 import User from '../../models/User';
 import Organizer, { OrganizerAttributesBody } from '../../models/Organizer';
-import constants from '../../../config/constants';
-import { ApiError } from '../../../config/ErrorHandler';
 
 export default class OrganizerRepository {
   protected formatter: any = Object;
   protected entityModel = User;
 
-  public async create(model: OrganizerAttributesBody): Promise<User> {
+  public async create(model: OrganizerAttributesBody): Promise<Organizer> {
     const { cnpj, senha, email, nome, telefone, login } = model;
     const passHash = await bcrypt.hash(senha, 8);
 

@@ -1,11 +1,10 @@
 import { Controller, Route, Post, Body } from 'tsoa';
 
 import SessionService from '../../services/SessionService';
-import { ClientAttributes } from '../../models/Client';
 
 export interface SessionBody {
   login: string;
-  password: string;
+  senha: string;
 }
 
 export interface UserReturn {

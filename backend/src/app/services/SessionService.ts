@@ -21,21 +21,21 @@ export default class UserService {
   }
 
   public async login(entity: SessionBody): Promise<ReturnBody> {
-    const { login, password } = entity;
+    const { login, senha } = entity;
     const user = await User.findOne({ where: { login } });
 
     if (!user) {
       throw new ApiError(constants.errorTypes.notFound);
     }
 
-    if (!(await this.checkPassword(password, user.senha))) {
+    if (!(await this.checkPassword(senha, user.senha))) {
       throw new ApiError(constants.errorTypes.auth);
     }
 
     const client = await Client.findOne({ where: { login_user: login } });
 
     const organizer = await Organizer.findOne({ where: { login } });
-
+    console.log('client', client);
     if (client) {
       const { cpf, email } = client;
 

@@ -35,8 +35,7 @@ export default class OrganizerService {
     }
 
     try {
-      const res = await this.repository.create(entity);
-      return this.getById((res as any).cnpj);
+      return this.repository.create(entity);
     } catch (err) {
       throw new ApiError(constants.errorTypes.db);
     }

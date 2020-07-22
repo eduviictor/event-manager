@@ -12,12 +12,12 @@ export default class ClientService {
   }
 
   public async getById(cpf: string): Promise<Client> {
-    const user = await this.repository.findOne(cpf);
-    if (!user) {
+    const client = await this.repository.findOne(cpf);
+    if (!client) {
       throw new ApiError(constants.errorTypes.notFound);
     }
 
-    return user;
+    return client;
   }
 
   public async create(entity: ClientAttributesBody): Promise<Client> {
@@ -35,8 +35,7 @@ export default class ClientService {
     }
 
     try {
-      const res = await this.repository.create(entity);
-      return this.getById((res as any).cpf);
+      return this.repository.create(entity);
     } catch (err) {
       throw new ApiError(constants.errorTypes.db);
     }
@@ -59,18 +58,18 @@ export default class ClientService {
       throw new ApiError(constants.errorTypes.alreadyExists);
     }
 
-    const user = await this.repository.update(cpf, entity);
+    const client = await this.repository.update(cpf, entity);
 
-    if (user[0] !== 1) {
+    if (client[0] !== 1) {
       throw new ApiError(constants.errorTypes.notFound);
     }
     return this.getById(cpf);
   }
 
   public async delete(cpf: string): Promise<string> {
-    const user = await this.repository.delete(cpf);
+    const client = await this.repository.delete(cpf);
 
-    if (user !== 1) {
+    if (client !== 1) {
       throw new ApiError(constants.errorTypes.notFound);
     }
     return 'Client deleted with success';

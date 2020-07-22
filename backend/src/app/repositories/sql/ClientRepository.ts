@@ -8,7 +8,7 @@ export default class ClientRepository {
   protected formatter: any = Object;
   protected entityModel = User;
 
-  public async create(model: ClientAttributesBody): Promise<User> {
+  public async create(model: ClientAttributesBody): Promise<Client> {
     const {
       cpf,
       senha,
