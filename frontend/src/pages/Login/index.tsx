@@ -31,7 +31,7 @@ const Login = () => {
                 <img src={logo} alt="Event Manager"/>                            
                 
                 <form onSubmit={login}>
-                    <h1>E-mail:</h1>
+                    <h1>Login:</h1>
                     <input
                         type="text"
                         name="login"
@@ -50,12 +50,12 @@ const Login = () => {
                     <button className="btnForm" type="submit">
                         Entrar
                     </button>
-                    <h2>Registrar-se</h2>
+                    <h2>Registrar</h2>
                     <div className="registerlinks">
-                        <Link to="/registercliente">
+                        <Link to="/register-client">
                             Cliente
                         </Link>
-                        <Link to="/registerorganizador">
+                        <Link to="/register-organizer">
                             Organizador
                         </Link>
                     </div>
