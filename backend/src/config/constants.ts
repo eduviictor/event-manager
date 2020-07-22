@@ -21,6 +21,11 @@ export default {
       name: 'Not Found',
       message: 'content not found',
     },
+    alreadyExists: {
+      statusCode: 400,
+      name: 'Already Exists',
+      message: 'Content already exists',
+    },
     entity: {
       statusCode: 422,
       name: 'Unprocessable Entity',

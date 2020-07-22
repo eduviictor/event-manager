@@ -2,6 +2,7 @@ import ClientRepository from '../repositories/sql/ClientRepository';
 import Client, { ClientAttributesBody } from '../models/Client';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
+import User from '../models/User';
 
 export default class ClientService {
   repository: ClientRepository = new ClientRepository();
@@ -11,20 +12,31 @@ export default class ClientService {
   }
 
   public async getById(cpf: string): Promise<Client> {
-    const user = await this.repository.findOne(cpf);
-    if (!user) {
+    const client = await this.repository.findOne(cpf);
+    if (!client) {
       throw new ApiError(constants.errorTypes.notFound);
     }
 
-    return user;
+    return client;
   }
 
   public async create(entity: ClientAttributesBody): Promise<Client> {
+    const { cpf, login } = entity;
+    const cnpjExists = await this.repository.findOne(cpf);
+
+    if (cnpjExists) {
+      throw new ApiError(constants.errorTypes.alreadyExists);
+    }
+
+    const userExists = await User.findOne({ where: { login } });
+
+    if (userExists) {
+      throw new ApiError(constants.errorTypes.alreadyExists);
+    }
+
     try {
-      const res = await this.repository.create(entity);
-      return this.getById((res as any).cpf);
+      return this.repository.create(entity);
     } catch (err) {
-      console.log('err', err);
       throw new ApiError(constants.errorTypes.db);
     }
   }
@@ -33,18 +45,31 @@ export default class ClientService {
     cpf: string,
     entity: ClientAttributesBody
   ): Promise<Client> {
-    const user = await this.repository.update(cpf, entity);
+    const { login } = entity;
+    const cpfExists = await this.repository.findOne(cpf);
 
-    if (user[0] !== 1) {
+    if (cpfExists) {
+      throw new ApiError(constants.errorTypes.alreadyExists);
+    }
+
+    const userExists = await User.findOne({ where: { login } });
+
+    if (userExists) {
+      throw new ApiError(constants.errorTypes.alreadyExists);
+    }
+
+    const client = await this.repository.update(cpf, entity);
+
+    if (client[0] !== 1) {
       throw new ApiError(constants.errorTypes.notFound);
     }
     return this.getById(cpf);
   }
 
   public async delete(cpf: string): Promise<string> {
-    const user = await this.repository.delete(cpf);
+    const client = await this.repository.delete(cpf);
 
-    if (user !== 1) {
+    if (client !== 1) {
       throw new ApiError(constants.errorTypes.notFound);
     }
     return 'Client deleted with success';

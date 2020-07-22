@@ -2,8 +2,8 @@ const { DataTypes } = require('sequelize');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('clients', {
-      cpf: {
+    await queryInterface.createTable('organizers', {
+      cnpj: {
         type: DataTypes.STRING,
         primaryKey: true,
         allowNull: false,
@@ -17,14 +17,6 @@ module.exports = {
         allowNull: false,
       },
       telefone: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      cidade: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      estado: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -50,6 +42,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('clients');
+    await queryInterface.dropTable('organizers');
   },
 };
