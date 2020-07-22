@@ -56,6 +56,9 @@ Lista de user stories e os requisitos que estão associados.
 * RF03 - Usuários do tipo cliente têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso.
 * RF15 - Ingressos podem ser adquiridos pelos clientes.
 
+### US08 - Manter relatório
+* RF23 - Relatórios têm como atributos: codigo, valor_investido, valor_arrecadado, cod_evento, receita. 
+
 
 ## Tipo de Contagem
 
@@ -74,10 +77,12 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 | ALI Empresa       |        Empresa         |   35 |
 | ALI Localização   |      Localização       |   35 |
 | ALI Usuário       |        Usuário         |   35 |
+| ALI Relatório     |        Relatório       |   35 |
+
 
 | Contagem   | Total de Pontos Função |
 | ---------- | :--------------------: |
-| Indicativa |          350           |
+| Indicativa |          385           |
 
 ### Contagem estimativa (Ce)
 Analisa todos às funções da dados (ALI’s e AIE’s) com complexidade baixa, 7 PF cada ALI e 5 PF para cada AIE).
@@ -133,7 +138,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Usuário     | ALI  | 2   | 1 (Usuário)  		     | Baixa 	    | 7 	   |
 | ALI Cliente     | ALI  | 7   | 1 (Cliente)  		     | Baixa 	    | 7 	   |
 | ALI Empresa     | ALI  | 5   | 1 (Empresa)  		     | Baixa 	    | 7 	   |
-| Total		  |      |     |                             |              | 59           |
+| ALI Relatório   | ALI  | 5   | 1 (Relatório) 		     | Baixa 	    | 7 	   |
+| Total		  |      |     |                             |              | 66           |
 
 
 | Descrição             | Tipo | DER | ALR (Nome das Tabelas)						   | Complexidade | Contribuição |
@@ -171,4 +177,6 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Alterar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa 	  | 3            |
 | Deletar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
 | Consultar empresa 	| CE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
-| Total			|      |     |	 						   		   |              | 117		 |
+| Deletar relatório   	| EE   | 5   | 2 (Relatório, evento)						   | Baixa        | 3            |
+| Consultar relatório 	| CE   | 5   | 2 (Relatório, evento)						   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 123		 |
