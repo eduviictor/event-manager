@@ -11,8 +11,9 @@
         "name": "jwt",
         "type": "jwt",
         "scopes": {
-          "admin": "admin",
-          "client": "client"
+          "organizer": "organizer",
+          "client": "client",
+          "admin": "admin"
         }
       }
     }

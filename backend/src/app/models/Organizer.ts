@@ -11,30 +11,28 @@ import {
 } from 'sequelize-typescript';
 import User from './User';
 
-export interface ClientAttributes {
-  cpf: string;
+export interface OrganizerAttributes {
+  cnpj: string;
   nome: string;
   email: string;
   telefone: string;
-  cidade: string;
-  estado: string;
   login: string;
 }
 
-export interface ClientAttributesBody extends ClientAttributes {
+export interface OrganizerAttributesBody extends OrganizerAttributes {
   senha: string;
 }
 
 @Table({
   timestamps: true,
-  tableName: 'clients',
+  tableName: 'organizers',
 })
-class Client extends Model<ClientAttributes> {
+class Organizer extends Model<OrganizerAttributes> {
   @PrimaryKey
   @AllowNull(false)
   @Unique
   @Column
-  cpf: string;
+  cnpj: string;
 
   @AllowNull(false)
   @Column
@@ -50,17 +48,9 @@ class Client extends Model<ClientAttributes> {
   telefone: number;
 
   @AllowNull(false)
-  @Column
-  cidade: string;
-
-  @AllowNull(false)
-  @Column
-  estado: string;
-
-  @AllowNull(false)
   @Unique
   @BelongsTo(() => User, {
-    as: 'loginClient',
+    as: 'loginOrganizer',
     onDelete: 'CASCADE',
     foreignKey: 'login',
   })
@@ -76,4 +66,4 @@ class Client extends Model<ClientAttributes> {
   updated_at: Date;
 }
 
-export default Client;
+export default Organizer;

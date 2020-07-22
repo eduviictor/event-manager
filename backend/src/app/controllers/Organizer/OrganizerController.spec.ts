@@ -1,76 +1,65 @@
-import { ClientController } from './ClientController';
-import Client, { ClientAttributesBody } from '../../models/Client';
+import { OrganizerController } from './OrganizerController';
+import Organizer, { OrganizerAttributesBody } from '../../models/Organizer';
 import User from '../../models/User';
-import ClientService from '../../services/ClientService';
 
-describe('Client Controller', () => {
-  const clientController = new ClientController();
+describe('Organizer Controller', () => {
+  const organizerController = new OrganizerController();
 
-  it('Get all clients: index()', async () => {
-    Client.findAll = jest.fn().mockReturnValue([
+  it('Get all organizers: index()', async () => {
+    Organizer.findAll = jest.fn().mockReturnValue([
       {
-        cpf: '21212112',
+        cnpj: '21212112',
         nome: 'Teste',
         email: 'email@email.com',
         telefone: '84999999999',
-        cidade: 'Caicó',
-        estado: 'RN',
         login: 'adm',
         created_at: '2020-07-22T02:28:11.215Z',
         updated_at: '2020-07-22T02:28:11.215Z',
       },
     ]);
 
-    const clients = await clientController.index();
-    expect(Array.isArray(clients)).toBe(true);
-    expect(clients[0]).toMatchObject({
-      cpf: '21212112',
+    const organizers = await organizerController.index();
+    expect(Array.isArray(organizers)).toBe(true);
+    expect(organizers[0]).toMatchObject({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
     });
   });
 
-  it('Get one client: show()', async () => {
-    Client.findOne = jest.fn().mockReturnValue({
-      cpf: '21212112',
+  it('Get one organizer: show()', async () => {
+    Organizer.findOne = jest.fn().mockReturnValue({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
 
-    const client = await clientController.show('8');
-    expect(client).toEqual({
-      cpf: '21212112',
+    const organizer = await organizerController.show('8');
+    expect(organizer).toEqual({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
   });
 
-  it('Create one client: store()', async () => {
-    Client.findOne = jest.fn().mockReturnValue(null);
+  it('Create one organizer: store()', async () => {
+    Organizer.findOne = jest.fn().mockReturnValue(null);
     User.findOne = jest.fn().mockReturnValue(null);
-    Client.create = jest.fn().mockReturnValue({
-      cpf: '21212112',
+    Organizer.create = jest.fn().mockReturnValue({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       created_at: '2020-07-22T02:55:54.036Z',
       updated_at: '2020-07-22T02:55:54.036Z',
@@ -82,43 +71,37 @@ describe('Client Controller', () => {
       updated_at: '2020-07-22T02:55:54.036Z',
     });
 
-    const clientPost: ClientAttributesBody = {
-      cpf: '21212112',
+    const organizerPost: OrganizerAttributesBody = {
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       senha: 'odadsa',
     };
 
-    const client = await clientController.store(clientPost);
-    expect(client).toMatchObject({
-      cpf: '21212112',
+    const organizer = await organizerController.store(organizerPost);
+    expect(organizer).toMatchObject({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
     });
   });
 
-  it('Update one client: update()', async () => {
-    Client.findOne = jest.fn().mockReturnValue(null);
+  it('Update one organizer: update()', async () => {
+    Organizer.findOne = jest.fn().mockReturnValue(null);
     User.findOne = jest.fn().mockReturnValue(null);
 
-    Client.update = jest.fn().mockReturnValue([
+    Organizer.update = jest.fn().mockReturnValue([
       1,
       [
         {
-          cpf: '21212112',
+          cnpj: '21212112',
           nome: 'Teste',
           email: 'email@email.com',
           telefone: '84999999999',
-          cidade: 'Caicó',
-          estado: 'RN',
           login: 'adm',
           created_at: '2020-07-22T02:55:54.036Z',
           updated_at: '2020-07-22T02:55:54.036Z',
@@ -137,56 +120,48 @@ describe('Client Controller', () => {
       ],
     ]);
 
-    clientController.service.getById = jest.fn().mockReturnValue({
-      cpf: '21212112',
+    organizerController.service.getById = jest.fn().mockReturnValue({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
 
-    const clientPut: ClientAttributesBody = {
-      cpf: '21212112',
+    const organizerPut: OrganizerAttributesBody = {
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       senha: 'odadsa',
     };
 
-    const client = await clientController.update('8', clientPut);
-    expect(client).toMatchObject({
-      cpf: '21212112',
+    const organizer = await organizerController.update('8', organizerPut);
+    expect(organizer).toMatchObject({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
     });
   });
 
-  it('Delete one client: delete()', async () => {
+  it('Delete one organizer: delete()', async () => {
     User.destroy = jest.fn().mockReturnValue(1);
-    Client.findOne = jest.fn().mockReturnValue({
-      cpf: '21212112',
+    Organizer.findOne = jest.fn().mockReturnValue({
+      cnpj: '21212112',
       nome: 'Teste',
       email: 'email@email.com',
       telefone: '84999999999',
-      cidade: 'Caicó',
-      estado: 'RN',
       login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
 
-    const deleted = await clientController.delete('21212112');
-    expect(deleted).toEqual('Client deleted with success');
+    const deleted = await organizerController.delete('9');
+    expect(deleted).toEqual('Organizer deleted with success');
   });
 });
