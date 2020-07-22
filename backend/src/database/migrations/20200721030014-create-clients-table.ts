@@ -28,7 +28,7 @@ module.exports = {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      login_user: {
+      login: {
         type: DataTypes.STRING,
         allowNull: false,
         references: {

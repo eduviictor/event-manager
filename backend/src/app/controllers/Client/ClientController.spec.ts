@@ -15,7 +15,7 @@ describe('Client Controller', () => {
         telefone: '84999999999',
         cidade: 'Caicó',
         estado: 'RN',
-        login_user: 'adm',
+        login: 'adm',
         created_at: '2020-07-22T02:28:11.215Z',
         updated_at: '2020-07-22T02:28:11.215Z',
       },
@@ -30,7 +30,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
     });
   });
 
@@ -42,7 +42,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
@@ -55,7 +55,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
@@ -71,7 +71,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       created_at: '2020-07-22T02:55:54.036Z',
       updated_at: '2020-07-22T02:55:54.036Z',
     });
@@ -89,7 +89,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       senha: 'odadsa',
     };
 
@@ -101,7 +101,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
     });
   });
 
@@ -119,7 +119,7 @@ describe('Client Controller', () => {
           telefone: '84999999999',
           cidade: 'Caicó',
           estado: 'RN',
-          login_user: 'adm',
+          login: 'adm',
           created_at: '2020-07-22T02:55:54.036Z',
           updated_at: '2020-07-22T02:55:54.036Z',
         },
@@ -144,7 +144,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
@@ -156,7 +156,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       senha: 'odadsa',
     };
 
@@ -168,7 +168,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
     });
   });
 
@@ -181,7 +181,7 @@ describe('Client Controller', () => {
       telefone: '84999999999',
       cidade: 'Caicó',
       estado: 'RN',
-      login_user: 'adm',
+      login: 'adm',
       created_at: '2020-07-22T02:28:11.215Z',
       updated_at: '2020-07-22T02:28:11.215Z',
     });
