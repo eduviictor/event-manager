@@ -1,9 +1,10 @@
 import React from 'react';
-import { Route, BrowserRouter, Switch} from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 import CreateEvent from './pages/event/CreateEvent';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import RegisterOrg from './pages/RegisterOrg';
 import UpdateEvent from './pages/event/UpdateEvent';
 
 const Routes = () => {
@@ -11,7 +12,8 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
           <Route component = {Login} path="/" exact  />                
-          <Route component={Home} path="/home"/>          
+          <Route component={Home} path="/home"/>
+          <Route component={RegisterOrg} path="/registerorganizador"/>
           <Route component={CreateEvent} path="/create-event" />
           <Route component={UpdateEvent} path="/update-event" />
       </Switch>
