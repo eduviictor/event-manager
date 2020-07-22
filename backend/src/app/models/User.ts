@@ -3,22 +3,15 @@ import {
   Column,
   Model,
   PrimaryKey,
-  AutoIncrement,
   AllowNull,
   CreatedAt,
   UpdatedAt,
-  Default,
+  Unique,
 } from 'sequelize-typescript';
 
-export interface UserAttributesBody {
-  nome: string;
-  email: string;
+export interface UserAttributes {
+  login: string;
   senha: string;
-  nivel_acesso: number;
-}
-
-export interface UserAttributes extends UserAttributesBody {
-  codigo: number;
 }
 
 @Table({
@@ -27,27 +20,14 @@ export interface UserAttributes extends UserAttributesBody {
 })
 class User extends Model<UserAttributes> {
   @PrimaryKey
-  @AutoIncrement
   @AllowNull(false)
+  @Unique
   @Column
-  codigo: number;
-
-  @AllowNull(false)
-  @Column
-  nome: string;
-
-  @AllowNull(false)
-  @Column
-  email: string;
+  login: string;
 
   @AllowNull(false)
   @Column
   senha: string;
-
-  @AllowNull(false)
-  @Default(1)
-  @Column
-  nivel_acesso: number;
 
   @CreatedAt
   @Column
