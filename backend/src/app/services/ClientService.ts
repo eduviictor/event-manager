@@ -21,14 +21,14 @@ export default class ClientService {
   }
 
   public async create(entity: ClientAttributesBody): Promise<Client> {
-    const { cpf, login_user } = entity;
+    const { cpf, login } = entity;
     const cnpjExists = await this.repository.findOne(cpf);
 
     if (cnpjExists) {
       throw new ApiError(constants.errorTypes.alreadyExists);
     }
 
-    const userExists = await User.findOne({ where: { login: login_user } });
+    const userExists = await User.findOne({ where: { login } });
 
     if (userExists) {
       throw new ApiError(constants.errorTypes.alreadyExists);
@@ -45,14 +45,14 @@ export default class ClientService {
     cpf: string,
     entity: ClientAttributesBody
   ): Promise<Client> {
-    const { login_user } = entity;
+    const { login } = entity;
     const cpfExists = await this.repository.findOne(cpf);
 
     if (cpfExists) {
       throw new ApiError(constants.errorTypes.alreadyExists);
     }
 
-    const userExists = await User.findOne({ where: { login: login_user } });
+    const userExists = await User.findOne({ where: { login } });
 
     if (userExists) {
       throw new ApiError(constants.errorTypes.alreadyExists);

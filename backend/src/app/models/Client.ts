@@ -8,7 +8,6 @@ import {
   UpdatedAt,
   Unique,
   BelongsTo,
-  ForeignKey,
 } from 'sequelize-typescript';
 import User from './User';
 
@@ -19,7 +18,7 @@ export interface ClientAttributes {
   telefone: string;
   cidade: string;
   estado: string;
-  login_user: string;
+  login: string;
 }
 
 export interface ClientAttributesBody extends ClientAttributes {
@@ -61,12 +60,12 @@ class Client extends Model<ClientAttributes> {
   @AllowNull(false)
   @Unique
   @BelongsTo(() => User, {
-    as: 'login',
+    as: 'loginClient',
     onDelete: 'CASCADE',
-    foreignKey: 'login_user',
+    foreignKey: 'login',
   })
   @Column
-  login_user: string;
+  login: string;
 
   @CreatedAt
   @Column
