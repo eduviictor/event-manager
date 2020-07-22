@@ -10,6 +10,7 @@ import {
   ReturnBody,
 } from '../controllers/Session/SessionController';
 import Client from '../models/Client';
+import Organizer from '../models/Organizer';
 
 export default class UserService {
   repository: UserRepository = new UserRepository();
@@ -27,18 +28,35 @@ export default class UserService {
       throw new ApiError(constants.errorTypes.notFound);
     }
 
-    const client = await Client.findOne({ where: { login_user: login } });
-
     if (!(await this.checkPassword(password, user.senha))) {
       throw new ApiError(constants.errorTypes.auth);
     }
 
-    const { cpf, login_user, email } = client;
+    const client = await Client.findOne({ where: { login_user: login } });
+
+    const organizer = await Organizer.findOne({ where: { login } });
+
+    if (client) {
+      const { cpf, email } = client;
+
+      return {
+        user: { cpf, login, email, type_user: 'client' },
+        token: jwt.sign(
+          { codigo: String(client.cpf), scopes: ['client'] },
+          authConfig.secret,
+          {
+            expiresIn: authConfig.expiresIn,
+          }
+        ),
+      };
+    }
+
+    const { cnpj, email } = organizer;
 
     return {
-      user: { cpf, login: login_user, email, type_user: 'client' },
+      user: { cnpj, login, email, type_user: 'organizer' },
       token: jwt.sign(
-        { codigo: String(client.cpf), scopes: ['client'] },
+        { codigo: String(organizer.cnpj), scopes: ['organizer'] },
         authConfig.secret,
         {
           expiresIn: authConfig.expiresIn,

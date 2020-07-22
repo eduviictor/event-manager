@@ -52,6 +52,11 @@ export default class ClientRepository {
 
   public async delete(cpf: string): Promise<number> {
     const client = await Client.findOne({ where: { cpf } });
+
+    if (!client) {
+      return 0;
+    }
+
     return this.entityModel.destroy({ where: { login: client.login_user } });
   }
 
