@@ -1,0 +1,33 @@
+name: Unit tests
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    # 2. Using the latest Ubuntu image
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the current repository code
+      - uses: actions/checkout@v1
+      # 3. https://github.com/actions/setup-node#usage
+
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      
+      - name: Install dependencies
+        working-directory: ./backend
+        run: yarn
+
+      - name: Build
+        working-directory: ./backend
+        run: yarn build
+
+      - name: Test
+        working-directory: ./backend
+        run: yarn test:ci
