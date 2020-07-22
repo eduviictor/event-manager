@@ -20,14 +20,14 @@ jobs:
         with:
           node-version: '12.x'
       
-      - name: Enter backend folder
-        run: cd backend 
-
       - name: Install dependencies
+        working-directory: ./backend
         run: yarn
 
       - name: Build
+        working-directory: ./backend
         run: yarn build
 
       - name: Test
+        working-directory: ./backend
         run: yarn test:ci
