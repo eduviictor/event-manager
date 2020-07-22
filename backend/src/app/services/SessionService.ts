@@ -32,7 +32,7 @@ export default class UserService {
       throw new ApiError(constants.errorTypes.auth);
     }
 
-    const client = await Client.findOne({ where: { login_user: login } });
+    const client = await Client.findOne({ where: { login } });
 
     const organizer = await Organizer.findOne({ where: { login } });
     console.log('client', client);
