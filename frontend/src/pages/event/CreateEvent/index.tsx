@@ -130,7 +130,7 @@ const CreateEvent = () => {
   return (
     <div id="page-create-event">
       <header>
-        <Link to="/">
+        <Link to="/home">
           Voltar para home
         </Link>
         <h1>Criar evento</h1>
