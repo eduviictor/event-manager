@@ -150,7 +150,7 @@ const UpdateEvent = () => {
   return (
     <div id="page-update-event">
       <header>
-        <Link to="/">
+        <Link to="/home">
           Voltar para home
         </Link>
         <h1>Atualizar evento</h1>

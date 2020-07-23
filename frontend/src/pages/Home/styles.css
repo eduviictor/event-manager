@@ -1,0 +1,111 @@
+.homeContainer {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 20px;
+    margin: auto;
+  }
+
+.homeContainer header {
+    display: flex;
+    align-items: center;
+}
+
+.homeContainer header div{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.homeContainer header span {
+    font-size: 20px;
+    margin-left: 10px;
+    color: #FFF;
+}
+
+.homeContainer header img {
+  height: 150px;
+}
+
+.homeContainer  header a {
+  width: 150px;
+  margin-left: auto;
+  margin-top: 0;  
+}
+
+.homeContainer header button {
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  border: 1px solid #dcdce6;
+  background: transparent;  
+  transition: border-color 0.5s;
+}
+
+.homeContainer header button:hover {
+  border-color: #E02041;
+}
+
+.homeContainer h1{
+    margin-bottom: 10px;
+    margin-left: 90px;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.homeContainer ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 18px;
+    list-style: none;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.homeContainer ul li{
+    background: #FFF;
+    padding: 18px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+}
+
+.homeContainer ul li .button-delete{
+    position: absolute;
+    right: 4px;
+    top: 10px;
+    border: 0;
+    width: 10%;
+}
+
+.homeContainer ul li button:hover{
+    opacity: 0.8;
+}
+
+.homeContainer ul li strong{
+    display: block;
+    margin-bottom: 10px;
+    color: #41414d;    
+}
+
+.homeContainer ul li p + strong{
+    margin-top: 15px;
+}
+
+.homeContainer ul li p{
+    color: #41414d;
+    line-height: 21px;
+    font-size: 16px;
+}
+
+.homeContainer  ul li .detail-link {    
+    color: #41414d;
+    font-size: 16px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;        
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;    
+    width: 50%;
+    margin-bottom: 0px;
+}
