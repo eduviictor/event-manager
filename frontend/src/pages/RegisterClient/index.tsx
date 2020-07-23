@@ -107,6 +107,13 @@ const RegisterClient = () => {
                     id="email"
                     onChange={handleInputChange}
                 />
+                <h1>Senha:</h1>
+                    <input
+                        name="password"
+                        type="password"
+                        id="password"
+                        onChange={handleInputChange}
+                    />
                 <h1>Telefone:</h1>
                 <input
                     name="telefone"
