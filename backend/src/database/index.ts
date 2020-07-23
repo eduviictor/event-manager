@@ -3,9 +3,10 @@ import Event from '../app/models/Event';
 import User from '../app/models/User';
 import Client from '../app/models/Client';
 import Organizer from '../app/models/Organizer';
+import Attraction from '../app/models/Attraction';
 const databaseConfig = require('../config/database');
 
-const models = [Event, User, Client, Organizer];
+const models = [Event, User, Client, Organizer, Attraction];
 
 class Database {
   public connection: Sequelize;
