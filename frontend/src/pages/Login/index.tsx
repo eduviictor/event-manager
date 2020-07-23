@@ -9,7 +9,7 @@ const Login = () => {
     const navigation = useHistory();
     
     const [formData, setFormData] = useState({
-        name: '',
+        login: '',
         password: '',        
     });
 
@@ -39,7 +39,7 @@ const Login = () => {
                         onChange={handleInputChange}
                     />   
 
-                    <h1>Password:</h1>
+                    <h1>Senha:</h1>
                     <input
                         name="password"
                         type="password"
