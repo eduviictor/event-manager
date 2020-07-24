@@ -2,22 +2,20 @@ import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import api from '../../../services/api';
+
+import { EventAttributesBody } from '../../../../../backend/src/app/models/Event'
+
 import './styles.css';
 
-interface Event {
-  name: string
-  date: string
-  hour: string
-}
-
-interface Localization {
-  id: number
-  street: string
-  neighborhood: string
-  local: string
-  city: string
-  uf: string
-}
+// interface Localization {
+//   id: number
+//   street: string
+//   neighborhood: string
+//   local: string
+//   city: string
+//   uf: string
+// }
 
 interface IBGEUFResponse {
   sigla: string
@@ -27,8 +25,7 @@ interface IBGECityResponse {
   nome: string
 }
 
-const UpdateEvent = () => {
-  const [event, setEvent] = useState<Event>();
+const CreateEvent = () => {
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [formData, setFormData] = useState({
@@ -67,20 +64,6 @@ const UpdateEvent = () => {
     });
   }, [selectedUf]);
 
-
-  // pegar dados da api
-  // useEffect(() => {
-  //   api.get('/events/1').then(response => {
-  //     setFormData(response.data);
-  //   });
-  //   api.get('/locations/1').then(response => {
-  //     setFormData(...formData, response.data);
-  //   });
-  //   setSelectedUf(formData.uf);
-  //   setSelectedCity(formData.city);
-  // }, []);
-
-
   function handleSelectUf(event: ChangeEvent<HTMLSelectElement>){
     const uf = event.target.value;
 
@@ -98,11 +81,18 @@ const UpdateEvent = () => {
 
     const { name, date, hour, uf, city, street, neighborhood, local } = formData;
     
-    const eventData = new FormData();
+    const EventBody: EventAttributesBody = {
+      codEmpresa: 1,
+      codAtracao: 1,
+      codLocal: 1,
+      codOrcamento: 1,
+      codIngresso: 1,
+      dados: name,
+      horario: hour,
+    };
     
-    eventData.append('name', name);
-    eventData.append('date', date);
-    eventData.append('hour', hour);
+    await api.post('/events', EventBody);
+
 
     const locationData = new FormData();
     locationData.append('uf', uf);
@@ -111,8 +101,7 @@ const UpdateEvent = () => {
     locationData.append('neighborhood', neighborhood);
     locationData.append('local', local);
 
-    // atualizar dados na api
-    // await api.put('/locations', locationData);
+    // await api.post('/locations', locationData);
 
     // axios.get('/locations').then(response => {
     //   const localizations: Localization[] = response.data;
@@ -126,18 +115,9 @@ const UpdateEvent = () => {
 
     //   eventData.append('codLocal', codLocal.toString());
     // });
-    // await api.put('/events', eventData);
+    // await api.post('/events', eventData);
 
-    alert('Evento alterado com sucesso!');
-
-    history.push('/');
-  }
-
-  function handleDelete() {
-    // api.delete(`/locations/${event.codLocal}`);
-    // api.delete(`/event/${event.id}`);
-
-    alert('Evento deletado com sucesso!');
+    alert('Evento criado com sucesso!');
 
     history.push('/');
   }
@@ -148,12 +128,12 @@ const UpdateEvent = () => {
   }
 
   return (
-    <div id="page-update-event">
+    <div id="page-create-event">
       <header>
-        <Link to="/">
+        <Link to="/home">
           Voltar para home
         </Link>
-        <h1>Atualizar evento</h1>
+        <h1>Criar evento</h1>
       </header>
 
       <form onSubmit={handleSubmit}>
@@ -251,15 +231,9 @@ const UpdateEvent = () => {
           </div>
         </fieldset>
         
-        <div className="field-group">
-          <button onClick={() => history.push('/')}>
-            Voltar
-          </button>
+        <div>
           <button type="submit">
-            Alterar
-          </button>
-          <button className="button-delete" onClick={handleDelete}>
-            Deletar
+            Criar
           </button>
         </div>
 
@@ -268,4 +242,4 @@ const UpdateEvent = () => {
   );
 }
 
-export default UpdateEvent;
+export default CreateEvent;

@@ -1,11 +1,10 @@
-export interface EventAttributesBody {
-  nome: string;
-  descricao: string;
-  horario_inicio: string;
-  horario_fim: string;
+export interface TicketAttributesBody {
+  valor: number;
+  quantidade: number;
+  cod_evento: number;
 }
 
-export interface EventAttributes extends EventAttributesBody {
+export interface TicketAttributes extends TicketAttributesBody {
   codigo: number;
 }
 
@@ -18,13 +17,16 @@ import {
   AllowNull,
   CreatedAt,
   UpdatedAt,
+  ForeignKey
 } from 'sequelize-typescript';
+
+import Event from './Event';
 
 @Table({
   timestamps: true,
-  tableName: 'events',
+  tableName: 'tickets',
 })
-class Event extends Model<EventAttributes> {
+class Ticket extends Model<TicketAttributes> {
   @PrimaryKey
   @AutoIncrement
   @AllowNull(false)
@@ -33,19 +35,16 @@ class Event extends Model<EventAttributes> {
 
   @AllowNull(false)
   @Column
-  nome: string;
+  valor: number;
 
   @AllowNull(false)
   @Column
-  descricao: string;
+  quantidade: number;
 
+  @ForeignKey(() => Event)
   @AllowNull(false)
   @Column
-  horario_inicio: string;
-
-  @AllowNull(false)
-  @Column
-  horario_fim: string;
+  cod_evento: number;
 
   @CreatedAt
   @Column
@@ -56,4 +55,4 @@ class Event extends Model<EventAttributes> {
   updated_at: Date;
 }
 
-export default Event;
+export default Ticket;
