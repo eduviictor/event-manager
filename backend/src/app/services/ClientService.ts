@@ -49,7 +49,7 @@ export default class ClientService {
     cpf: string,
     entity: ClientAttributesBody
   ): Promise<Client> {
-    
+    await this.validator.update(entity);
     const client = await this.repository.update(cpf, entity);
 
     if (client[0] !== 1) {

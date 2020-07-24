@@ -2,10 +2,11 @@ import AttractionRepository from '../repositories/sql/AttractionRepository';
 import Attraction, { AttractionAttributes } from '../models/Attraction';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
-
+import AttractionValidator from '../validators/AttractionValidator';
 
 export default class AttractionService { 
     repository: AttractionRepository = new AttractionRepository();
+    validator: AttractionValidator = new AttractionValidator();
 
     public async findAll(): Promise<Attraction[]> {
         return this.repository.find();
@@ -21,7 +22,8 @@ export default class AttractionService {
     }
 
     public async create(entity: AttractionAttributes): Promise<Attraction> {
-        const { codigo } = entity;
+      await this.validator.create(entity);  
+      const { codigo } = entity;
         const codigoExists = await this.repository.findOne(codigo);
     
         if (codigoExists) {
