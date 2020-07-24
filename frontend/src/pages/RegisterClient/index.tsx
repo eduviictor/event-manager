@@ -82,18 +82,23 @@ const RegisterClient = () => {
             cidade
         };  
 
-        try {
-            const response = await api.post('/clients', data);
-            if (response.status != 200){
-              alert(`Erro ${response.status}.`);
-            }
-          } catch (err){
+        if(data.cpf === '' || data.nome === '' || data.email === '' || data.login === '' || data.senha === '' || data.telefone === '' || data.estado === '' || data.cidade === ''){
+            alert('Erro! Verifique se os campos preenchidos estão corretos.');
             return;
-          }
-      
-          alert('Cliente criado com sucesso!');
-      
-          history.push('/');    
+        }else{
+            try {
+                const response = await api.post('/clients', data);
+                if (response.status != 200){
+                  alert(`Erro ${response.status}.`);
+                }
+              } catch (err){
+                return;
+              }
+          
+              alert('Cliente criado com sucesso!');
+          
+              history.push('/');    
+        }        
     }
 
     return(
