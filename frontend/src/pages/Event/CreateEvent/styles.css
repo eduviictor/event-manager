@@ -79,9 +79,13 @@
   margin-bottom: 24px;
 }
 
+#page-create-event form .field label {
+  color: #000
+}
+
 #page-create-event form .field input[type=text],
-#page-create-event form .field input[type=email],
-#page-create-event form .field input[type=number] {
+#page-create-event form .field input[type=time],
+#page-create-event form .field input[type=date] {
   flex: 1;
   background: #F0F0F5;
   border-radius: 8px;
@@ -141,7 +145,7 @@
 #page-create-event form button {
   width: 260px;
   height: 56px;
-  background: #258f56;
+  background: #04afc5;
   border-radius: 8px;
   color: #FFF;
   font-weight: bold;
@@ -154,5 +158,6 @@
 }
 
 #page-create-event form button:hover {
-  background: #2FB86E;
+  background: #24bff5;
+  transition: background-color 0.2s;
 }

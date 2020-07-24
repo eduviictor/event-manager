@@ -1,145 +1,109 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
+
+import api from '../../../services/api';
+
+import logo from '../../../assets/logo.png';
 
 import './styles.css';
 
-interface Event {
-  name: string
-  date: string
-  hour: string
-}
-
-interface Localization {
-  id: number
-  street: string
-  neighborhood: string
-  local: string
-  city: string
-  uf: string
-}
-
-interface IBGEUFResponse {
-  sigla: string
-}
-
-interface IBGECityResponse {
-  nome: string
-}
-
 const UpdateEvent = () => {
-  const [event, setEvent] = useState<Event>();
-  const [ufs, setUfs] = useState<string[]>([]);
-  const [cities, setCities] = useState<string[]>([]);
+
+  interface EventAttributesBody {
+    nome: string;
+    descricao: string;
+    horario_inicio: string;
+    horario_fim: string;
+  }
+
   const [formData, setFormData] = useState({
     name: '',
-    date: '',
-    hour: '',
-    uf: '0',
-    city: '0',
-    street: '',
-    neighborhood: '',
-    local: ''
+    description: '',
+    initialDate: '',
+    finalDate: '',
+    initialHour: '',
+    finalHour: '',
   });
 
-  const [selectedUf, setSelectedUf] = useState('0');
-  const [selectedCity, setSelectedCity] = useState('0');
+  function splitDate(date: string): string[] {
+    let day = date[0]+date[1];
+    let month = date[3]+date[4];
+    let year = date[6]+date[7]+date[8]+date[9];
+
+    let hour = date[15]+date[16]+date[17]+date[18]+date[19];
+
+    const splittedDate = [year+'-'+month+'-'+day, hour];
+
+    return splittedDate;
+  }
+
+  useEffect(() => {
+      try {
+          const getData = async () => {
+            await api.get('/events/12').then(response => {
+              const { nome, descricao, horario_inicio, horario_fim } = response.data;
+              const splittedInitialDate = splitDate(horario_inicio);
+              const splittedFinalDate = splitDate(horario_fim);
+    
+              setFormData({...formData, 
+                              name: nome, 
+                              description: descricao,
+                              initialDate: splittedInitialDate[0],
+                              initialHour: splittedInitialDate[1],
+                              finalDate: splittedFinalDate[0],
+                              finalHour: splittedFinalDate[1],
+              });
+            });
+          }
+          getData();
+          return;
+      } catch (err) {
+        return;
+      }
+  }, []);
 
   const history = useHistory();
 
-  useEffect(() => {
-    axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
-      const ufInitials = response.data.map(uf => uf.sigla);
-
-      setUfs(ufInitials);
-    })
-  }, []);
-
-  useEffect(() => {
-    if (selectedUf === '0'){
-      return ;
-    }
-
-    axios.get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`).then(response => {
-      const cityNames = response.data.map(city => city.nome);
-
-      setCities(cityNames);
-    });
-  }, [selectedUf]);
-
-
-  // pegar dados da api
-  // useEffect(() => {
-  //   api.get('/events/1').then(response => {
-  //     setFormData(response.data);
-  //   });
-  //   api.get('/locations/1').then(response => {
-  //     setFormData(...formData, response.data);
-  //   });
-  //   setSelectedUf(formData.uf);
-  //   setSelectedCity(formData.city);
-  // }, []);
-
-
-  function handleSelectUf(event: ChangeEvent<HTMLSelectElement>){
-    const uf = event.target.value;
-
-    setSelectedUf(uf);
-  }
-
-  function handleSelectCity(event: ChangeEvent<HTMLSelectElement>){
-    const city = event.target.value;
-
-    setSelectedCity(city);
+  function formatDate(date: string){
+    let day:string = date[8]+date[9];
+    let month:string = date[5]+date[6];
+    let year:string = date[0]+date[1]+date[2]+date[3];
+    
+    const formattedDate = day+'/'+month+'/'+year;
+    return formattedDate;
   }
 
   async function handleSubmit(event: FormEvent){
     event.preventDefault();
 
-    const { name, date, hour, uf, city, street, neighborhood, local } = formData;
-    
-    const eventData = new FormData();
-    
-    eventData.append('name', name);
-    eventData.append('date', date);
-    eventData.append('hour', hour);
+    const { name, description, initialDate, initialHour, finalDate, finalHour } = formData;
+    const formattedInitialDate = formatDate(initialDate);
+    const formattedFinalDate = formatDate(finalDate);
 
-    const locationData = new FormData();
-    locationData.append('uf', uf);
-    locationData.append('city', city);
-    locationData.append('street', street);
-    locationData.append('neighborhood', neighborhood);
-    locationData.append('local', local);
+    if (!name || !description || initialDate === 'NaN' || !initialHour || finalDate === 'NaN' || !finalHour){
+      alert('Erro! Verifique se os campos preenchidos estão corretos.');
+      return;
+    }
 
-    // atualizar dados na api
-    // await api.put('/locations', locationData);
+    const EventBody: EventAttributesBody = {
+      nome: name,
+      descricao: description,
+      horario_inicio: `${formattedInitialDate}, às ${initialHour} horas`,
+      horario_fim: `${formattedFinalDate}, às ${finalHour} horas`
+    };
 
-    // axios.get('/locations').then(response => {
-    //   const localizations: Localization[] = response.data;
-    //   const localizationFound: Localization | undefined = localizations.find((localization: Localization) => {
-    //     if (localization.uf === uf && localization.city === city && localization.street === street && localization.neighborhood === neighborhood && localization.local === local){
-    //       return localization;
-    //     }
-    //   });
+    try {
+      const response = await api.put('/events/12', EventBody);
+      if (response.status != 200){
+        alert(`Erro ${response.status}.`);
+      }
+    } catch (err){
+      return;
+    }
 
-    //   const codLocal:number = localizationFound?.id!;
+    alert('Evento atualizado com sucesso!');
 
-    //   eventData.append('codLocal', codLocal.toString());
-    // });
-    // await api.put('/events', eventData);
-
-    alert('Evento alterado com sucesso!');
-
-    history.push('/');
-  }
-
-  function handleDelete() {
-    // api.delete(`/locations/${event.codLocal}`);
-    // api.delete(`/event/${event.id}`);
-
-    alert('Evento deletado com sucesso!');
-
-    history.push('/');
+    history.push('/home');
   }
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>){
@@ -148,12 +112,12 @@ const UpdateEvent = () => {
   }
 
   return (
-    <div id="page-update-event">
+    <div id="page-create-event">
       <header>
         <Link to="/home">
-          Voltar para home
+          <img src={logo} alt="Event Manager"/>
         </Link>
-        <h1>Atualizar evento</h1>
+        <h1>Criar evento</h1>
       </header>
 
       <form onSubmit={handleSubmit}>
@@ -168,98 +132,74 @@ const UpdateEvent = () => {
               type="text" 
               name="name" 
               id="name" 
-              onChange={handleInputChange}
+              onChange={() => handleInputChange}
+              defaultValue={formData.name}
             />
           </div>
 
           <div className="field">
-            <label htmlFor="date">Data inicial do evento</label>
+            <label htmlFor="description">Descrição</label>
             <input 
               type="text" 
-              name="date" 
-              id="date" 
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="hour">Hora inicial do evento</label>
-            <input 
-              type="text" 
-              name="hour" 
-              id="hour" 
-              onChange={handleInputChange}
+              name="description" 
+              id="description" 
+              onChange={() => handleInputChange}
+              defaultValue={formData.description}
             />
           </div>
 
           <div className="field-group">
             <div className="field">
-              <label htmlFor="uf">Estado (UF)</label>
-              <select 
-                name="uf" 
-                id="uf" value={selectedUf} 
-                onChange={handleSelectUf}
-              >
-                {ufs.map(uf => (
-                  <option key={uf} value={uf}>{uf}</option>
-                ))}
-              </select>
+              <label htmlFor="initialDate">Data inicial do evento</label>
+              <input 
+                type="date" 
+                name="initialDate" 
+                id="initialDate" 
+                onChange={() => handleInputChange}
+                defaultValue={formData.initialDate}
+              />
             </div>
+
             <div className="field">
-              <label htmlFor="city">Cidade</label>
-              <select 
-                name="city" 
-                id="city"
-                value={selectedCity}
-                onChange={handleSelectCity}
-              >
-                <option value="0">Selecione uma cidade</option>
-                {cities.map(city => (
-                  <option key={city} value={city}>{city}</option>
-                ))}
-              </select>
+              <label htmlFor="initialHour">Hora inicial do evento</label>
+              <input 
+                type="time" 
+                name="initialHour" 
+                id="initialHour" 
+                onChange={() => handleInputChange}
+                defaultValue={formData.initialHour}
+              />
             </div>
           </div>
+
           <div className="field-group">
-          <div className="field">
-              <label htmlFor="street">Rua</label>
-              <input 
-                type="text" 
-                name="street" 
-                id="street" 
-                onChange={handleInputChange}
-              />
-            </div>
             <div className="field">
-              <label htmlFor="neighborhood">Bairro</label>
+              <label htmlFor="finalDate">Data final do evento</label>
               <input 
-                type="text" 
-                name="neighborhood" 
-                id="neighborhood" 
-                onChange={handleInputChange}
+                type="date" 
+                name="finalDate" 
+                id="finalDate" 
+                onChange={() => handleInputChange}
+                defaultValue={formData.finalDate}
               />
             </div>
-          </div>
-          <div className="field">
-            <label htmlFor="local">Descrição do local</label>
-            <input 
-              type="text" 
-              name="local" 
-              id="local" 
-              onChange={handleInputChange}
-            />
+
+            <div className="field">
+              <label htmlFor="finalHour">Hora inicial do evento</label>
+              <input 
+                type="time" 
+                name="finalHour" 
+                id="finalHour" 
+                onChange={() => handleInputChange} 
+                defaultValue={formData.finalHour}
+              />
+            </div>
           </div>
         </fieldset>
         
-        <div className="field-group">
-          <button onClick={() => history.push('/')}>
-            Voltar
-          </button>
+        <div>
           <button type="submit">
-            Alterar
-          </button>
-          <button className="button-delete" onClick={handleDelete}>
-            Deletar
+            Atualizar
           </button>
         </div>
 
