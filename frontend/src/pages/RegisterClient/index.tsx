@@ -1,9 +1,11 @@
 import React, {useState, ChangeEvent, useEffect, FormEvent } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import logo from '../../assets/logo.png';
 import './styles.css';
+
+import api from '../../services/api';
 
 interface IBGEUFResponse {
     sigla: string
@@ -14,10 +16,12 @@ interface IBGEUFResponse {
   }
 
 const RegisterClient = () => {
+    const history = useHistory();
 
     const [cpf, setCpf] = useState('');
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
+    const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
     const [telefone, setTelefone] = useState('');
 
@@ -63,15 +67,33 @@ const RegisterClient = () => {
     async function registerClient(event: FormEvent){ 
         event.preventDefault();
 
+        
+        const estado = selectedUf;
+        const cidade = selectedCity;
+
         const data = {
+            cpf,
             nome,
             email,
+            login,
             senha,
-            telefone,
-            selectedCity,
-            selectedUf,
-        };                              
-        console.log(data);
+            telefone,        
+            estado,
+            cidade
+        };  
+
+        try {
+            const response = await api.post('/clients', data);
+            if (response.status != 200){
+              alert(`Erro ${response.status}.`);
+            }
+          } catch (err){
+            return;
+          }
+      
+          alert('Cliente criado com sucesso!');
+      
+          history.push('/');    
     }
 
     return(
@@ -108,6 +130,13 @@ const RegisterClient = () => {
                     type="text"
                     id="email"
                     onChange={e => setEmail(e.target.value)} 
+                />
+                <h1>Usuário:</h1>
+                <input
+                    name="login"
+                    type="text"
+                    id="login"
+                    onChange={e => setLogin(e.target.value)} 
                 />
                 <h1>Senha:</h1>
                     <input
