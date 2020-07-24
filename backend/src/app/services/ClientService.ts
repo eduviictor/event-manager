@@ -45,19 +45,7 @@ export default class ClientService {
     cpf: string,
     entity: ClientAttributesBody
   ): Promise<Client> {
-    const { login } = entity;
-    const cpfExists = await this.repository.findOne(cpf);
-
-    if (cpfExists) {
-      throw new ApiError(constants.errorTypes.alreadyExists);
-    }
-
-    const userExists = await User.findOne({ where: { login } });
-
-    if (userExists) {
-      throw new ApiError(constants.errorTypes.alreadyExists);
-    }
-
+    
     const client = await this.repository.update(cpf, entity);
 
     if (client[0] !== 1) {
