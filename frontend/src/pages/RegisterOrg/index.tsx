@@ -1,29 +1,47 @@
-import React, {useState, ChangeEvent, FormEvent} from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, FormEvent} from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import logo from '../../assets/logo.png';
 import './styles.css';
 
+import api from '../../services/api';
 
 const RegisterOrg = () => {
     
     const [cnpj, setCnpj] = useState('');
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
+    const [login, setLogin] = useState('');
     const [senha, setSenha] = useState('');
     const [telefone, setTelefone] = useState('');
 
+    const history = useHistory();
 
     async function registerOrg(event: FormEvent){ 
         event.preventDefault();
 
         const data = {
+            cnpj,
             nome,
             email,
+            login,
             senha,
             telefone
-        };                              
-        console.log(data);
+        };  
+
+        try {
+            const response = await api.post('/organizers', data);
+            if (response.status != 200){
+              alert(`Erro ${response.status}.`);
+            }
+          } catch (err){
+            return;
+          }
+      
+          alert('Organizador criado com sucesso!');
+      
+          history.push('/');                        
+        
     }
     return(
         <div className="registerContainer">
@@ -59,6 +77,13 @@ const RegisterOrg = () => {
                     type="text"
                     id="email"
                     onChange={e => setEmail(e.target.value)}
+                />
+                <h1>Usuário:</h1>
+                <input
+                    name="login"
+                    type="text"
+                    id="login"
+                    onChange={e => setLogin(e.target.value)}
                 />
                 <h1>Senha:</h1>
                     <input
