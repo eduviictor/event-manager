@@ -23,15 +23,19 @@ const Home = () => {
       <header>
         <img src={logo} alt="Event Manager" />
         <span>Bem vindo, {login}</span>
-        <div>
-          <Link to="/create-event">Criar evento</Link>
+        <div className="header_menu">
+          <div className="menu_events">
+            <Link to="/create-event">Criar evento</Link>
 
-          <Link to="/update-event">Alterar evento</Link>
+            <Link className="event_update" to="/update-event">Alterar evento</Link>
+          </div>
 
-          <Link to="/create-attraction">Criar atração</Link>
+          <div className="menu_attractions">
+            <Link to="/create-attraction">Criar atração</Link>
 
-          <Link to="/update-attraction">Alterar atração</Link>
-          
+            <Link className="attraction_update" to="/update-attraction">Alterar atração</Link>
+          </div>
+
           <Link to="/update-organizer">Dados Pessoais</Link>
         </div>
         <button onClick={handleLogout} type="button">
