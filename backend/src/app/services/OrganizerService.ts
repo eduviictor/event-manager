@@ -44,19 +44,7 @@ export default class OrganizerService {
   public async update(
     cnpj: string,
     entity: OrganizerAttributesBody
-  ): Promise<Organizer> {
-    const { login } = entity;
-    const cnpjExists = await this.repository.findOne(cnpj);
-
-    if (cnpjExists) {
-      throw new ApiError(constants.errorTypes.alreadyExists);
-    }
-
-    const userExists = await User.findOne({ where: { login } });
-
-    if (userExists) {
-      throw new ApiError(constants.errorTypes.alreadyExists);
-    }
+  ): Promise<Organizer> {    
 
     const user = await this.repository.update(cnpj, entity);
 

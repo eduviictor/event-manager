@@ -45,17 +45,6 @@ export default class AttractionService {
         codigo: number,
         entity: AttractionAttributes
       ): Promise<Attraction> {
-        const codigoExists = await this.repository.findOne(codigo);
-    
-        if (codigoExists) {
-          throw new ApiError(constants.errorTypes.alreadyExists);
-        }
-    
-        const attractionExists = await Attraction.findOne({ where: { codigo } });
-    
-        if (attractionExists) {
-          throw new ApiError(constants.errorTypes.alreadyExists);
-        }
     
         const attraction = await this.repository.update(codigo, entity);
     
