@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\arthu\Desktop\FACULDADE\SUPLEMENTAR\ENG_II\event-manager\backend\src\app\controllers\Attraction\AttractionController.spec.ts">
-    <testCase name="Attraction Controller Get all attractions: index()" duration="25"/>
-    <testCase name="Attraction Controller Get one attraction: show()" duration="6"/>
-    <testCase name="Attraction Controller Create one attraction: store()" duration="6"/>
-    <testCase name="Attraction Controller Update one attraction: update()" duration="6"/>
-    <testCase name="Attraction Controller Delete one attraction: delete()" duration="870"/>
-  </file>
-  <file path="C:\Users\arthu\Desktop\FACULDADE\SUPLEMENTAR\ENG_II\event-manager\backend\src\app\controllers\Organizer\OrganizerController.spec.ts">
-    <testCase name="Organizer Controller Get all organizers: index()" duration="17"/>
-    <testCase name="Organizer Controller Get one organizer: show()" duration="5"/>
-    <testCase name="Organizer Controller Create one organizer: store()" duration="239"/>
-    <testCase name="Organizer Controller Update one organizer: update()" duration="3"/>
-    <testCase name="Organizer Controller Delete one organizer: delete()" duration="3"/>
-  </file>
-  <file path="C:\Users\arthu\Desktop\FACULDADE\SUPLEMENTAR\ENG_II\event-manager\backend\src\app\controllers\Client\ClientController.spec.ts">
-    <testCase name="Client Controller Get all clients: index()" duration="20"/>
-    <testCase name="Client Controller Get one client: show()" duration="5"/>
-    <testCase name="Client Controller Create one client: store()" duration="235"/>
-    <testCase name="Client Controller Update one client: update()" duration="4"/>
-    <testCase name="Client Controller Delete one client: delete()" duration="3"/>
-  </file>
-  <file path="C:\Users\arthu\Desktop\FACULDADE\SUPLEMENTAR\ENG_II\event-manager\backend\src\app\controllers\Event\EventController.spec.ts">
-    <testCase name="Event Controller Get all events: index()" duration="14"/>
-    <testCase name="Event Controller Get one event: show()" duration="4"/>
-    <testCase name="Event Controller Create one event: store()" duration="8"/>
-    <testCase name="Event Controller Update one event: update()" duration="3"/>
-    <testCase name="Event Controller Delete one event: delete()" duration="2"/>
-  </file>
-  <file path="C:\Users\arthu\Desktop\FACULDADE\SUPLEMENTAR\ENG_II\event-manager\backend\src\app\controllers\Ticket\TicketController.spec.ts">
-    <testCase name="Ticket Controller Get all tickets: index()" duration="14"/>
-    <testCase name="Ticket Controller Get one ticket: show()" duration="3"/>
-    <testCase name="Ticket Controller Create one ticket: store()" duration="10"/>
-    <testCase name="Ticket Controller Update one ticket: update()" duration="3"/>
-    <testCase name="Ticket Controller Delete one ticket: delete()" duration="2"/>
+    <testCase name="Attraction Controller Get all attractions: index()" duration="20"/>
+    <testCase name="Attraction Controller Get one attraction: show()" duration="4"/>
+    <testCase name="Attraction Controller Create one attraction: store()" duration="3"/>
+    <testCase name="Attraction Controller Update one attraction: update()" duration="3"/>
+    <testCase name="Attraction Controller Delete one attraction: delete()" duration="3"/>
   </file>
 </testExecutions>
