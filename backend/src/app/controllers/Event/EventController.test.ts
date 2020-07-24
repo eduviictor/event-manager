@@ -40,13 +40,10 @@ describe('Event Controller', () => {
 
     const event = {
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
     };
 
     await Event.create(event);
@@ -61,13 +58,10 @@ describe('Event Controller', () => {
       expect(response.body).toMatchObject([
         {
           codigo: 9,
-          codEmpresa: 1,
-          codAtracao: 1,
-          codLocal: 1,
-          codOrcamento: 1,
-          codIngresso: 1,
-          dados: 'dsadasdsa',
-          horario: '323232',
+          nome: "Party",
+          descricao: "A nice party!",
+          horario_inicio: "July 4, 9 PM",
+          horario_fim: "July 5, 10 PM",
         },
       ]);
     });
@@ -80,13 +74,10 @@ describe('Event Controller', () => {
         .set('Authorization', `bearer ${token}`);
       expect(response.body).toMatchObject({
         codigo: 9,
-        codEmpresa: 1,
-        codAtracao: 1,
-        codLocal: 1,
-        codOrcamento: 1,
-        codIngresso: 1,
-        dados: 'dsadasdsa',
-        horario: '323232',
+        nome: "Party",
+        descricao: "A nice party!",
+        horario_inicio: "July 4, 9 PM",
+        horario_fim: "July 5, 10 PM",
       });
     });
 
@@ -103,23 +94,17 @@ describe('Event Controller', () => {
       const response = await request
         .post('/events')
         .send({
-          codEmpresa: 1,
-          codAtracao: 1,
-          codLocal: 1,
-          codOrcamento: 1,
-          codIngresso: 1,
-          dados: 'dsadasdsa',
-          horario: '323232',
+          nome: "Party",
+          descricao: "A nice party!",
+          horario_inicio: "July 4, 9 PM",
+          horario_fim: "July 5, 10 PM",
         })
         .set('Authorization', `bearer ${token}`);
       expect(response.body).toMatchObject({
-        codEmpresa: 1,
-        codAtracao: 1,
-        codLocal: 1,
-        codOrcamento: 1,
-        codIngresso: 1,
-        dados: 'dsadasdsa',
-        horario: '323232',
+        nome: "Party",
+        descricao: "A nice party!",
+        horario_inicio: "July 4, 9 PM",
+        horario_fim: "July 5, 10 PM",
       });
     });
   });
@@ -129,23 +114,17 @@ describe('Event Controller', () => {
       const response = await request
         .put('/events/9')
         .send({
-          codEmpresa: 2,
-          codAtracao: 2,
-          codLocal: 2,
-          codOrcamento: 2,
-          codIngresso: 2,
-          dados: 'dsadasdsa2',
-          horario: '323232',
+          nome: "Party",
+          descricao: "A nice party!",
+          horario_inicio: "July 4, 9 PM",
+          horario_fim: "July 5, 10 PM",
         })
         .set('Authorization', `bearer ${token}`);
       expect(response.body).toMatchObject({
-        codEmpresa: 2,
-        codAtracao: 2,
-        codLocal: 2,
-        codOrcamento: 2,
-        codIngresso: 2,
-        dados: 'dsadasdsa2',
-        horario: '323232',
+        nome: "Party",
+        descricao: "A nice party!",
+        horario_inicio: "July 4, 9 PM",
+        horario_fim: "July 5, 10 PM",
       });
     });
 

@@ -7,38 +7,29 @@ describe('Event Controller', () => {
     Event.findAll = jest.fn().mockReturnValue([
       {
         codigo: 9,
-        codEmpresa: 1,
-        codAtracao: 1,
-        codLocal: 1,
-        codOrcamento: 1,
-        codIngresso: 1,
-        dados: 'dsadasdsa',
-        horario: '323232',
+        nome: "Party",
+        descricao: "A nice party!",
+        horario_inicio: "July 4, 9 PM",
+        horario_fim: "July 5, 10 PM",
         created_at: '2020-07-09T15:52:54.165Z',
         updated_at: '2020-07-09T15:52:54.165Z',
       },
     ]);
     Event.findOne = jest.fn().mockReturnValue({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
     Event.create = jest.fn().mockReturnValue({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
       created_at: '2020-07-09T16:27:45.227Z',
       updated_at: '2020-07-09T16:27:45.227Z',
     });
@@ -47,13 +38,10 @@ describe('Event Controller', () => {
       [
         {
           codigo: 8,
-          codEmpresa: 1,
-          codAtracao: 5,
-          codLocal: 2,
-          codOrcamento: 2,
-          codIngresso: 2,
-          dados: 'dsadasdsa',
-          horario: '323232',
+          nome: "Party",
+          descricao: "A nice party!",
+          horario_inicio: "July 4, 9 PM",
+          horario_fim: "July 5, 10 PM",
           created_at: '2020-07-09T14:14:20.288Z',
           updated_at: '2020-07-09T14:15:31.324Z',
         },
@@ -67,13 +55,10 @@ describe('Event Controller', () => {
     expect(events).toEqual([
       {
         codigo: 9,
-        codEmpresa: 1,
-        codAtracao: 1,
-        codLocal: 1,
-        codOrcamento: 1,
-        codIngresso: 1,
-        dados: 'dsadasdsa',
-        horario: '323232',
+        nome: "Party",
+        descricao: "A nice party!",
+        horario_inicio: "July 4, 9 PM",
+        horario_fim: "July 5, 10 PM",
         created_at: '2020-07-09T15:52:54.165Z',
         updated_at: '2020-07-09T15:52:54.165Z',
       },
@@ -84,13 +69,10 @@ describe('Event Controller', () => {
     const event = await eventController.show('9');
     expect(event).toEqual({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -99,50 +81,38 @@ describe('Event Controller', () => {
   it('Create one event: store()', async () => {
     const eventPost: Event = new Event({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
     });
 
     const event = await eventController.store(eventPost);
     expect(event).toMatchObject({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
     });
   });
 
   it('Update one event: update()', async () => {
     const eventPut: Event = new Event({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
     });
 
     const event = await eventController.update('8', eventPut);
     expect(event).toMatchObject({
       codigo: 9,
-      codEmpresa: 1,
-      codAtracao: 1,
-      codLocal: 1,
-      codOrcamento: 1,
-      codIngresso: 1,
-      dados: 'dsadasdsa',
-      horario: '323232',
+      nome: "Party",
+      descricao: "A nice party!",
+      horario_inicio: "July 4, 9 PM",
+      horario_fim: "July 5, 10 PM",
     });
   });
 

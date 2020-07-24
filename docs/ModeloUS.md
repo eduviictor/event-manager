@@ -6,6 +6,8 @@
 | ---------- | :----: | :--------------------------------------------------------: | :-------------: |
 | 12/03/2020 |  1.0   | Documento inicial.                                         | Arthur Medeiros |
 | 12/07/2020 |  1.1   | Separação de requisitos funcionais em outros user stories. | Kael Silva      |
+| 23/07/2020 |  1.2   | Atualização dos requisitos funcionais dos US               | Ewerton Silva   |
+
 
 ## Prioridade do User Story
 
@@ -20,7 +22,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 
   * Descrição: O sistema deve manter um cadastro de evento que é criado por um organizador e consultado por clientes. Um evento tem os atributos código, nome, data, horario, código da atração, código da localização, código da empresa, código do orçamento, código de ingresso. O evento é cadastrado por um organizador diretamente no sistema e consultado pelo cliente que deseja participar.
-  * Requisitos envolvidos: RF05, RF06, RF09
+  * Requisitos envolvidos: RF04, RF05, RF06, RF07, RF08, RF10, RF12, RF21, RF22 
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -35,10 +37,10 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
 
    * Descrição: O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos nome, endereço, email e senha. O email será o login e ele pode registrar-se diretamente no sistema e aguardar ativação da conta pelo administrador. Ao efetuar login o sistema deverá ser capaz de distinguir entre os tipos de usuário seja ele cliente ou Organizador dando acesso a suas respectivas funcionalidades.
-   * Requisitos envolvidos: RF01, RF02, RF03
+   * Requisitos envolvidos: RF01, RF19
    * Prioridade: Essencial
    * Estimativa: 10h
-   * Tempo gasto(real):12h
+   * Tempo gasto(real):
    * Testes de aceitação:
      * TA01.01 - O usuário informa, na tela Registrar, todos os dados para registrar-se corretamente, ao clicar em salvar ele é notificado com uma mensagem de sucesso. Mensagem: Cadastro realizado com sucesso, aguardando ativação do administrador.
      * TA01.02 - O usuário informa, na tela Registrar, os dados para registrar-se incorretamente, ao clicar em salvar ele é notificado com uma mensagem de erro. Mensagem: Cadastro não realizado, o campo “xxxx” não foi informado corretamente.
@@ -48,7 +50,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US02 - Manter organizador
 
   * Descrição: O sistema deve manter um cadastro de organizador que é criado por uma pessoa que utiliza a aplicação. Um organizador tem os atributos cpf/cnpj, nome, email, telefone, status, cod_evento. Os organizadores cadastram eventos nos quais os usuários podem acessar informações.
-  * Requisitos envolvidos: RF01, RF04, RF05, RF10
+  * Requisitos envolvidos: RF03, RF05, RF09, RF21
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -62,7 +64,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US03 - Manter cliente
 
   * Descrição: O sistema deve manter um cadastro de cliente que é criado por uma pessoa que utiliza a aplicação. Um cliente tem os atributos cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso. Os clientes adquirem ingressos de eventos nos quais os organizadores cadastram as informações.
-  * Requisitos envolvidos: RF01, RF03, RF15
+  * Requisitos envolvidos: RF02, RF06, RF13
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -76,7 +78,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US04 - Manter Atração
 
    * Descrição: O sistema deve manter um cadastro de uma ou mais atrações pertencentes a um único evento(no qual deverá ser criado por um organizador, que terá acesso posteriormente a parte de criar atrações para esse evento). Uma atração tem os atributos código, nome, e-mail e telefone. Uma atração é criada pelo mesmo usúario que criou o respectivo evento, podendo ser acessado pelos clientes.
-   * Requisitos envolvidos: RF13
+   * Requisitos envolvidos: RF10, RF11
    * Prioridade: Essencial
    * Estimativa: 10h
    * Tempo gasto(real):
@@ -90,7 +92,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US05 - Manter Ingresso
 
    * Descrição: O sistema deverá permitir a compra/aquisição de ingressos por parte do cliente e a disponibilização dos mesmos com suas respectivas informações por parte dos organizadores.
-   * Requisitos envolvidos: RF15, RF16, RF17, RF19
+   * Requisitos envolvidos: RF13, RF14, RF15, RF17
    * Prioridade: Essencial
    * Estimativa: 12h
    * Tempo gasto(real):
@@ -106,7 +108,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
    * Descrição:O sistema deve manter um cadastro de empresa que é criado por um usuário organizador que utiliza a aplicação. Uma empresa tem como atributos cnpj, nome, serviço, telefone, e-mail. Uma empresa é cadastrada diretamente no sistema por um usuário organizador e consultada pelos usuários clientes.
 
-   * Requisitos envolvidos: RF11
+   * Requisitos envolvidos: RF08, RF09
    * Prioridade: Essencial
    * Estimativa: 10h
    * Tempo gasto(real):
@@ -122,7 +124,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 
    * Descrição: O sistema deve manter o registro de Informações sobre finanças como ingressos vendidos, valores arrecadados, valores investidos enfim, informações que serão analisadas e avaliadas em determinado período. Um Orçamento têm como atributos: código, descrição, ingressos vendidos, valor arrecadado, valor investido, receita. Ele pode ser consultado pelo Organizador.
 
-   * Requisitos envolvidos:RF14
+   * Requisitos envolvidos:RF12
    * Prioridade: Essencial
    * Estimativa: 12h
    * Tempo gasto(real):
@@ -134,7 +136,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US08 - Manter Relatório  
   
   * Descrição: O sistema deve gerar um relatório com  registros de todos os eventos cadastrados no mesmo utilizando os valores investidos, valores arrecadados. Essas informações serão analisadas e avaliadas entre um período. Ele pode ser consultado pelo Organizador do evento ou administrador com fim de visualização para melhor planejamento ou gerenciamento, exemplo: quais eventos deram maior lucro em 2019, quais tem valor de investimento menor ou maior lucro, etc. Um Relatório têm como atributos: código, valor investido, valor arrecadado, cod_evento e receita.  
-  * Requisitos envolvidos: RF23  
+  * Requisitos envolvidos: RF21 
   * Prioridade: Essencial  
   * Estimativa:  
   * Tempo gasto(real):  
@@ -147,7 +149,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US09 - Atribuir localização a evento
 
   * Descrição: O sistema deve ser capaz de atribuir uma localização a um evento.
-  * Requisitos envolvidos: RF07
+  * Requisitos envolvidos: RF05, RF06, RF07 
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -159,7 +161,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US10 - Atribuir atração a evento
 
   * Descrição: O sistema deve ser capaz de atribuir várias atrações a um evento ou removê-las.
-  * Requisitos envolvidos: RF12
+  * Requisitos envolvidos: RF10
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 
@@ -170,7 +172,7 @@ Desejável: requisito que não compromete as funcionalidades básicas do sistema
 * User Story US11 - Atribuir empresa a evento
 
   * Descrição: O sistema deve ser capaz de atribuir várias empresas a um evento ou removê-las.
-  * Requisitos envolvidos: RF09
+  * Requisitos envolvidos: RF08
   * Prioridade: Essencial
   * Estimativa: 10h
   * Tempo gasto(real): 

@@ -16,46 +16,50 @@ O sistema Event Manager é uma ferramenta para o processo de gerenciamento de ev
 Lista de user stories e os requisitos que estão associados.
 
 ### US00 - Manter evento
-* RF05 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
-* RF06 - Eventos têm atributos.
-* RF07 - Eventos possuem localizações.
-* RF09 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
-* RF12 - Eventos possuem atrações.
-* RF13 - Eventos geram orçamentos.
+* RF04 - Eventos podem ser cadastrados por organizadores e consultados por clientes, e têm como atributos: codigo, nome, data, horario_inicio, Horario_fim, cod_atracao, cod_local, cod_empresa, cod_orcamento, cod_ingresso.
+* RF05 - Eventos possuem localização
+* RF06 - Localizações podem ser consultadas por clientes.
+* RF07 - localização de um evento pode ser alterada.
+* RF08 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
+* RF10 - Eventos possuem atrações.
+* RF12 - Eventos geram orçamentos.
+* RF21 - Eventos possuem relatórios.
+* RF22 - Relatório de um evento é consultado por um organizador.
 
 ### US01 - Manter usuário
-* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
-* RF02 - Usuários têm como atributos: Login, Senha.
-* RF03 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
+* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos, e têm como atributos: Login, Senha.
+* RF19 - Usuários recebem notificação sobre os eventos.
 
 ### US02 - Manter organizador
-* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
-* RF04 - Usuários do tipo organizador de evento têm como atributos: cnpj, nome, e-mail, telefone, cod_evento.
+* RF03 - Usuários (organizador) organizadores de eventos, e têm como atributos:  cnpj, nome, e-mail, telefone, login.
 * RF05 - Eventos podem ser cadastrados por organizadores e consultados por clientes.
-* RF10 - Organizadores podem consultar empresas.
+* RF09 - Organizadores podem consultar empresas.
+* RF21 - Organizadores podem consultar relatórios.
 
 ### US03 - Manter atração
-* RF12 - Eventos possuem atrações.
-* RF13 - Atrações têm como atributos: codigo, nome, telefone, e-mail.
+* RF10 - Eventos possuem atrações.
+* RF11 - Atrações têm como atributos: codigo, nome, telefone, e-mail, horario_inicio, horario_fim, descrição.
 
 ### US04 - Manter ingresso
-* RF15 - Ingressos podem ser adquiridos pelos clientes.
-* RF16 - Ingressos possuem tipos: Estudante, VIP, normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento.
-* RF17 - Ingressos têm como atributos: codigo, tipo, valor, quantidade.
-* RF19 - Tipo_ingresso tem como atributos: cod_ingresso, cod_evento.
+* RF13 - Ingressos podem ser adquiridos pelos clientes.
+* RF14 - Ingressos possuem tipos: Estudante, VIP, normal, entre outros. Por isso, é necessário a criação de uma entidade ingresso que pertence a evento.
+* RF15 - Ingressos têm como atributos: codigo, tipo, valor, quantidade.
+* RF17 - Tipo_ingresso tem como atributos: cod_ingresso, cod_evento.
 
 ### US05 - Manter empresa
-* RF09 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
-* RF11 - Empresas têm como atributos: cnpj, nome, serviço, telefone, e-mail.
+* RF08 - O sistema contará com empresas associadas que se cadastraram na aplicação para fornecerem serviços a um evento.
+* RF09 - Empresas têm como atributos: cnpj, nome, serviço, telefone, e-mail.
 
 ### US06 -Manter orçamento
-* RF14 - Orçamentos têm como atributos: codigo, descriçao, ingressos vendidos, valor arrecadado, valor investido, receita.
+* RF12 - Orçamentos têm como atributos: codigo, descriçao, ingressos_vendidos, valor_arrecadado, valor_investido, cod_evento, receita.
 
 ### US07 - Manter cliente
-* RF01 - Usuários podem ser cadastrados como clientes e organizadores de eventos.
-* RF03 - Usuários do tipo cliente têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, cod_ingresso.
-* RF15 - Ingressos podem ser adquiridos pelos clientes.
+* RF02 - Usuários podem ser cadastrados como clientes e organizadores de eventos, e têm como atributos: cpf, nome, e-mail, telefone, estado, cidade, login.
+* RF06 - clientes podem consultar a localização de um evento.
+* RF13 - Ingressos podem ser adquiridos pelos clientes.
 
+### US08 - Manter relatório
+* RF21 - Relatórios de eventos/atração podem ser consultados pelos organizadores, e têm como atributos: codigo, valor_investido, valor_arrecadado, cod_evento, receita.
 
 ## Tipo de Contagem
 
@@ -74,10 +78,12 @@ Na contagem indicativa só é necessário analisar os ALIs (Arquivos Lógicos In
 | ALI Empresa       |        Empresa         |   35 |
 | ALI Localização   |      Localização       |   35 |
 | ALI Usuário       |        Usuário         |   35 |
+| ALI Relatório     |        Relatório       |   35 |
+
 
 | Contagem   | Total de Pontos Função |
 | ---------- | :--------------------: |
-| Indicativa |          350           |
+| Indicativa |          385           |
 
 ### Contagem estimativa (Ce)
 Analisa todos às funções da dados (ALI’s e AIE’s) com complexidade baixa, 7 PF cada ALI e 5 PF para cada AIE).
@@ -133,7 +139,8 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | ALI Usuário     | ALI  | 2   | 1 (Usuário)  		     | Baixa 	    | 7 	   |
 | ALI Cliente     | ALI  | 7   | 1 (Cliente)  		     | Baixa 	    | 7 	   |
 | ALI Empresa     | ALI  | 5   | 1 (Empresa)  		     | Baixa 	    | 7 	   |
-| Total		  |      |     |                             |              | 59           |
+| ALI Relatório   | ALI  | 5   | 1 (Relatório) 		     | Baixa 	    | 7 	   |
+| Total		  |      |     |                             |              | 66           |
 
 
 | Descrição             | Tipo | DER | ALR (Nome das Tabelas)						   | Complexidade | Contribuição |
@@ -171,4 +178,6 @@ A contagem Detalhada (Cd) analisa todos às funções da dados (ALI’s e AIE’
 | Alterar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa 	  | 3            |
 | Deletar empresa   	| EE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
 | Consultar empresa 	| CE   | 5   | 1 (Empresa)							   | Baixa        | 3            |
-| Total			|      |     |	 						   		   |              | 117		 |
+| Deletar relatório   	| EE   | 5   | 2 (Relatório, evento)						   | Baixa        | 3            |
+| Consultar relatório 	| CE   | 5   | 2 (Relatório, evento)						   | Baixa        | 3            |
+| Total			|      |     |	 						   		   |              | 123		 |
