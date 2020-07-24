@@ -49,7 +49,7 @@ export default class OrganizerService {
     cnpj: string,
     entity: OrganizerAttributesBody
   ): Promise<Organizer> {    
-
+    await this.validator.update(entity);
     const user = await this.repository.update(cnpj, entity);
 
     if (user[0] !== 1) {
