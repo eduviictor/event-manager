@@ -10,10 +10,20 @@
     align-items: center;
 }
 
-.homeContainer header div{
+.homeContainer header .header_menu{
     display: flex;
     align-items: center;
     margin-left: auto;
+}
+
+.homeContainer header .header_menu .menu_events,
+.homeContainer header .header_menu .menu_attractions{
+   margin-right: 80px;
+}
+
+.homeContainer header .header_menu .menu_events .event_update,
+.homeContainer header .header_menu .menu_attractions .attraction_update{
+   margin-top: 15px;
 }
 
 .homeContainer header span {
