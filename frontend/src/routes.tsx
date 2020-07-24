@@ -31,7 +31,7 @@ const Routes = () => {
         <PrivateRoute component={RegisterOrg} path="/register-organizer" />
         <PrivateRoute component={RegisterClt} path="/register-client" />
         <PrivateRoute component={CreateEvent} path="/create-event" />
-        <PrivateRoute component={UpdateEvent} path="/update-event" />
+        <PrivateRoute component={UpdateEvent} path="/update-event/:codigo" />
       </Switch>
     </BrowserRouter>
   );
