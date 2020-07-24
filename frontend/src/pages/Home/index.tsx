@@ -52,17 +52,27 @@ const Home = () => {
 
   return (
     <div className="homeContainer">
-     <header>
-        <img src={logo} alt="Event Manager" />
+       <header>
+          <img src={logo} alt="Event Manager" />
+          <span>Bem vindo, {login}</span>
+          <div className="header_menu">
+            <div className="menu_events">
+              <Link to="/create-event">Criar evento</Link>
 
-        <span>Bem vindo, usuário</span>
-        
-        <div>
-          <Link to="/create-event">Criar evento</Link>
-        </div>
-        <button onClick={handleLogout} type="button">
-          <BsPower size={18} color="#E02041" />
-        </button>
+              <Link className="event_update" to="/update-event">Alterar evento</Link>
+            </div>
+
+            <div className="menu_attractions">
+              <Link to="/create-attraction">Criar atração</Link>
+
+              <Link className="attraction_update" to="/update-attraction">Alterar atração</Link>
+            </div>
+
+            <Link to="/update-organizer">Dados Pessoais</Link>
+          </div>
+          <button onClick={handleLogout} type="button">
+            <BsPower size={18} color="#E02041" />
+          </button>
       </header>
 
       <h1>Eventos</h1>
