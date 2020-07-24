@@ -33,12 +33,17 @@ const Routes = () => {
       <Switch>
         <Route component={Login} path="/" exact />
         <PrivateRoute component={Home} path="/home" />
-        <PrivateRoute component={RegisterOrg} path="/register-organizer" />
-        <PrivateRoute component={RegisterClt} path="/register-client" />
-        <PrivateRoute component={CreateEvent} path="/create-event" />
-        <PrivateRoute component={UpdateEvent} path="/update-event/:codigo" />
+        <PrivateRoute component={HomeClient} path="/home-client" />        
+        <Route component={RegisterOrg} path="/register-organizer" />
+        <Route component={RegisterClt} path="/register-client" />
+        <PrivateRoute component={ClientUpdate} path="/update-client" />   
+        <PrivateRoute component={OrganizerUpdate} path="/update-organizer" />           
+        <PrivateRoute component={CreateEvent} path="/create-event" />        
+        <PrivateRoute component={UpdateEvent} path="/update-event" />        
+        <PrivateRoute component={CreateAttraction} path="/create-attraction" />
+        <PrivateRoute component={UpdateAttraction} path="/update-attraction" />
       </Switch>
-    </BrowserRouter>    
+    </BrowserRouter>
   );
 };
 
