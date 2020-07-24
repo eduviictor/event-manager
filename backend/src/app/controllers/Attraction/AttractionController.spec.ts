@@ -1,6 +1,5 @@
 import { AttractionController } from './AttractionController';
 import Attraction, { AttractionAttributes } from '../../models/Attraction';
-import AttractionService from '../../services/AttractionService';
 
 describe('Attraction Controller', () => {
   const attractioncontroller = new AttractionController();
@@ -149,7 +148,8 @@ describe('Attraction Controller', () => {
     });
   });
 
-  it('Delete one attraction: delete()', async () => {    
+  it('Delete one attraction: delete()', async () => {  
+    Attraction.destroy = jest.fn().mockReturnValue(1);  
     Attraction.findOne = jest.fn().mockReturnValue({
       codigo: 21212112,
       nome: 'Atração teste',
@@ -161,6 +161,7 @@ describe('Attraction Controller', () => {
       created_at: '2020-07-23T18:17:22.365Z',
       updated_at: '2020-07-23T18:17:22.365Z' 
     });
+    
 
     const deleted = await attractioncontroller.delete(21212112);
     expect(deleted).toEqual('Attraction deleted with success');
