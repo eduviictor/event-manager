@@ -19,7 +19,7 @@ interface IBGEUFResponse {
 
   const ClientUpdate = () => {
     
-    const navigation = useHistory();
+    const history = useHistory();
 
     
     const [cpf, setCpf] = useState('');
@@ -35,6 +35,18 @@ interface IBGEUFResponse {
     const [selectedUf, setSelectedUf] = useState('0');
     const [selectedCity, setSelectedCity] = useState('0');
 
+      
+    useEffect(() => {
+        api.get(`/clients/${cpf}`).then(
+            res => {
+                setCpf(res.data[0].cpf);
+                setNome(res.data[0].nome);
+                setEmail(res.data[0].email);
+                setLogin(res.data[0].login);
+                setTelefone(res.data[0].telefone);
+            }
+        )
+    }, []);    
     
     useEffect(() => {
         axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
@@ -69,8 +81,43 @@ interface IBGEUFResponse {
     }
     
 
-    async function updateClient(){
-        alert('atualizar');
+    async function updateClient(event: FormEvent){
+        event.preventDefault();
+
+           
+        const estado = selectedUf;
+        const cidade = selectedCity;
+
+        const data = {
+            cpf,
+            nome,
+            email,
+            login,
+            senha,
+            telefone,        
+            estado,
+            cidade
+        };  
+
+        if(data.cpf === '' || data.nome === '' || data.email === '' || data.login === '' || data.senha === '' || data.telefone === '' || data.estado === '' || data.cidade === ''){
+            alert('Erro! Verifique se os campos preenchidos estão corretos.');
+            return;
+        }else{
+
+            try {
+                const response = await api.put(`/clients/${cpf}`, data);        
+                if (response.status != 200){
+                alert(`Erro ${response.status}.`);
+                }
+            } catch (err){
+                return;
+            }
+
+                
+            alert('Cliente atualizado com sucesso!');
+            
+            history.push('/home-client');   
+        }
     }
 
     return(
@@ -88,6 +135,7 @@ interface IBGEUFResponse {
                 <form onSubmit={updateClient}>
                 <h1>CPF:</h1>
                 <input
+                    value= {cpf}
                     name="cpf"
                     type="text"
                     id="cpf"
@@ -95,6 +143,7 @@ interface IBGEUFResponse {
                 />
                 <h1>Nome:</h1>
                 <input
+                    value= {nome}
                     name="nome"
                     type="text"
                     id="nome"
@@ -102,6 +151,7 @@ interface IBGEUFResponse {
                 />
                 <h1>E-Mail:</h1>
                 <input
+                    value= {email}
                     name="email"
                     type="text"
                     id="email"
@@ -109,6 +159,7 @@ interface IBGEUFResponse {
                 />
                 <h1>Usuário:</h1>
                 <input
+                    value= {login}
                     name="login"
                     type="text"
                     id="login"
@@ -123,6 +174,7 @@ interface IBGEUFResponse {
                     />
                 <h1>Telefone:</h1>
                 <input
+                    value= {telefone}
                     name="telefone"
                     type="text"
                     id="telefone"
