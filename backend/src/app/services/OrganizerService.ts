@@ -3,9 +3,12 @@ import Organizer, { OrganizerAttributesBody } from '../models/Organizer';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
 import User from '../models/User';
+import OrganizerValidator from '../validators/OrganizerValidator';
 
 export default class OrganizerService {
   repository: OrganizerRepository = new OrganizerRepository();
+  validator: OrganizerValidator = new OrganizerValidator();
+
 
   public async findAll(): Promise<Organizer[]> {
     return this.repository.find();
@@ -21,6 +24,7 @@ export default class OrganizerService {
   }
 
   public async create(entity: OrganizerAttributesBody): Promise<Organizer> {
+    await this.validator.create(entity);
     const { cnpj, login } = entity;
     const cnpjExists = await this.repository.findOne(cnpj);
 
