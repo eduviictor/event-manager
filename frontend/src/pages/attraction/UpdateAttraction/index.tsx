@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../../services/api';
@@ -18,8 +18,36 @@ const UpdateAttraction = () => {
 
   const history = useHistory();
 
-  async function updateAttraction(){
-      alert('Alterar atração');
+  async function updateAttraction(event: FormEvent){
+    event.preventDefault();
+
+    const data = {        
+        nome,
+        email,
+        telefone,        
+        horario_fim,
+        horario_inicio,
+        descricao
+    };  
+
+    if(data.nome === '' || data.email === '' || data.telefone === '' || data.horario_fim === '' || data.horario_inicio === '' || data.descricao === '' ){
+        alert('Erro! Verifique se os campos preenchidos estão corretos.');
+        return;
+    }else{
+      
+        try {
+            const response = await api.put('/attractions/12', data);
+            if (response.status != 200){
+                alert(`Erro ${response.status}.`);
+            }
+            } catch (err){
+            return;
+        }
+        
+        alert('Atração atualizada com sucesso!');
+
+        history.push('/home');
+    }
   }
 
   return (
