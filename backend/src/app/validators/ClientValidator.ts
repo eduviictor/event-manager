@@ -21,5 +21,21 @@ export default class ClientValidator {
       throw new ApiError(constants.errorTypes.validation);
     }
   }
+  public async update(body: ClientAttributesBody) {
+    const schema = yup.object().shape({
+      cpf: yup.string().required(),
+      email: yup.string().email().required(),
+      cidade: yup.string().required(),
+      estado: yup.string().required(),
+      nome: yup.string().required(),
+      senha: yup.string().required(),
+      telefone: yup.string().required(),
+    });
 
+    const result = await schema.isValid(body);
+
+    if (!result) {
+      throw new ApiError(constants.errorTypes.validation);
+    }
+  }
 }
