@@ -10,8 +10,11 @@ import { logout } from '../../services/auth';
 const Home = () => {
   const navigation = useHistory();
 
+  const login = localStorage.getItem('user_name');
+
   function handleLogout() {
-    logout();
+    logout();    
+    localStorage.clear();
     navigation.push('/');
   }
 
@@ -19,11 +22,17 @@ const Home = () => {
     <div className="homeContainer">
       <header>
         <img src={logo} alt="Event Manager" />
-        <span>Bem vindo, usuário</span>
+        <span>Bem vindo, {login}</span>
         <div>
           <Link to="/create-event">Criar evento</Link>
 
           <Link to="/update-event">Alterar evento</Link>
+
+          <Link to="/create-attraction">Criar atração</Link>
+
+          <Link to="/update-attraction">Alterar atração</Link>
+          
+          <Link to="/update-organizer">Dados Pessoais</Link>
         </div>
         <button onClick={handleLogout} type="button">
           <BsPower size={18} color="#E02041" />
