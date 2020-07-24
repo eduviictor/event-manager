@@ -7,14 +7,16 @@ import logo from '../../../assets/logo.png';
 
 import './styles.css';
 
-const UpdateEvent = () => {
-
+const UpdateEvent = (props:any) => {
+  const { match } = props;
+  const { codigo } = match.params;
   interface EventAttributesBody {
     nome: string;
     descricao: string;
     horario_inicio: string;
     horario_fim: string;
   }
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -39,24 +41,25 @@ const UpdateEvent = () => {
 
   useEffect(() => {
       try {
-          const getData = async () => {
-            await api.get('/events/12').then(response => {
-              const { nome, descricao, horario_inicio, horario_fim } = response.data;
-              const splittedInitialDate = splitDate(horario_inicio);
-              const splittedFinalDate = splitDate(horario_fim);
-    
-              setFormData({...formData, 
-                              name: nome, 
-                              description: descricao,
-                              initialDate: splittedInitialDate[0],
-                              initialHour: splittedInitialDate[1],
-                              finalDate: splittedFinalDate[0],
-                              finalHour: splittedFinalDate[1],
-              });
+        const getData = async () => {
+
+          await api.get(`/events/${codigo}`).then(response => {
+            const { nome, descricao, horario_inicio, horario_fim } = response.data;
+            const splittedInitialDate = splitDate(horario_inicio);
+            const splittedFinalDate = splitDate(horario_fim);
+  
+            setFormData({...formData, 
+                            name: nome, 
+                            description: descricao,
+                            initialDate: splittedInitialDate[0],
+                            initialHour: splittedInitialDate[1],
+                            finalDate: splittedFinalDate[0],
+                            finalHour: splittedFinalDate[1],
             });
-          }
-          getData();
-          return;
+          });
+        }
+        getData();
+        return;
       } catch (err) {
         return;
       }
@@ -93,7 +96,9 @@ const UpdateEvent = () => {
     };
 
     try {
-      const response = await api.put('/events/12', EventBody);
+      const response = await api.put(`/events/${codigo}`, EventBody);
+
+      alert('Evento atualizado com sucesso!');
       if (response.status != 200){
         alert(`Erro ${response.status}.`);
       }
@@ -101,14 +106,14 @@ const UpdateEvent = () => {
       return;
     }
 
-    alert('Evento atualizado com sucesso!');
-
     history.push('/home');
   }
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>){
     const { name, value } = event.target;
+    console.log('name antes: '+ name);
     setFormData({ ...formData, [name]: value });
+    console.log('formdata.name depois: '+ formData.name)
   }
 
   return (
@@ -132,7 +137,7 @@ const UpdateEvent = () => {
               type="text" 
               name="name" 
               id="name" 
-              onChange={() => handleInputChange}
+              onChange={handleInputChange}
               defaultValue={formData.name}
             />
           </div>
@@ -143,7 +148,7 @@ const UpdateEvent = () => {
               type="text" 
               name="description" 
               id="description" 
-              onChange={() => handleInputChange}
+              onChange={handleInputChange}
               defaultValue={formData.description}
             />
           </div>
@@ -155,7 +160,7 @@ const UpdateEvent = () => {
                 type="date" 
                 name="initialDate" 
                 id="initialDate" 
-                onChange={() => handleInputChange}
+                onChange={handleInputChange}
                 defaultValue={formData.initialDate}
               />
             </div>
@@ -166,7 +171,7 @@ const UpdateEvent = () => {
                 type="time" 
                 name="initialHour" 
                 id="initialHour" 
-                onChange={() => handleInputChange}
+                onChange={handleInputChange}
                 defaultValue={formData.initialHour}
               />
             </div>
@@ -179,7 +184,7 @@ const UpdateEvent = () => {
                 type="date" 
                 name="finalDate" 
                 id="finalDate" 
-                onChange={() => handleInputChange}
+                onChange={handleInputChange}
                 defaultValue={formData.finalDate}
               />
             </div>
@@ -190,7 +195,7 @@ const UpdateEvent = () => {
                 type="time" 
                 name="finalHour" 
                 id="finalHour" 
-                onChange={() => handleInputChange} 
+                onChange={handleInputChange} 
                 defaultValue={formData.finalHour}
               />
             </div>
