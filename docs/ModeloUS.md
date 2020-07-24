@@ -6,6 +6,7 @@
 | ---------- | :----: | :--------------------------------------------------------: | :-------------: |
 | 12/03/2020 |  1.0   | Documento inicial.                                         | Arthur Medeiros |
 | 12/07/2020 |  1.1   | Separação de requisitos funcionais em outros user stories. | Kael Silva      |
+| 23/07/2020 |  1.2   | Atualização dos requisitos funcionais dos US               | Ewerton Silva   |
 
 
 ## Prioridade do User Story
