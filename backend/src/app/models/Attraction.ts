@@ -15,14 +15,14 @@ export interface AttractionAttributes {
     nome: string;
     email: string;
     telefone: string;
-    horario_fim: Date;
-    horario_inicio: Date;
+    horario_fim: string;
+    horario_inicio: string;
     descricao: string;
 }
 
 @Table({
     timestamps: true,
-    tableName: 'atracao',
+    tableName: 'attraction',
 })
 
 
@@ -48,11 +48,15 @@ class Attraction extends Model<AttractionAttributes> {
   
     @AllowNull(false)
     @Column
-    horario_fim: Date;
+    horario_fim: string;
 
     @AllowNull(false)
     @Column
-    horario_inicio: Date;
+    horario_inicio: string;
+    
+    @AllowNull(false)
+    @Column
+    descricao: string;
   
     @CreatedAt
     @Column
@@ -61,6 +65,7 @@ class Attraction extends Model<AttractionAttributes> {
     @UpdatedAt
     @Column
     updated_at: Date;
+
   }
   
   export default Attraction;

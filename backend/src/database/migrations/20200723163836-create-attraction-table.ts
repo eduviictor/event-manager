@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-  await queryInterface.createTable('atracao', {
+  await queryInterface.createTable('attraction', {
       codigo: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -21,14 +21,14 @@ module.exports = {
         allowNull: false,
       },
       horario_fim: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       horario_inicio: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
       },
-      descrição: {
+      descricao: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -44,6 +44,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('atracao');
+    await queryInterface.dropTable('attraction');
   }
 };
