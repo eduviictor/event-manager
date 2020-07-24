@@ -10,6 +10,8 @@ import RegisterClt from './pages/RegisterClient';
 import ClientUpdate from './pages/UpdateClient';
 import OrganizerUpdate from './pages/UpdateOrganizer';
 import UpdateEvent from './pages/event/UpdateEvent';
+import CreateAttraction from './pages/attraction/CreateAttraction';
+import UpdateAttraction from './pages/attraction/UpdateAttraction';
 import { isAuthenticated } from './services/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }: any) => (
@@ -36,8 +38,10 @@ const Routes = () => {
         <Route component={RegisterClt} path="/register-client" />
         <PrivateRoute component={ClientUpdate} path="/update-client" />   
         <PrivateRoute component={OrganizerUpdate} path="/update-organizer" />           
-        <PrivateRoute component={CreateEvent} path="/create-event" />
-        <PrivateRoute component={UpdateEvent} path="/update-event" />
+        <PrivateRoute component={CreateEvent} path="/create-event" />        
+        <PrivateRoute component={UpdateEvent} path="/update-event" />        
+        <PrivateRoute component={CreateAttraction} path="/create-attraction" />
+        <PrivateRoute component={UpdateAttraction} path="/update-attraction" />
       </Switch>
     </BrowserRouter>
   );
