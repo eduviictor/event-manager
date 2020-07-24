@@ -7,13 +7,31 @@ import constants from '../../config/constants';
 export default class AttractionValidator {
   public async create(body: AttractionAttributes) {
     const schema = yup.object().shape({
-      cpf: yup.string().required(),
-      email: yup.string().email().required(),
-      cidade: yup.string().required(),
-      estado: yup.string().required(),
+      codigo: yup.number().required(),
       nome: yup.string().required(),
-      senha: yup.string().required(),
+      email: yup.string().email().required(),
       telefone: yup.string().required(),
+      horario_fim: yup.string().required(),
+      horario_inicio: yup.string().required(),
+      descricao: yup.string().required(),
+            
+    });
+
+    const result = await schema.isValid(body);
+
+    if (!result) {
+      throw new ApiError(constants.errorTypes.validation);
+    }
+  }
+  public async update(body: AttractionAttributes) {
+    const schema = yup.object().shape({
+        codigo: yup.number().required(),
+        nome: yup.string().required(),
+        email: yup.string().email().required(),
+        telefone: yup.string().required(),
+        horario_fim: yup.string().required(),
+        horario_inicio: yup.string().required(),
+        descricao: yup.string().required(),
     });
 
     const result = await schema.isValid(body);

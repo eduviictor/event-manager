@@ -47,7 +47,7 @@ export default class AttractionService {
         codigo: number,
         entity: AttractionAttributes
       ): Promise<Attraction> {
-    
+        await this.validator.update(entity);
         const attraction = await this.repository.update(codigo, entity);
     
         if (attraction[0] !== 1) {
