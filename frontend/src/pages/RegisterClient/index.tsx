@@ -1,4 +1,4 @@
-import React, {useState, ChangeEvent, useEffect} from 'react';
+import React, {useState, ChangeEvent, useEffect, FormEvent } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
@@ -14,26 +14,18 @@ interface IBGEUFResponse {
   }
 
 const RegisterClient = () => {
-    
-    const [formData, setFormData] = useState({
-        cpf: '',  
-        nome: '',  
-        email: '',  
-        telefone: '',  
-        uf: '0',
-        city: '0',    
-    });
+
+    const [cpf, setCpf] = useState('');
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [telefone, setTelefone] = useState('');
+
     const [ufs, setUfs] = useState<string[]>([]);
     const [cities, setCities] = useState<string[]>([]);
 
     const [selectedUf, setSelectedUf] = useState('0');
     const [selectedCity, setSelectedCity] = useState('0');
-
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        const { name, value } = event.target;
-
-        setFormData({...formData, [name]: value});
-    } 
 
     
     useEffect(() => {
@@ -68,8 +60,18 @@ const RegisterClient = () => {
         setSelectedCity(city);
     }
 
-    function register(){                               
-        alert('Registrar usuário');
+    async function registerClient(event: FormEvent){ 
+        event.preventDefault();
+
+        const data = {
+            nome,
+            email,
+            senha,
+            telefone,
+            selectedCity,
+            selectedUf,
+        };                              
+        console.log(data);
     }
 
     return(
@@ -85,41 +87,41 @@ const RegisterClient = () => {
                         Já possuo registro                
                     </Link>
                 </section>            
-            <form onSubmit={register}>
+            <form onSubmit={registerClient}>
                 <h1>CPF:</h1>
                 <input
                     name="cpf"
                     type="text"
                     id="cpf"
-                    onChange={handleInputChange}
+                    onChange={e => setCpf(e.target.value)}                    
                 />
                 <h1>Nome:</h1>
                 <input
-                    name="name"
+                    name="nome"
                     type="text"
                     id="nome"
-                    onChange={handleInputChange}
+                    onChange={e => setNome(e.target.value)} 
                 />
                 <h1>E-Mail:</h1>
                 <input
                     name="email"
                     type="text"
                     id="email"
-                    onChange={handleInputChange}
+                    onChange={e => setEmail(e.target.value)} 
                 />
                 <h1>Senha:</h1>
                     <input
-                        name="password"
+                        name="senha"
                         type="password"
-                        id="password"
-                        onChange={handleInputChange}
+                        id="senha"
+                        onChange={e => setSenha(e.target.value)} 
                     />
                 <h1>Telefone:</h1>
                 <input
                     name="telefone"
                     type="text"
                     id="telefone"
-                    onChange={handleInputChange}
+                    onChange={e => setTelefone(e.target.value)}                     
                 />
                 <div className="field">
                     <label htmlFor="uf">Estado (UF)</label>
