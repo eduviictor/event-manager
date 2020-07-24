@@ -29,19 +29,23 @@ const RegisterOrg = () => {
             telefone
         };  
 
-        try {
-            const response = await api.post('/organizers', data);
-            if (response.status != 200){
-              alert(`Erro ${response.status}.`);
-            }
-          } catch (err){
+         if(data.cnpj === '' || data.nome === '' || data.email === '' || data.login === '' || data.senha === '' || data.telefone === ''){
+            alert('Erro! Verifique se os campos preenchidos estão corretos.');
             return;
-          }
-      
-          alert('Organizador criado com sucesso!');
-      
-          history.push('/');                        
-        
+        }else{ 
+            try {
+                const response = await api.post('/organizers', data);
+                if (response.status != 200){
+                  alert(`Erro ${response.status}.`);
+                }
+              } catch (err){
+                return;
+              }
+          
+              alert('Organizador criado com sucesso!');
+          
+              history.push('/'); 
+        }                                       
     }
     return(
         <div className="registerContainer">
