@@ -9,6 +9,7 @@ import './styles.css';
 
 const CreateAttraction = () => {
 
+    const [codigo, setCodigo] = useState(0);
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');    
@@ -18,8 +19,40 @@ const CreateAttraction = () => {
 
   const history = useHistory();
 
-  async function createAttraction(){
-      alert('Cadastrar atração');
+  async function createAttraction(event: FormEvent){
+    event.preventDefault();
+
+    const min = Math.ceil(0);
+    const max = Math.floor(999999);
+    const codigo = Math.floor(Math.random() * (max - min)) + min;
+
+    const data = {   
+        codigo,     
+        nome,
+        email,
+        telefone,        
+        horario_fim,
+        horario_inicio,
+        descricao
+    };  
+
+    if(data.nome === '' || data.email === '' || data.telefone === '' || data.horario_fim === '' || data.horario_inicio === '' || data.descricao === '' ){
+        alert('Erro! Verifique se os campos preenchidos estão corretos.');
+        return;
+    }else{
+        try {
+            const response = await api.post('/attractions', data);
+            if (response.status != 200){
+              alert(`Erro ${response.status}.`);
+            }
+        } catch (err){
+        return;
+        }
+    
+        alert('Atração cadastrada com sucesso!');
+    
+        history.push('/home');
+    }
   }
 
   return (
