@@ -1,11 +1,8 @@
 export interface EventAttributesBody {
-  codEmpresa: number;
-  codAtracao: number;
-  codLocal: number;
-  codOrcamento: number;
-  codIngresso: number;
-  dados: string;
-  horario: string;
+  nome: string;
+  descricao: string;
+  horario_inicio: string;
+  horario_fim: string;
 }
 
 export interface EventAttributes extends EventAttributesBody {
@@ -36,31 +33,19 @@ class Event extends Model<EventAttributes> {
 
   @AllowNull(false)
   @Column
-  codEmpresa: number;
+  nome: string;
 
   @AllowNull(false)
   @Column
-  codAtracao: number;
+  descricao: string;
 
   @AllowNull(false)
   @Column
-  codLocal: number;
+  horario_inicio: string;
 
   @AllowNull(false)
   @Column
-  codOrcamento: number;
-
-  @AllowNull(false)
-  @Column
-  codIngresso: number;
-
-  @AllowNull(false)
-  @Column
-  dados: string;
-
-  @AllowNull(false)
-  @Column
-  horario: string;
+  horario_fim: string;
 
   @CreatedAt
   @Column
