@@ -1,4 +1,4 @@
-import React, {useState, ChangeEvent} from 'react';
+import React, {useState, ChangeEvent, FormEvent} from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import logo from '../../assets/logo.png';
@@ -7,24 +7,24 @@ import './styles.css';
 
 const RegisterOrg = () => {
     
-    const [formData, setFormData] = useState({
-        cnpj: '',  
-        nome: '',  
-        email: '',  
-        telefone: '',      
-    });
-
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        const { name, value } = event.target;
-
-        setFormData({...formData, [name]: value});
-    } 
+    const [cnpj, setCnpj] = useState('');
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [telefone, setTelefone] = useState('');
 
 
-    function register(){                               
-        alert('Registrar usuário');
+    async function registerOrg(event: FormEvent){ 
+        event.preventDefault();
+
+        const data = {
+            nome,
+            email,
+            senha,
+            telefone
+        };                              
+        console.log(data);
     }
-
     return(
         <div className="registerContainer">
             <div className="content">
@@ -38,41 +38,41 @@ const RegisterOrg = () => {
                         Já possuo registro                
                     </Link>
                 </section>            
-            <form onSubmit={register}>
+            <form onSubmit={registerOrg}>
                 <h1>CNPJ:</h1>
                 <input
                     name="cnpj"
                     type="text"
                     id="cnpj"
-                    onChange={handleInputChange}
+                    onChange={e => setCnpj(e.target.value)}
                 />
                 <h1>Nome:</h1>
                 <input
-                    name="name"
+                    name="nome"
                     type="text"
                     id="nome"
-                    onChange={handleInputChange}
+                    onChange={e => setNome(e.target.value)}
                 />
                 <h1>E-Mail:</h1>
                 <input
-                    name="mail"
+                    name="email"
                     type="text"
-                    id="mail"
-                    onChange={handleInputChange}
+                    id="email"
+                    onChange={e => setEmail(e.target.value)}
                 />
                 <h1>Senha:</h1>
                     <input
-                        name="password"
+                        name="senha"
                         type="password"
-                        id="password"
-                        onChange={handleInputChange}
+                        id="senha"
+                        onChange={e => setSenha(e.target.value)}
                     />
                 <h1>Telefone:</h1>
                 <input
-                    name="phone"
+                    name="telefone"
                     type="text"
-                    id="phone"
-                    onChange={handleInputChange}
+                    id="telefone"
+                    onChange={e => setTelefone(e.target.value)}
                 />               
                 <button className="btnform" type="submit">
                     Registrar
