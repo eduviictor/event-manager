@@ -33,6 +33,7 @@ export default class Ticket_TypeService {
   }
 
   public async update(codigo: string, entity: Ticket_Type): Promise<Ticket_Type> {
+    await this.validator.update(entity);
     const ticket_type = await this.repository.update(codigo, entity);
 
     if (ticket_type[0] !== 1) {

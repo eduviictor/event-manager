@@ -18,13 +18,8 @@ export default class Ticket_TypeValidator {
   }
   public async update(body: Ticket_TypeValidator) {
     const schema = yup.object().shape({
-      cpf: yup.string().required(),
-      email: yup.string().email().required(),
-      cidade: yup.string().required(),
-      estado: yup.string().required(),
-      nome: yup.string().required(),
-      senha: yup.string().required(),
-      telefone: yup.string().required(),
+        cod_ingresso: yup.number().required(),
+        cod_tipo: yup.number().required(),
     });
 
     const result = await schema.isValid(body);
