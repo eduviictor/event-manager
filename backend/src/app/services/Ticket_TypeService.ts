@@ -1,10 +1,13 @@
 import Ticket_TypeRepository from '../repositories/sql/Ticket_TypeRepository';
-import Ticket_Type from '../models/Ticket_Type';
+import Ticket_Type, { Ticket_TypeAttributes } from '../models/Ticket_Type';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
+import Ticket_TypeValidator from '../validators/Ticket_TypeValidator';
+
 
 export default class Ticket_TypeService {
   repository: Ticket_TypeRepository = new Ticket_TypeRepository();
+  validator: Ticket_TypeValidator = new (Ticket_TypeValidator);
 
   public async findAll(): Promise<Ticket_Type[]> {
     return this.repository.find();
@@ -20,6 +23,7 @@ export default class Ticket_TypeService {
   }
 
   public async create(entity: Ticket_Type): Promise<Ticket_Type> {
+    await this.validator.create(entity);
     try {
       const res = await this.repository.create(entity);
       return this.getById((res as any).cod_ingresso);
