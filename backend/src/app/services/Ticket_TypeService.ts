@@ -7,7 +7,7 @@ import Ticket_TypeValidator from '../validators/Ticket_TypeValidator';
 
 export default class Ticket_TypeService {
   repository: Ticket_TypeRepository = new Ticket_TypeRepository();
-  validator: Ticket_TypeValidator = new (Ticket_TypeValidator);
+  validator: Ticket_TypeValidator = new Ticket_TypeValidator();
 
   public async findAll(): Promise<Ticket_Type[]> {
     return this.repository.find();
@@ -37,7 +37,7 @@ export default class Ticket_TypeService {
     const ticket_type = await this.repository.update(codigo, entity);
 
     if (ticket_type[0] !== 1) {
-      throw new ApiError(constants.errorTypes.notFound);
+      throw new ApiError(constants.errorTypes.notFound);  
     }
     return this.getById(codigo);
   }
