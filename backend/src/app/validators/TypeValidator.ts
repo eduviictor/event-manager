@@ -17,7 +17,7 @@ export default class TypeValidator {
   }
   public async update(body: TypeAttributesBody) {
     const schema = yup.object().shape({
-
+        nome: yup.string().required(),
     });
 
     const result = await schema.isValid(body);

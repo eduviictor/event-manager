@@ -32,6 +32,7 @@ export default class TypeService {
   }
 
   public async update(codigo: string, entity: Type): Promise<Type> {
+    await this.validator.update(entity);
     const type = await this.repository.update(codigo, entity);
 
     if (type[0] !== 1) {
