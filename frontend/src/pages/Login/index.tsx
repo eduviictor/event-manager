@@ -30,7 +30,15 @@ const Login = () => {
 
       const { user, token } = logged.data;
       login(token, user);
-      navigation.push('/home');
+      if(user.type_user === 'client'){
+        localStorage.setItem('user_name',user.login);
+        localStorage.setItem('cliente_id',user.cpf);
+        navigation.push('/home-client');
+      }else if(user.type_user === 'organizer'){
+        localStorage.setItem('user_name',user.login);
+        localStorage.setItem('org_id',user.cnpj);
+        navigation.push('/home');
+      }  
     } catch (err) {
       console.log('err', err);
       alert('Usuário ou senha incorretos!');

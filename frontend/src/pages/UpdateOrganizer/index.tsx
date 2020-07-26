@@ -1,12 +1,17 @@
-import React, {useState, FormEvent} from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, {useState, useEffect, FormEvent} from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
+import { Link, useHistory} from 'react-router-dom';
+
+import api from '../../services/api';
 import logo from '../../assets/logo.png';
 import './styles.css';
 
-import api from '../../services/api';
 
-const RegisterOrg = () => {
+const OrganizerUpdate = () => {
+    
+    const cpnj = localStorage.getItem('org_id')
+
+    const history = useHistory();
     
     const [cnpj, setCnpj] = useState('');
     const [nome, setNome] = useState('');
@@ -15,9 +20,21 @@ const RegisterOrg = () => {
     const [senha, setSenha] = useState('');
     const [telefone, setTelefone] = useState('');
 
-    const history = useHistory();
+    
+    useEffect(() => {
+        api.get(`/organizers/${cnpj}`).then(
+            res => {
+                setCnpj(res.data[0].cnpj);
+                setNome(res.data[0].nome);
+                setEmail(res.data[0].email);
+                setLogin(res.data[0].login);
+                setTelefone(res.data[0].telefone);
+            }
+        )
+    }, []);        
 
-    async function registerOrg(event: FormEvent){ 
+   
+    async function updateOrganizer(event: FormEvent){
         event.preventDefault();
 
         const data = {
@@ -32,37 +49,40 @@ const RegisterOrg = () => {
          if(data.cnpj === '' || data.nome === '' || data.email === '' || data.login === '' || data.senha === '' || data.telefone === ''){
             alert('Erro! Verifique se os campos preenchidos estão corretos.');
             return;
-        }else{ 
+        }else{
+
             try {
-                const response = await api.post('/organizers', data);
+                const response = await api.put(`/organizers/${cnpj}`, data);        
                 if (response.status != 200){
-                  alert(`Erro ${response.status}.`);
+                alert(`Erro ${response.status}.`);
                 }
-              } catch (err){
+            } catch (err){
                 return;
-              }
-          
-              alert('Organizador criado com sucesso!');
-          
-              history.push('/'); 
-        }                                       
+            }
+
+                
+            alert('Cliente atualizado com sucesso!');
+            
+            history.push('/home');   
+        }
     }
+
     return(
-        <div className="registerContainer">
+        <div className="updateContainer">
             <div className="content">
                 <section>
                     <img src={logo} alt="Event Manager"/>
 
-                    <h1>Registrar organizador</h1>
-                    <p>Ao registrar-se no Event Manager você terá uma melhor organização, divulgação e credibilidade na realização de seus eventos.</p>
-                    <Link to="/">   
-                        <FiArrowLeft size={16} color="#FFF"/>                     
-                        Já possuo registro                
+                    <h1>Atualizar perfil</h1>                
+                    <Link to="/home">
+                        <FiArrowLeft size={16} color="#FFF"/>
+                        Voltar para home               
                     </Link>
                 </section>            
-            <form onSubmit={registerOrg}>
+                <form onSubmit={updateOrganizer}>
                 <h1>CNPJ:</h1>
                 <input
+                    value= {cnpj}
                     name="cnpj"
                     type="text"
                     id="cnpj"
@@ -70,6 +90,7 @@ const RegisterOrg = () => {
                 />
                 <h1>Nome:</h1>
                 <input
+                    value= {nome}
                     name="nome"
                     type="text"
                     id="nome"
@@ -77,6 +98,7 @@ const RegisterOrg = () => {
                 />
                 <h1>E-Mail:</h1>
                 <input
+                    value= {email}
                     name="email"
                     type="text"
                     id="email"
@@ -84,6 +106,7 @@ const RegisterOrg = () => {
                 />
                 <h1>Usuário:</h1>
                 <input
+                    value= {login}
                     name="login"
                     type="text"
                     id="login"
@@ -98,13 +121,14 @@ const RegisterOrg = () => {
                     />
                 <h1>Telefone:</h1>
                 <input
+                    value= {telefone}
                     name="telefone"
                     type="text"
                     id="telefone"
                     onChange={e => setTelefone(e.target.value)}
-                />               
+                />    
                 <button className="btnform" type="submit">
-                    Registrar
+                    Salvar
                 </button>
             </form>
             </div>
@@ -112,4 +136,4 @@ const RegisterOrg = () => {
     );
 };
 
-export default RegisterOrg;
+export default OrganizerUpdate;

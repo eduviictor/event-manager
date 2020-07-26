@@ -1,48 +1,38 @@
-.homeContainer {
+.homeClientContainer {
     width: 100%;
     max-width: 1180px;
     padding: 0 20px;
     margin: auto;
   }
 
-.homeContainer header {
+.homeClientContainer header {
     display: flex;
     align-items: center;
 }
 
-.homeContainer header .header_menu{
+.homeClientContainer header div{
     display: flex;
     align-items: center;
     margin-left: auto;
 }
 
-.homeContainer header .header_menu .menu_events,
-.homeContainer header .header_menu .menu_attractions{
-   margin-right: 80px;
-}
-
-.homeContainer header .header_menu .menu_events .event_update,
-.homeContainer header .header_menu .menu_attractions .attraction_update{
-   margin-top: 15px;
-}
-
-.homeContainer header span {
+.homeClientContainer header span {
     font-size: 20px;
     margin-left: 10px;
     color: #FFF;
 }
 
-.homeContainer header img {
+.homeClientContainer header img {
   height: 150px;
 }
 
-.homeContainer  header a {
+.homeClientContainer  header a {
   width: 150px;
   margin-left: auto;
   margin-top: 0;  
 }
 
-.homeContainer header button {
+.homeClientContainer header button {
   height: 40px;
   width: 40px;
   border-radius: 4px;
@@ -51,18 +41,18 @@
   transition: border-color 0.5s;
 }
 
-.homeContainer header button:hover {
+.homeClientContainer header button:hover {
   border-color: #E02041;
 }
 
-.homeContainer h1{
+.homeClientContainer h1{
     margin-bottom: 10px;
     margin-left: 90px;
     color: #FFF;
     font-size: 20px;
 }
 
-.homeContainer ul {
+.homeClientContainer ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 18px;
@@ -71,7 +61,7 @@
     margin-bottom: 20px;
 }
 
-.homeContainer ul li{
+.homeClientContainer ul li{
     background: #FFF;
     padding: 18px;
     border-radius: 8px;
@@ -79,7 +69,7 @@
     width: 80%;
 }
 
-.homeContainer ul li .button-delete{
+.homeClientContainer ul li .button-delete{
     position: absolute;
     right: 4px;
     top: 10px;
@@ -87,27 +77,27 @@
     width: 10%;
 }
 
-.homeContainer ul li button:hover{
+.homeClientContainer ul li button:hover{
     opacity: 0.8;
 }
 
-.homeContainer ul li strong{
+.homeClientContainer ul li strong{
     display: block;
     margin-bottom: 10px;
     color: #41414d;    
 }
 
-.homeContainer ul li p + strong{
+.homeClientContainer ul li p + strong{
     margin-top: 15px;
 }
 
-.homeContainer ul li p{
+.homeClientContainer ul li p{
     color: #41414d;
     line-height: 21px;
     font-size: 16px;
 }
 
-.homeContainer  ul li .detail-link {    
+.homeClientContainer  ul li .detail-link {    
     color: #41414d;
     font-size: 16px;
     margin-top: 10px;
