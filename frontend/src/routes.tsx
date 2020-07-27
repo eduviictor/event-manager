@@ -35,7 +35,7 @@ const Routes = () => {
       <Switch>
         <Route component={Login} path="/" exact />
         <PrivateRoute component={Home} path="/home" />
-        <PrivateRoute component={HomeClient} path="/home-client" />        
+        <PrivateRoute component={HomeClient} path="/home-client" />
         <Route component={RegisterOrg} path="/register-organizer" />
         <Route component={RegisterClt} path="/register-client" />
         <PrivateRoute component={ClientUpdate} path="/update-client" />   
