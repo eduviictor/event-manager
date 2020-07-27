@@ -18,6 +18,7 @@ export default class EventRepository {
     codigo: string,
     model: Event
   ): Promise<[number, Event[]]> {
+    delete model.codigo;
     return this.entityModel.update(model, {
       where: { codigo },
     });

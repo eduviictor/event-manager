@@ -83,8 +83,8 @@ describe('Event Controller', () => {
 
     it('Should return "404" if not found a event', async () => {
       const response = await request
-        .get('/events/8')
-        .set('Authorization', `bearer ${token}`);
+        .get('/events/50')
+        .set('Authorization', `bearer ${token}`)
       expect(response.status).toBe(404);
     });
   });
@@ -131,7 +131,14 @@ describe('Event Controller', () => {
     it('Should return "404" if not found a event', async () => {
       const response = await request
         .put('/events/8')
-        .set('Authorization', `bearer ${token}`);
+        .set('Authorization', `bearer ${token}`)
+        .send({
+          codigo: 9,
+          nome: "Party",
+          descricao: "A nice party!",
+          horario_inicio: "July 4, 9 PM",
+          horario_fim: "July 5, 10 PM"
+        });
       expect(response.status).toBe(404);
     });
   });

@@ -8,4 +8,5 @@ module.exports = {
   database: process.env.DB_NAME,
   storage: ':memory:',
   port: 5432,
+  logging: false
 };
