@@ -9,6 +9,7 @@ describe('Ticket Controller', () => {
         codigo: 1234,
         valor: 106.50,
         quantidade: 200,
+        cod_evento: 9,
         created_at: '2020-07-09T15:52:54.165Z',
         updated_at: '2020-07-09T15:52:54.165Z',
       },
@@ -17,6 +18,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -24,6 +26,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -34,6 +37,7 @@ describe('Ticket Controller', () => {
           codigo: 1233,
           valor: 107,
           quantidade: 190,
+          cod_evento: 9,
           created_at: '2020-07-09T15:52:54.165Z',
           updated_at: '2020-07-09T15:52:54.165Z',
         },
@@ -49,6 +53,7 @@ describe('Ticket Controller', () => {
         codigo: 1234,
         valor: 106.50,
         quantidade: 200,
+        cod_evento: 9,
         created_at: '2020-07-09T15:52:54.165Z',
         updated_at: '2020-07-09T15:52:54.165Z',
       },
@@ -61,6 +66,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -71,6 +77,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -80,6 +87,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -90,6 +98,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
@@ -99,6 +108,7 @@ describe('Ticket Controller', () => {
       codigo: 1234,
       valor: 106.50,
       quantidade: 200,
+      cod_evento: 9,
       created_at: '2020-07-09T15:52:54.165Z',
       updated_at: '2020-07-09T15:52:54.165Z',
     });
