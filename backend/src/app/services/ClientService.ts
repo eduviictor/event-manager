@@ -3,9 +3,11 @@ import Client, { ClientAttributesBody } from '../models/Client';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
 import User from '../models/User';
+import ClientValidator from '../validators/ClientValidator';
 
 export default class ClientService {
   repository: ClientRepository = new ClientRepository();
+  validator: ClientValidator = new ClientValidator();
 
   public async findAll(): Promise<Client[]> {
     return this.repository.find();
@@ -21,6 +23,8 @@ export default class ClientService {
   }
 
   public async create(entity: ClientAttributesBody): Promise<Client> {
+    await this.validator.create(entity);
+
     const { cpf, login } = entity;
     const cnpjExists = await this.repository.findOne(cpf);
 
@@ -45,7 +49,7 @@ export default class ClientService {
     cpf: string,
     entity: ClientAttributesBody
   ): Promise<Client> {
-    
+    await this.validator.update(entity);
     const client = await this.repository.update(cpf, entity);
 
     if (client[0] !== 1) {
