@@ -16,6 +16,7 @@ export function expressAuthentication(
       }
 
       const [, token] = authorization.split(' ');
+      console.log('token', token);
       jwt.verify(token, authConfig.secret, function (err: any, decoded: any) {
         console.log('scopes', scopes);
         console.log('decoded', decoded);

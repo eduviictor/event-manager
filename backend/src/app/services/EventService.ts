@@ -2,9 +2,11 @@ import EventRepository from '../repositories/sql/EventRepository';
 import Event from '../models/Event';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
+import EventValidator from '../validators/EventValidator';
 
 export default class EventService {
   repository: EventRepository = new EventRepository();
+  validator: EventValidator = new EventValidator();
 
   public async findAll(): Promise<Event[]> {
     return this.repository.find();
@@ -20,6 +22,7 @@ export default class EventService {
   }
 
   public async create(entity: Event): Promise<Event> {
+    await this.validator.create(entity);
     try {
       const res = await this.repository.create(entity);
       return this.getById((res as any).codigo);
@@ -29,6 +32,7 @@ export default class EventService {
   }
 
   public async update(codigo: string, entity: Event): Promise<Event> {
+    await this.validator.update(entity);
     const event = await this.repository.update(codigo, entity);
 
     if (event[0] !== 1) {

@@ -2,9 +2,11 @@ import TypeRepository from '../repositories/sql/TypeRepository';
 import Type from '../models/Type';
 import { ApiError } from '../../config/ErrorHandler';
 import constants from '../../config/constants';
+import TypeValidator from '../validators/TypeValidator';
 
 export default class TypeService {
   repository: TypeRepository = new TypeRepository();
+  validator: TypeValidator = new TypeValidator();
 
   public async findAll(): Promise<Type[]> {
     return this.repository.find();
@@ -20,6 +22,7 @@ export default class TypeService {
   }
 
   public async create(entity: Type): Promise<Type> {
+    await this.validator.create(entity);
     try {
       const res = await this.repository.create(entity);
       return this.getById((res as any).codigo);
@@ -29,6 +32,7 @@ export default class TypeService {
   }
 
   public async update(codigo: string, entity: Type): Promise<Type> {
+    await this.validator.update(entity);
     const type = await this.repository.update(codigo, entity);
 
     if (type[0] !== 1) {
