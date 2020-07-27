@@ -16,7 +16,7 @@ export default class Ticket_TypeValidator {
       throw new ApiError(constants.errorTypes.validation);
     }
   }
-  public async update(body: Ticket_TypeValidator) {
+  public async update(body: Ticket_TypeAttributes) {
     const schema = yup.object().shape({
         cod_ingresso: yup.number().required(),
         cod_tipo: yup.number().required(),
