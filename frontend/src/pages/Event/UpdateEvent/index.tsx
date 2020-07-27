@@ -1,5 +1,8 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { FiArrowRight, FiPlus } from 'react-icons/fi';
+import { BsTrash } from 'react-icons/bs';
+
 
 import api from '../../../services/api';
 
@@ -17,7 +20,7 @@ const UpdateEvent = (props:any) => {
     horario_fim: string;
   }
 
-
+  
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -26,6 +29,33 @@ const UpdateEvent = (props:any) => {
     initialHour: '',
     finalHour: '',
   });
+  
+  const [ticketData, setTicketData] = useState<Ticket[]>(
+    []
+  );
+  
+  interface Ticket {
+    codigo: number
+    valor: number
+    quantidade: number
+    cod_evento: number
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+
+      const response = await api.get('/tickets');
+        
+      const tickets: Ticket[] = response.data;
+
+      const wantedTickets: Ticket[] = await tickets.filter((ticket:any) => ticket.cod_evento == codigo);
+
+      setTicketData(wantedTickets);
+    }
+    getData();
+
+    return;
+  }, []);
 
   function splitDate(date: string): string[] {
     let day = date[0]+date[1];
@@ -111,13 +141,18 @@ const UpdateEvent = (props:any) => {
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>){
     const { name, value } = event.target;
-    console.log('name antes: '+ name);
     setFormData({ ...formData, [name]: value });
-    console.log('formdata.name depois: '+ formData.name)
+  }
+
+  function handleDeleteTicket(codigo:number){
+    const response = async () => await api.delete(`/tickets/${codigo}`);
+    response();
+    alert('Ingresso deletado!');
+    history.go(0);
   }
 
   return (
-    <div id="page-create-event">
+    <div id="page-update-event">
       <header>
         <Link to="/home">
           <img src={logo} alt="Event Manager"/>
@@ -207,8 +242,63 @@ const UpdateEvent = (props:any) => {
             Atualizar
           </button>
         </div>
-
       </form>
+
+      <div className="ticket-list">
+        <fieldset>
+          <div className="field-group">
+            <legend>
+              <h2>Ingressos</h2>
+              <Link 
+                to={`/create-ticket/${codigo}`} 
+                className="detail-link" 
+                type="button"
+              >
+                <div className="creation-button-field">
+                  <FiPlus size={16} color="#1393f6" className="react-icons" />
+                  <p id="ticket-create-button">
+                    Criar ingresso
+                  </p>
+                </div>
+              </Link>
+            </legend>
+          </div>
+
+          <div className="field-group">
+          {ticketData.map((ticket: any) => (
+            <div className="field" key={ticket.codigo}>
+                <strong>Código:</strong>
+                <p>{ticket.codigo}</p>
+
+                <strong>Quantidade:</strong>
+                <p>{ticket.quantidade}</p>
+
+                <strong>Valor:</strong>
+                <p>{ticket.valor}</p>
+
+                <button
+                  className="button-delete"
+                  onClick={() => handleDeleteTicket(ticket.codigo)}
+                  type="button"
+                >
+                  <BsTrash size={18} color="#1393f6" />
+                </button>
+
+              <Link 
+                to={`/update-ticket/${ticket.codigo}`} 
+                className="detail-link" 
+                type="button"
+              >
+                <p id="ticket-config-button">
+                  Configurações
+                </p>
+                <FiArrowRight size={16} color="#1393f6" />
+              </Link>
+            </div>
+          ))}
+          </div>
+        </fieldset>
+      </div>
     </div>
   );
 }
