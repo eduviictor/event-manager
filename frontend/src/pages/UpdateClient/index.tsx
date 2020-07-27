@@ -1,11 +1,12 @@
 import React, {useState, ChangeEvent, useEffect, FormEvent } from 'react';
-import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { Link, useHistory} from 'react-router-dom';
+import axios from 'axios';
+
+import api from '../../services/api';
 import logo from '../../assets/logo.png';
 import './styles.css';
 
-import api from '../../services/api';
 
 interface IBGEUFResponse {
     sigla: string
@@ -15,9 +16,12 @@ interface IBGEUFResponse {
     nome: string
   }
 
-const RegisterClient = () => {
+
+  const ClientUpdate = () => {
+    
     const history = useHistory();
 
+    
     const [cpf, setCpf] = useState('');
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -31,6 +35,18 @@ const RegisterClient = () => {
     const [selectedUf, setSelectedUf] = useState('0');
     const [selectedCity, setSelectedCity] = useState('0');
 
+      
+    useEffect(() => {
+        api.get(`/clients/${cpf}`).then(
+            res => {
+                setCpf(res.data[0].cpf);
+                setNome(res.data[0].nome);
+                setEmail(res.data[0].email);
+                setLogin(res.data[0].login);
+                setTelefone(res.data[0].telefone);
+            }
+        )
+    }, []);    
     
     useEffect(() => {
         axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then(response => {
@@ -63,11 +79,12 @@ const RegisterClient = () => {
 
         setSelectedCity(city);
     }
+    
 
-    async function registerClient(event: FormEvent){ 
+    async function updateClient(event: FormEvent){
         event.preventDefault();
 
-        
+           
         const estado = selectedUf;
         const cidade = selectedCity;
 
@@ -86,37 +103,39 @@ const RegisterClient = () => {
             alert('Erro! Verifique se os campos preenchidos estão corretos.');
             return;
         }else{
+
             try {
-                const response = await api.post('/clients', data);
+                const response = await api.put(`/clients/${cpf}`, data);        
                 if (response.status != 200){
-                  alert(`Erro ${response.status}.`);
+                alert(`Erro ${response.status}.`);
                 }
-              } catch (err){
+            } catch (err){
                 return;
-              }
-          
-              alert('Cliente criado com sucesso!');
-          
-              history.push('/');    
-        }        
+            }
+
+                
+            alert('Cliente atualizado com sucesso!');
+            
+            history.push('/home-client');   
+        }
     }
 
     return(
-        <div className="registerContainer">
+        <div className="updateContainer">
             <div className="content">
                 <section>
                     <img src={logo} alt="Event Manager"/>
 
-                    <h1>Registrar cliente</h1>
-                    <p>Ao registrar-se no Event Manager, você como cliente receberá notificações sobre seus eventos preferidos e poderá adquirir ingressos para curtir juntos com seus amigos.</p>
-                    <Link to="/">    
-                        <FiArrowLeft size={16} color="#FFF"/>                    
-                        Já possuo registro                
+                    <h1>Atualizar perfil</h1>                
+                    <Link to="/home-client">
+                        <FiArrowLeft size={16} color="#FFF"/>
+                        Voltar para home               
                     </Link>
                 </section>            
-            <form onSubmit={registerClient}>
+                <form onSubmit={updateClient}>
                 <h1>CPF:</h1>
                 <input
+                    value= {cpf}
                     name="cpf"
                     type="text"
                     id="cpf"
@@ -124,6 +143,7 @@ const RegisterClient = () => {
                 />
                 <h1>Nome:</h1>
                 <input
+                    value= {nome}
                     name="nome"
                     type="text"
                     id="nome"
@@ -131,6 +151,7 @@ const RegisterClient = () => {
                 />
                 <h1>E-Mail:</h1>
                 <input
+                    value= {email}
                     name="email"
                     type="text"
                     id="email"
@@ -138,6 +159,7 @@ const RegisterClient = () => {
                 />
                 <h1>Usuário:</h1>
                 <input
+                    value= {login}
                     name="login"
                     type="text"
                     id="login"
@@ -152,6 +174,7 @@ const RegisterClient = () => {
                     />
                 <h1>Telefone:</h1>
                 <input
+                    value= {telefone}
                     name="telefone"
                     type="text"
                     id="telefone"
@@ -177,7 +200,7 @@ const RegisterClient = () => {
                     </select>
                 </div>
                 <button className="btnform" type="submit">
-                    Registrar
+                    Salvar
                 </button>
             </form>
             </div>
@@ -185,4 +208,4 @@ const RegisterClient = () => {
     );
 };
 
-export default RegisterClient;
+export default ClientUpdate;

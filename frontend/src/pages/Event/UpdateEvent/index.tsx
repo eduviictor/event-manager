@@ -1,5 +1,8 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { FiArrowRight, FiPlus } from 'react-icons/fi';
+import { BsTrash } from 'react-icons/bs';
+
 
 import api from '../../../services/api';
 
@@ -7,8 +10,9 @@ import logo from '../../../assets/logo.png';
 
 import './styles.css';
 
-const UpdateEvent = () => {
-
+const UpdateEvent = (props:any) => {
+  const { match } = props;
+  const { codigo } = match.params;
   interface EventAttributesBody {
     nome: string;
     descricao: string;
@@ -16,6 +20,7 @@ const UpdateEvent = () => {
     horario_fim: string;
   }
 
+  
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -24,6 +29,33 @@ const UpdateEvent = () => {
     initialHour: '',
     finalHour: '',
   });
+  
+  const [ticketData, setTicketData] = useState<Ticket[]>(
+    []
+  );
+  
+  interface Ticket {
+    codigo: number
+    valor: number
+    quantidade: number
+    cod_evento: number
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+
+      const response = await api.get('/tickets');
+        
+      const tickets: Ticket[] = response.data;
+
+      const wantedTickets: Ticket[] = await tickets.filter((ticket:any) => ticket.cod_evento == codigo);
+
+      setTicketData(wantedTickets);
+    }
+    getData();
+
+    return;
+  }, []);
 
   function splitDate(date: string): string[] {
     let day = date[0]+date[1];
@@ -39,24 +71,25 @@ const UpdateEvent = () => {
 
   useEffect(() => {
       try {
-          const getData = async () => {
-            await api.get('/events/12').then(response => {
-              const { nome, descricao, horario_inicio, horario_fim } = response.data;
-              const splittedInitialDate = splitDate(horario_inicio);
-              const splittedFinalDate = splitDate(horario_fim);
-    
-              setFormData({...formData, 
-                              name: nome, 
-                              description: descricao,
-                              initialDate: splittedInitialDate[0],
-                              initialHour: splittedInitialDate[1],
-                              finalDate: splittedFinalDate[0],
-                              finalHour: splittedFinalDate[1],
-              });
+        const getData = async () => {
+
+          await api.get(`/events/${codigo}`).then(response => {
+            const { nome, descricao, horario_inicio, horario_fim } = response.data;
+            const splittedInitialDate = splitDate(horario_inicio);
+            const splittedFinalDate = splitDate(horario_fim);
+  
+            setFormData({...formData, 
+                            name: nome, 
+                            description: descricao,
+                            initialDate: splittedInitialDate[0],
+                            initialHour: splittedInitialDate[1],
+                            finalDate: splittedFinalDate[0],
+                            finalHour: splittedFinalDate[1],
             });
-          }
-          getData();
-          return;
+          });
+        }
+        getData();
+        return;
       } catch (err) {
         return;
       }
@@ -93,15 +126,15 @@ const UpdateEvent = () => {
     };
 
     try {
-      const response = await api.put('/events/12', EventBody);
+      const response = await api.put(`/events/${codigo}`, EventBody);
+
+      alert('Evento atualizado com sucesso!');
       if (response.status != 200){
         alert(`Erro ${response.status}.`);
       }
     } catch (err){
       return;
     }
-
-    alert('Evento atualizado com sucesso!');
 
     history.push('/home');
   }
@@ -111,8 +144,15 @@ const UpdateEvent = () => {
     setFormData({ ...formData, [name]: value });
   }
 
+  function handleDeleteTicket(codigo:number){
+    const response = async () => await api.delete(`/tickets/${codigo}`);
+    response();
+    alert('Ingresso deletado!');
+    history.go(0);
+  }
+
   return (
-    <div id="page-create-event">
+    <div id="page-update-event">
       <header>
         <Link to="/home">
           <img src={logo} alt="Event Manager"/>
@@ -132,7 +172,7 @@ const UpdateEvent = () => {
               type="text" 
               name="name" 
               id="name" 
-              onChange={() => handleInputChange}
+              onChange={handleInputChange}
               defaultValue={formData.name}
             />
           </div>
@@ -143,7 +183,7 @@ const UpdateEvent = () => {
               type="text" 
               name="description" 
               id="description" 
-              onChange={() => handleInputChange}
+              onChange={handleInputChange}
               defaultValue={formData.description}
             />
           </div>
@@ -155,7 +195,7 @@ const UpdateEvent = () => {
                 type="date" 
                 name="initialDate" 
                 id="initialDate" 
-                onChange={() => handleInputChange}
+                onChange={handleInputChange}
                 defaultValue={formData.initialDate}
               />
             </div>
@@ -166,7 +206,7 @@ const UpdateEvent = () => {
                 type="time" 
                 name="initialHour" 
                 id="initialHour" 
-                onChange={() => handleInputChange}
+                onChange={handleInputChange}
                 defaultValue={formData.initialHour}
               />
             </div>
@@ -179,7 +219,7 @@ const UpdateEvent = () => {
                 type="date" 
                 name="finalDate" 
                 id="finalDate" 
-                onChange={() => handleInputChange}
+                onChange={handleInputChange}
                 defaultValue={formData.finalDate}
               />
             </div>
@@ -190,7 +230,7 @@ const UpdateEvent = () => {
                 type="time" 
                 name="finalHour" 
                 id="finalHour" 
-                onChange={() => handleInputChange} 
+                onChange={handleInputChange} 
                 defaultValue={formData.finalHour}
               />
             </div>
@@ -202,8 +242,63 @@ const UpdateEvent = () => {
             Atualizar
           </button>
         </div>
-
       </form>
+
+      <div className="ticket-list">
+        <fieldset>
+          <div className="field-group">
+            <legend>
+              <h2>Ingressos</h2>
+              <Link 
+                to={`/create-ticket/${codigo}`} 
+                className="detail-link" 
+                type="button"
+              >
+                <div className="creation-button-field">
+                  <FiPlus size={16} color="#1393f6" className="react-icons" />
+                  <p id="ticket-create-button">
+                    Criar ingresso
+                  </p>
+                </div>
+              </Link>
+            </legend>
+          </div>
+
+          <div className="field-group">
+          {ticketData.map((ticket: any) => (
+            <div className="field" key={ticket.codigo}>
+                <strong>Código:</strong>
+                <p>{ticket.codigo}</p>
+
+                <strong>Quantidade:</strong>
+                <p>{ticket.quantidade}</p>
+
+                <strong>Valor:</strong>
+                <p>{ticket.valor}</p>
+
+                <button
+                  className="button-delete"
+                  onClick={() => handleDeleteTicket(ticket.codigo)}
+                  type="button"
+                >
+                  <BsTrash size={18} color="#1393f6" />
+                </button>
+
+              <Link 
+                to={`/update-ticket/${ticket.codigo}`} 
+                className="detail-link" 
+                type="button"
+              >
+                <p id="ticket-config-button">
+                  Configurações
+                </p>
+                <FiArrowRight size={16} color="#1393f6" />
+              </Link>
+            </div>
+          ))}
+          </div>
+        </fieldset>
+      </div>
     </div>
   );
 }
